@@ -1,0 +1,119 @@
+.cart {
+    padding-bottom: 50px;
+    font-size: 14px;
+    .plan1__block3 {
+        text-align: left;
+        margin-bottom: 30px;
+    }
+    .plan1__block3 span {
+        color: var(--orang);
+    }
+}
+
+.cart__email {
+    margin-top: 10px;
+    font-size: 14px;
+    margin-bottom: 33px;
+}
+
+.cart__ball {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 175%;
+    /* identical to box height, or 24px */
+    color: #3535BF;
+}
+
+.cart__form {
+    width: 368px;
+}
+
+.cart__form__wrap {
+    display: flex;
+    margin: 0 -6px;
+    margin-bottom: 12px;
+    .c-btn {
+        width: calc(100% / 2 - 12px);
+        margin: 0 6px;
+        height: 45px;
+    }
+}
+
+.cart__form__wrap2 {
+    display: flex;
+    position: relative;
+    .sub-btn {
+        width: 91px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 42px;
+        flex: 0 0 91px;
+    }
+    .input {
+        border-radius: 5px 0 0 5px;
+        padding-right: 100px;
+        width: calc(100% - 2px);
+    }
+}
+
+.cart__pay-wrap {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 15px;
+    img {
+        max-width: 80px;
+        margin-right: 25px;
+        max-height: 88px;
+        margin-bottom: 25px;
+    }
+}
+
+.cart__wrap {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.cart__left {
+    flex: 1;
+}
+
+@media(max-width: 1199px) {
+    .cart {
+        .plan1__block3 span {
+            display: inline-block;
+        }
+    }
+}
+
+@media(max-width: 767px) {
+    .cart__wrap {
+        flex-wrap: wrap;
+    }
+    .cart__left {
+        width: 100%;
+        flex: 0 0 100%;
+        margin-bottom: 30px;
+    }
+    .cart__form {
+        max-width: 368px;
+        margin-bottom: 30px;
+    }
+}
+
+@media(max-width: 424px) {
+    .cart__form__wrap .c-btn {
+        width: calc(100% - 12px);
+        margin-bottom: 12px;
+    }
+    .cart__form__wrap {
+        flex-wrap: wrap;
+    }
+    .cart__pay-wrap img {
+        margin-right: 15px;
+    }
+    .cart__form__wrap {
+        margin-bottom: 0;
+    }
+}
