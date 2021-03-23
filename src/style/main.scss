@@ -28,6 +28,11 @@ a {
 .form-switch label {
     margin-bottom: 0;
     cursor: pointer;
+    padding-left: 5px;
+    a {
+        color: #0d6efd;
+        text-decoration: underline;
+    }
 }
 
 .form-check-input {
@@ -1711,6 +1716,10 @@ h1 {
     transition: 0.3s all;
 }
 
+.input.error {
+    border: 1px solid #FF4D4D;
+}
+
 .input::placeholder {
     color: #BDBDBD;
     font-family: var(--main-font);
@@ -1718,6 +1727,241 @@ h1 {
 
 .input:focus {
     border: 1px solid #7379F8;
+}
+
+.btn-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 0.9em;
+    height: 0.9em;
+}
+
+.field-name {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 170%;
+    margin-bottom: 10px;
+    letter-spacing: 0.05em;
+    color: #000000;
+}
+
+.modal-content {
+    padding: 35px;
+}
+
+@media(max-width: 767px) {
+    .modal-content {
+        padding: 35px 15px;
+    }
+}
+
+.btn-close {
+    opacity: 1;
+}
+
+.kupon {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    svg {
+        margin-right: 17px;
+        flex: 0 0 45px;
+    }
+}
+
+@media(max-width: 500px) {
+    .kupon {
+        flex-direction: column;
+        text-align: center;
+        svg {
+            margin-right: 0;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+#kupon .modal-dialog {
+    max-width: 500px;
+}
+
+.modal-name {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    color: #252525;
+    text-align: center;
+    margin-bottom: 25px;
+    padding: 0 10px;
+}
+
+.ui-widget.ui-widget-content {
+    position: absolute;
+    z-index: 1051;
+}
+
+.selectric {
+    border: 1px solid #C4C4C4;
+    box-sizing: border-box;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    height: 55px
+}
+
+.selectric .label {
+    line-height: 55px;
+    font-size: 14px;
+    /* identical to box height, or 24px */
+    letter-spacing: 0.05em;
+    color: #000000;
+}
+
+.selectric-items .disabled {
+    display: none;
+}
+
+.selectric .button {
+    height: 55px;
+    font-size: 0;
+    background-image: url('../img/v.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #FFFFFF;
+}
+
+.selectric .button:after {
+    display: none;
+}
+
+.selectric-items li.highlighted {
+    background-color: #FFFFFF;
+    color: var(--orang);
+}
+
+.selectric-items {
+    background: #FFFFFF;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.selectric-items li:hover {
+    background-color: #FFFFFF;
+    color: var(--orang);
+}
+
+.selectric-wrapper {
+    margin-bottom: 20px;
+}
+
+.selectric-items li {
+    font-size: 14px;
+    line-height: 170%;
+    /* identical to box height, or 24px */
+    letter-spacing: 0.05em;
+    color: #000000;
+}
+
+.modal-btns button {
+    width: 100%;
+    margin-bottom: 12px;
+    height: 45px;
+}
+
+.modal-content .input {
+    height: 55px;
+    padding: 0 16px;
+    margin-bottom: 20px;
+}
+
+.delete__wrap {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    img {
+        margin-bottom: 15px;
+        margin-top: 20px;
+    }
+}
+
+.modal-dialog {
+    max-width: 445px;
+}
+
+.modal-dialog.modal-lg {
+    max-width: 812px;
+}
+
+.delete__text {
+    text-align: center;
+    max-width: 289px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.modal-name2 {
+    font-size: 16px;
+    line-height: 170%;
+    /* or 27px */
+    text-align: center;
+    letter-spacing: 0.05em;
+    color: #000000;
+    border-bottom: 1px solid#E2EAF4;
+    padding-bottom: 17px;
+    margin-bottom: 16px;
+}
+
+.modal-text {
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 170%;
+    /* or 20px */
+    text-align: center;
+    letter-spacing: 0.05em;
+    color: #000000;
+    margin-bottom: 40px;
+}
+
+.checkbox__wrap {
+    display: flex;
+    flex-wrap: wrap;
+    .checkbox {
+        margin-right: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+.checkbox {
+    cursor: pointer;
+    display: flex;
+}
+
+.checkbox input {
+    display: none;
+}
+
+.checkbox input+span {
+    width: 23px;
+    height: 23px;
+    border: 2px solid #C4C4C4;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.checkbox input:checked+span {
+    background-image: url('../img/modals/check.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 2px solid var(--orang);
+    background-size: 23px;
+}
+
+.modal-demo .modal-btns {
+    max-width: 368px;
+    margin: 0 auto;
+    margin-top: 35px;
+    margin-bottom: 20px;
 }
 
 @import './template/cart.scss';

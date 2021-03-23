@@ -32,13 +32,6 @@ $(function() {
         $(this).autocomplete("search", "");
     });
 
-    var Countries = ['Forms',
-        'Tables',
-        'Charts',
-        'Icones',
-        'Maps'
-    ];
-
     $('#kak-use-input').autocomplete({
         source: Countries,
         minLength: 0,
@@ -115,9 +108,6 @@ $(function() {
 
     }
 
-
-
-
     $('ul.tabs__caption').on('click', 'li:not(.active)', function() {
         $(this).addClass('active').siblings().removeClass('active')
             .closest('div.tabs').find('div.tabs__content').removeClass('active').eq($(this).index()).addClass('active');
@@ -130,5 +120,7 @@ $(function() {
             $(this).parent().addClass('active')
         }
     })
+
+    $('select').selectric();
 
 })

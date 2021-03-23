@@ -134,6 +134,7 @@
         letter-spacing: 0.05em;
         color: #000000;
         margin-bottom: 10px;
+        display: block;
     }
     .input {
         height: 55px;
@@ -146,7 +147,7 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 30px;
-    a {
+    a.auth__form__bot-reset {
         display: flex;
         align-items: center;
         svg {
@@ -174,6 +175,12 @@
     }
 }
 
+@media(max-height: 940px) and (min-width: 991px) {
+    .auth.reg {
+        height: auto;
+    }
+}
+
 @media(max-height: 600px) and (min-width: 991px) {
     .auth.login {
         height: auto;
@@ -189,11 +196,13 @@
         width: 100%;
         justify-content: flex-start;
         padding: 30px 15px;
+        flex: auto;
     }
     .auth__left {
         width: 100%;
         justify-content: flex-start;
         padding: 30px 15px;
+        flex: auto;
     }
 }
 
@@ -204,10 +213,21 @@
     .auth__form__body label {
         font-size: 12px;
     }
-    .auth__form__bot a {
+    .auth__form__bot a.auth__form__bot-reset {
         font-size: 12px;
     }
     .auth__form__body {
         padding: 0;
     }
+}
+
+.auth__form__body label.error {
+    font-size: 12px;
+    line-height: 170%;
+    /* or 20px */
+    text-align: right;
+    letter-spacing: 0.05em;
+    color: #FF4D4D;
+    position: relative;
+    top: -10px;
 }

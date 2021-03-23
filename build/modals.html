@@ -192,62 +192,186 @@
         </ul>
     </nav>
     <div class="content">
-        <div class="cart">
-            <div class="wrap">
-                <h1>Оплата тарифа</h1>
-                <div class="cart__email"><b>Доступ по email:</b> websport24@yandex.ru</div>
-                <div class="cart__wrap">
+        <div class="wrap">
+            <button class="btn-bo" data-bs-toggle="modal" data-bs-target="#kupon">Купон</button>
+            <button class="btn-bo" data-bs-toggle="modal" data-bs-target="#add-t">Добавить товар в группу</button>
+            <button class="btn-bo" data-bs-toggle="modal" data-bs-target="#add-t2">Добавить товар в группу 2</button>
+            <button class="btn-bo" data-bs-toggle="modal" data-bs-target="#preimenovat">Переименование группы товаров</button>
+            <button class="btn-bo" data-bs-toggle="modal" data-bs-target="#sozdat">Создание группы товаров</button>
+            <button class="btn-bo" data-bs-toggle="modal" data-bs-target="#delete">Удалить</button>
+            <button class="btn-bo" data-bs-toggle="modal" data-bs-target="#m-demo">Демонстрация</button>
+        </div>
+        <style>
+            .wrap button {
+                margin-bottom: 5px;
+                margin-right: 5px;
+            }
+        </style>
 
-                    <div class="cart__left">
-                        <div>Сумма к оплате</div>
-                        <div class="plan1__block3"><span>2400</span>/ месяц</div>
-                        <a href="" class="cart__ball">5000 баллов за 4000 руб в месяц</a>
+        <div class="modal fade" id="kupon" tabindex="-1" aria-labelledby="kupon" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="kupon">
+                        <svg width="45" height="39" viewBox="0 0 45 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22.4998 25.1216C21.7232 25.1216 21.0938 24.492 21.0938 23.7155V13.8731C21.0938 13.0966 21.7232 12.467 22.4998 12.467C23.2764 12.467 23.9059 13.0966 23.9059 13.8731V23.7155C23.9059 24.4921 23.2764 25.1216 22.4998 25.1216Z" fill="#A8A8A8"/>
+                            <path d="M44.4048 32.1809L26.9002 3.00692C24.9142 -0.304436 20.09 -0.310851 18.1001 3.00692L0.595433 32.1809C-1.05994 34.9398 0.931656 38.4791 4.16155 38.4791H40.8386C44.069 38.4791 46.0598 34.9394 44.4048 32.1809ZM40.8386 35.667H4.16163C3.11395 35.667 2.47155 34.5184 3.00691 33.6273L20.5115 4.4534C21.4095 2.95656 23.5897 2.95481 24.4888 4.4534L41.9934 33.6273C42.5281 34.5175 41.8872 35.667 40.8386 35.667Z" fill="#A8A8A8"/>
+                            <path d="M22.5 30.7458C23.6648 30.7458 24.609 29.8015 24.609 28.6367C24.609 27.4719 23.6648 26.5276 22.5 26.5276C21.3351 26.5276 20.3909 27.4719 20.3909 28.6367C20.3909 29.8015 21.3351 30.7458 22.5 30.7458Z" fill="#A8A8A8"/>
+                            </svg> Купон не найден, либо закончился срок действия, либо применим к другому тарифу!
                     </div>
-
-                    <form action="" class="cart__form">
-                        <div class="cart__form__wrap">
-                            <button class="c-btn btn-or">Оплатить онлайн</button>
-                            <button class="c-btn btn-bo">Оплатить по счету</button>
-                        </div>
-                        <div class="cart__form__wrap2">
-                            <input class="input" type="text" placeholder="Введите промокод">
-                            <button type="button" class="sub-btn btn-or" data-bs-toggle="modal" data-bs-target="#kupon">Ок</button>
-                        </div>
-                    </form>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+            </div>
+        </div>
 
-                <p>
-                    Нажимая кнопку "Оплатить" - вы принимаете условия договора о предоставлении цифровых услуг и даете своё согласие на обработку своих персональных данных, в соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ «О персональных данных», на условиях
-                    и для целей, определенных политикой конфиденциальности.
-                </p>
-                <div class="cart__pay-wrap">
-                    <img src="./img/cart/Alfabank_logo_png-min.png">
-                    <img src="./img/cart/kivi-min.png">
-                    <img src="./img/cart/maestro-min.png">
-                    <img src="./img/cart/marsersec-min.png">
-                    <img src="./img/cart/mastercard-min.png">
-                    <img src="./img/cart/PayU-Logo-min.png">
-                    <img src="./img/cart/verified-by-visa-min.png">
-                    <img src="./img/cart/visa-min.png">
-                    <img src="./img/cart/visaele-min.png">
-                    <img src="./img/cart/webmone-min.png">
+        <div class="modal fade" id="add-t" tabindex="-1" aria-labelledby="add-t" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-name">Добавить товар в группу</div>
+                    <div class="field-name">Название</div>
+                    <select>
+                        <option selected disabled hidden>Не выбрана</option>
+                        <option>група 1</option>
+                        <option>Група 2</option>
+                    </select>
+                    <div class="modal-btns">
+                        <button class="btn-or">Добавить</button>
+                        <button class="btn-bo" data-bs-dismiss="modal" aria-label="Close">Отмена</button>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="add-t2" tabindex="-1" aria-labelledby="add-t2" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-name">Добавить товар в группу</div>
+                    <div class="field-name">Название</div>
+                    <select>
+                        <option selected disabled hidden>Не выбрана</option>
+                        <option>група 1</option>
+                        <option>Група 2</option>
+                    </select>
+                    <div class="field-name">Название новой группы</div>
+                    <input type="text" class="input" placeholder="Название новой группы">
+                    <div class="modal-btns">
+                        <button class="btn-or">Добавить</button>
+                        <button class="btn-bo" data-bs-dismiss="modal" aria-label="Close">Отмена</button>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="preimenovat" tabindex="-1" aria-labelledby="preimenovat" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-name">Переименование группы товаров</div>
+                    <div class="field-name">Название</div>
+                    <input type="text" id="pereimenovat-input" class="input" placeholder="Название новой группы">
+                    <div class="modal-btns">
+                        <button class="btn-or">Переименовать</button>
+                        <button class="btn-bo" data-bs-dismiss="modal" aria-label="Close">Отмена</button>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="sozdat" tabindex="-1" aria-labelledby="sozdat" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-name">Переименование группы товаров</div>
+                    <div class="field-name">Название</div>
+                    <input type="text" id="soc-input2" class="input" placeholder="Название новой группы">
+                    <div class="modal-btns">
+                        <button class="btn-or">Переименовать</button>
+                        <button class="btn-bo" data-bs-dismiss="modal" aria-label="Close">Отмена</button>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="delete" tabindex="-1" aria-labelledby="delete" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="delete__wrap">
+                        <img src="./img/modals/delete.svg">
+
+                        <div class="modal-name" style="margin-bottom: 15px;">Внимание!</div>
+                        <div class="delete__text">
+                            Вы уверены что хотите удалить группу <b>“косм”</b>?
+                        </div>
+                    </div>
+                    <div class="modal-btns">
+                        <button class="btn-or">Удалить</button>
+                        <button class="btn-bo" data-bs-dismiss="modal" aria-label="Close">Отмена</button>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="m-demo" tabindex="-1" aria-labelledby="m-demo" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-demo">
+                        <div class="modal-name" style="margin-bottom: 10px;">Демонстрация системы и тестовый доступ</div>
+                        <div class="modal-name2" style="margin-bottom: 10px;">Профессиональный инструмент для аналитики продаж на маркетплейсах</div>
+                        <div class="modal-text">Наш менеджер с радостью проведет Вам демонстрацию, ответит на все вопросы, это не займет много времени - средняя продолжительность сессии от 15 до 20 минут. По итогам этой встречи мы предоставим бесплатный ознакомительный доступ
+                            к системе на сутки.</div>
+                        <div class="modal-demo__wrap">
+                            <div class="field-name">Название</div>
+                            <input type="text" class="input">
+
+                            <div class="field-name">Ваш email</div>
+                            <input type="text" class="input">
+
+                            <div class="field-name">Ваш телефон</div>
+                            <input type="text" class="input">
+
+                            <div class="field-name">Ваш логин в Telegram, если так удобнее</div>
+                            <input type="text" class="input">
+
+                            <div class="field-name">Уже работаете с маркетплейсами?</div>
+                            <div class="checkbox__wrap">
+                                <label class="checkbox">
+                                    <input type="checkbox">
+                                    <span></span>
+                                    Wieldberries
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox">
+                                    <span></span>
+                                    Ozon
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox">
+                                    <span></span>
+                                    Beru
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox">
+                                    <span></span>
+                                    Lamoda
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox">
+                                    <span></span>
+                                    Другие
+                                </label>
+                            </div>
+                        </div>
+                        <div class="modal-btns">
+                            <button class="btn-or">Готов к демонстрации</button>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
             </div>
         </div>
     </div>
-    <div class="modal fade" id="kupon" tabindex="-1" aria-labelledby="kupon" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="kupon">
-                    <svg width="45" height="39" viewBox="0 0 45 39" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M22.4998 25.1216C21.7232 25.1216 21.0938 24.492 21.0938 23.7155V13.8731C21.0938 13.0966 21.7232 12.467 22.4998 12.467C23.2764 12.467 23.9059 13.0966 23.9059 13.8731V23.7155C23.9059 24.4921 23.2764 25.1216 22.4998 25.1216Z" fill="#A8A8A8"/>
-                        <path d="M44.4048 32.1809L26.9002 3.00692C24.9142 -0.304436 20.09 -0.310851 18.1001 3.00692L0.595433 32.1809C-1.05994 34.9398 0.931656 38.4791 4.16155 38.4791H40.8386C44.069 38.4791 46.0598 34.9394 44.4048 32.1809ZM40.8386 35.667H4.16163C3.11395 35.667 2.47155 34.5184 3.00691 33.6273L20.5115 4.4534C21.4095 2.95656 23.5897 2.95481 24.4888 4.4534L41.9934 33.6273C42.5281 34.5175 41.8872 35.667 40.8386 35.667Z" fill="#A8A8A8"/>
-                        <path d="M22.5 30.7458C23.6648 30.7458 24.609 29.8015 24.609 28.6367C24.609 27.4719 23.6648 26.5276 22.5 26.5276C21.3351 26.5276 20.3909 27.4719 20.3909 28.6367C20.3909 29.8015 21.3351 30.7458 22.5 30.7458Z" fill="#A8A8A8"/>
-                        </svg> Купон не найден, либо закончился срок действия, либо применим к другому тарифу!
-                </div>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-        </div>
     </div>
     <footer class="footer">
         <div class="wrap">
@@ -327,6 +451,32 @@
 
     <!-- main.js -->
     <script src="./js/main.js"></script>
+
+    <!-- скрипты этой страницы -->
+    <script>
+        var Countries = ['Косметология',
+            'Tables',
+            'Charts',
+            'Icones',
+            'Maps'
+        ];
+
+        $('#pereimenovat-input').autocomplete({
+            source: Countries,
+            minLength: 0,
+            scroll: true
+        }).focus(function() {
+            $(this).autocomplete("search", "");
+        });
+
+        $('#soc-input2').autocomplete({
+            source: Countries,
+            minLength: 0,
+            scroll: true
+        }).focus(function() {
+            $(this).autocomplete("search", "");
+        });
+    </script>
 </body>
 
 </html>

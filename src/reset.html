@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- плагины -->
+    <link rel='stylesheet' type='text/css' media='screen' href='./libs/jquery/jq-ui.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='./libs/bootstrap.min.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='./libs/selectric/selectric.css'>
+    <!-- стили -->
+    <link rel='stylesheet' type='text/css' media='screen' href='./css/main.min.css'>
+</head>
+
+<body>
+    <div class="auth">
+        <div class="auth__left">
+            <div class="auth__left__wrap">
+                <div class="auth__left__welcom">Добро пожаловать в <span>Get<b>Data</b></span></div>
+                <h1>Начните ваш путь к успешному бизнему на Wildberries!</h1>
+                <div class="auth__slogan">Анализируйте данные Выберите нишу, которая приведет вас к успеху!</div>
+            </div>
+        </div>
+        <div class="auth__right">
+            <form class="auth__form" id="reset">
+                <div class="auth__form__h">
+
+                    <div class="auth__left__welcom">Сброс пароля</div>
+                    <div class="auth__slogan2">Введите свой email и мы пришлем вам инструкцию </div>
+
+                </div>
+                <div class="auth__form__body">
+                    <label>Email</label>
+                    <input type="email" name="resetemail" required class="input" placeholder="Введите email">
+
+                    <button type="submit" class="auth__form__sub btn-or">Сбросить пароль</button>
+                    <div class="auth__form__bot-text">Вспомнили пароль?<a href="">Нажмите сюда</a></div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <!-- плагины -->
+    <script src="./libs/jquery/jquery.min.js"></script>
+    <script src="./libs/jquery/jq-ui.js"></script>
+    <script src="./libs/bootstrap.bundle.min.js"></script>
+    <script src="./libs/selectric/selectric.min.js"></script>
+    <script src="./libs/jq-validate/jquery.validate.min.js"></script>
+    <!-- main.js -->
+    <script src="./js/main.js"></script>
+
+    <!-- скрипты этой страницы -->
+    <script>
+        $('#reset').validate({
+            field: {
+                required: true,
+                email: true
+            },
+            messages: {
+                email: "Такого email не существует",
+                required: "Это поле обязательное",
+            }
+        })
+        $.validator.messages.required = 'Это поле обязательное';
+    </script>
+</body>
+
+</html>

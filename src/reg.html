@@ -18,46 +18,49 @@
 </head>
 
 <body>
-    <div class="auth login">
+    <div class="auth reg">
         <div class="auth__left">
-            <div class="auth__left__wrap">
-                <div class="auth__left__welcom">Добро пожаловать в <span>Get<b>Data</b></span></div>
-                <h1>Начните ваш путь к успешному бизнему на Wildberries!</h1>
-                <div class="auth__slogan">Анализируйте данные Выберите нишу, которая приведет вас к успеху!</div>
-            </div>
+            <div class="auth__left__welcom">Добро пожаловать в <span>Get<b>Data</b></span></div>
+            <h1>Начните ваш путь к успешному бизнему на Wildberries!</h1>
+            <div class="auth__slogan">Анализируйте данные Выберите нишу, которая приведет вас к успеху!</div>
         </div>
         <div class="auth__right">
-            <form class="auth__form" id="login">
+            <form class="auth__form" id="reg">
                 <div class="auth__form__h">
                     <img class="auth__form__logo" src="./img/main/logo.svg">
                     <div class="auth__left__welcom">Добро пожаловать в <span>Get<b>Data</b></span></div>
                     <div class="auth__slogan2">Войдите, чтобы найти трендовые ниши и товары</div>
                     <ul>
-                        <li class="active"><span>Войти</span></li>
-                        <li><a href="">Регистрация</a></li>
+                        <li><a href="">Войти</a></li>
+                        <li class="active"><span>Регистрация</span></li>
                     </ul>
                 </div>
                 <div class="auth__form__body">
                     <label>Имя пользователя</label>
-                    <input type="text" class="input" name="name" placeholder="Имя пользователя" required>
+                    <input type="text" name="name" required class="input" placeholder="Имя пользователя">
+
+                    <label>Номер телефона</label>
+                    <input type="text" name="phone" required class="input" placeholder="Пароль">
+
+                    <label>Email</label>
+                    <input type="text" name="email" required class="input" placeholder="Пароль">
 
                     <label>Пароль</label>
-                    <input type="password" name="pass" class="input" placeholder="Пароль" required>
+                    <input type="password" name="pass" required class="input" placeholder="Пароль">
+
+                    <label>Повторите пароль</label>
+                    <input type="password" name="pass2" required class="input" placeholder="Пароль">
 
                     <div class="auth__form__bot">
                         <div class="form-check form-switch">
                             <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-                            <label class="form-check-label" for="flexSwitchCheckDefault">Запомнить меня</label>
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Регистрируясь, вы соглашаетесь с <a href="">Условиями использования</a></label>
                         </div>
-                        <a href="" class="auth__form__bot-reset">
-                            <svg width="13" height="17" viewBox="0 0 13 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12.8332 8.49992C12.8332 7.62671 12.123 6.91659 11.2498 6.91659H10.4582V4.54159C10.4582 2.35896 8.68246 0.583252 6.49984 0.583252C4.31721 0.583252 2.5415 2.35896 2.5415 4.54159V6.91659H1.74984C0.876629 6.91659 0.166504 7.62671 0.166504 8.49992V14.8333C0.166504 15.7065 0.876629 16.4166 1.74984 16.4166H11.2498C12.123 16.4166 12.8332 15.7065 12.8332 14.8333V8.49992ZM4.12484 4.54159C4.12484 3.23217 5.19042 2.16659 6.49984 2.16659C7.80925 2.16659 8.87484 3.23217 8.87484 4.54159V6.91659H4.12484V4.54159Z" fill="#FF7B1B"/>
-                                </svg> Забыли пароль?
-                        </a>
+
                     </div>
 
-                    <button type="submit" class="auth__form__sub btn-or">Войти</button>
-                    <div class="auth__form__bot-text">Нет аккаунта? <a href="">Зарегистрируйтесь</a></div>
+                    <button type="submit" class="auth__form__sub btn-or">Регистрация</button>
+                    <div class="auth__form__bot-text">Есть аккаунт? <a href="">Войдите</a></div>
                 </div>
 
             </form>
@@ -72,12 +75,23 @@
     <!-- main.js -->
     <script src="./js/main.js"></script>
 
+
     <!-- скрипты этой страницы -->
     <script>
-        $('#login').validate({
+        $('#reg').validate({
+            rules: {
+                pass: "required",
+                pass2: {
+                    equalTo: "#pass"
+                }
+            },
             messages: {
                 email: "Такого email не существует",
                 required: "Это поле обязательное",
+                pass2: {
+                    required: "Это поле обязательное",
+                    equalTo: "Пароли не совпадают",
+                }
             }
         })
         $.validator.messages.required = 'Это поле обязательное';
