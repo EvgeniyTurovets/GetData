@@ -7,15 +7,15 @@
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap&v=f390f337f38f565de418564528f8a70e" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- плагины -->
-    <link rel='stylesheet' type='text/css' media='screen' href='./libs/jquery/jq-ui.css?v=f390f337f38f565de418564528f8a70e'>
-    <link rel='stylesheet' type='text/css' media='screen' href='./libs/bootstrap.min.css?v=f390f337f38f565de418564528f8a70e'>
-    <link rel='stylesheet' type='text/css' media='screen' href='./libs/selectric/selectric.css?v=f390f337f38f565de418564528f8a70e'>
+    <link rel='stylesheet' type='text/css' media='screen' href='./libs/jquery/jq-ui.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='./libs/bootstrap.min.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='./libs/selectric/selectric.css'>
 
     <!-- стили -->
-    <link rel='stylesheet' type='text/css' media='screen' href='./css/main.min.css?v=f390f337f38f565de418564528f8a70e'>
+    <link rel='stylesheet' type='text/css' media='screen' href='./css/main.min.css'>
 </head>
 
 <body>
@@ -192,187 +192,231 @@
         </ul>
     </nav>
     <div class="content">
-        <div class="wrap">
-            <button class="btn-bo" data-bs-toggle="modal" data-bs-target="#kupon">Купон</button>
-            <button class="btn-bo" data-bs-toggle="modal" data-bs-target="#add-t">Добавить товар в группу</button>
-            <button class="btn-bo" data-bs-toggle="modal" data-bs-target="#add-t2">Добавить товар в группу 2</button>
-            <button class="btn-bo" data-bs-toggle="modal" data-bs-target="#preimenovat">Переименование группы товаров</button>
-            <button class="btn-bo" data-bs-toggle="modal" data-bs-target="#sozdat">Создание группы товаров</button>
-            <button class="btn-bo" data-bs-toggle="modal" data-bs-target="#delete">Удалить</button>
-            <button class="btn-bo" data-bs-toggle="modal" data-bs-target="#m-demo">Демонстрация</button>
-        </div>
-        <style>
-            .wrap button {
-                margin-bottom: 5px;
-                margin-right: 5px;
-            }
-        </style>
-
-        <div class="modal fade" id="kupon" tabindex="-1" aria-labelledby="kupon" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="kupon">
-                        <svg width="45" height="39" viewBox="0 0 45 39" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M22.4998 25.1216C21.7232 25.1216 21.0938 24.492 21.0938 23.7155V13.8731C21.0938 13.0966 21.7232 12.467 22.4998 12.467C23.2764 12.467 23.9059 13.0966 23.9059 13.8731V23.7155C23.9059 24.4921 23.2764 25.1216 22.4998 25.1216Z" fill="#A8A8A8"/>
-                            <path d="M44.4048 32.1809L26.9002 3.00692C24.9142 -0.304436 20.09 -0.310851 18.1001 3.00692L0.595433 32.1809C-1.05994 34.9398 0.931656 38.4791 4.16155 38.4791H40.8386C44.069 38.4791 46.0598 34.9394 44.4048 32.1809ZM40.8386 35.667H4.16163C3.11395 35.667 2.47155 34.5184 3.00691 33.6273L20.5115 4.4534C21.4095 2.95656 23.5897 2.95481 24.4888 4.4534L41.9934 33.6273C42.5281 34.5175 41.8872 35.667 40.8386 35.667Z" fill="#A8A8A8"/>
-                            <path d="M22.5 30.7458C23.6648 30.7458 24.609 29.8015 24.609 28.6367C24.609 27.4719 23.6648 26.5276 22.5 26.5276C21.3351 26.5276 20.3909 27.4719 20.3909 28.6367C20.3909 29.8015 21.3351 30.7458 22.5 30.7458Z" fill="#A8A8A8"/>
-                            </svg> Купон не найден, либо закончился срок действия, либо применим к другому тарифу!
+        <section class="s-search">
+            <form>
+                <div class="s-search__filter">
+                    <div class="s-search__filter__btn">
+                        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.34239 4.35022H0.735288C0.329149 4.35022 0 4.02085 0 3.61493C0 3.20901 0.329149 2.87964 0.735288 2.87964H5.34239C5.74853 2.87964 6.07768 3.20901 6.07768 3.61493C6.07768 4.02085 5.74853 4.35022 5.34239 4.35022Z" fill="#878787"></path>
+                            <path d="M7.97449 6.98261C6.11733 6.98261 4.60651 5.47179 4.60651 3.61479C4.60651 1.7574 6.11733 0.246582 7.97449 0.246582C9.83166 0.246582 11.3425 1.7574 11.3425 3.61479C11.3425 5.47185 9.83166 6.98261 7.97449 6.98261ZM7.97449 1.71721C6.92824 1.71721 6.07708 2.56853 6.07708 3.61479C6.07708 4.66105 6.92824 5.51198 7.97449 5.51198C9.02075 5.51198 9.87191 4.66105 9.87191 3.61479C9.87191 2.56853 9.02075 1.71721 7.97449 1.71721Z" fill="#878787"></path>
+                            <path d="M24.2639 4.35022H13.2743C12.8682 4.35022 12.539 4.02085 12.539 3.61493C12.539 3.20901 12.8682 2.87964 13.2743 2.87964H24.2639C24.67 2.87964 24.9991 3.20901 24.9991 3.61493C24.9991 4.02085 24.67 4.35022 24.2639 4.35022Z" fill="#878787"></path>
+                            <path d="M17.847 15.8677C15.9898 15.8677 14.479 14.3569 14.479 12.4999C14.479 10.6429 15.9898 9.13208 17.847 9.13208C19.7042 9.13208 21.215 10.6429 21.215 12.4999C21.215 14.3569 19.7042 15.8677 17.847 15.8677ZM17.847 10.6027C16.8007 10.6027 15.9496 11.4536 15.9496 12.4999C15.9496 13.5462 16.8007 14.3971 17.847 14.3971C18.8933 14.3971 19.7444 13.5462 19.7444 12.4999C19.7444 11.4536 18.8933 10.6027 17.847 10.6027Z" fill="#878787"></path>
+                            <path d="M12.5477 13.2355H0.735288C0.329149 13.2355 0 12.9061 0 12.5002C0 12.0943 0.329149 11.7649 0.735288 11.7649H12.5477C12.9538 11.7649 13.283 12.0943 13.283 12.5002C13.283 12.9061 12.9538 13.2355 12.5477 13.2355Z" fill="#878787"></path>
+                            <path d="M24.2639 13.2355H20.4794C20.0733 13.2355 19.7441 12.9061 19.7441 12.5002C19.7441 12.0943 20.0733 11.7649 20.4794 11.7649H24.2639C24.67 11.7649 24.9992 12.0943 24.9992 12.5002C24.9992 12.9061 24.67 13.2355 24.2639 13.2355Z" fill="#878787"></path>
+                            <path d="M7.15216 24.7534C5.295 24.7534 3.78418 23.2425 3.78418 21.3852C3.78418 19.5282 5.295 18.0173 7.15216 18.0173C9.00933 18.0173 10.5201 19.5282 10.5201 21.3852C10.5201 23.2425 9.00933 24.7534 7.15216 24.7534ZM7.15216 19.488C6.10591 19.488 5.25475 20.3389 5.25475 21.3852C5.25475 22.4314 6.10591 23.2827 7.15216 23.2827C8.19842 23.2827 9.04957 22.4314 9.04957 21.3852C9.04957 20.3389 8.19842 19.488 7.15216 19.488Z" fill="#878787"></path>
+                            <path d="M24.2652 22.1205H12.4528C12.0466 22.1205 11.7175 21.7911 11.7175 21.3852C11.7175 20.9793 12.0466 20.6499 12.4528 20.6499H24.2652C24.6713 20.6499 25.0004 20.9793 25.0004 21.3852C25.0004 21.7911 24.6713 22.1205 24.2652 22.1205Z" fill="#878787"></path>
+                            <path d="M4.51976 22.1205H0.735288C0.329149 22.1205 0 21.7912 0 21.3852C0 20.9793 0.329149 20.6499 0.735288 20.6499H4.51976C4.9259 20.6499 5.25505 20.9793 5.25505 21.3852C5.25505 21.7912 4.9259 22.1205 4.51976 22.1205Z" fill="#878787"></path>
+                        </svg>
                     </div>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                    Поиск <span class="name">по товарам</span>
+                    <span class="arr">
+                  <svg width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6.49991 1.00012C6.70436 0.999726 6.90249 1.07093 7.05991 1.20137L12.3099 5.57637C12.4886 5.7249 12.601 5.93832 12.6223 6.16969C12.6436 6.40106 12.5722 6.63144 12.4237 6.81013C12.2751 6.98881 12.0617 7.10119 11.8303 7.12252C11.599 7.14385 11.3686 7.0724 11.1899 6.92388L6.49991 3.00388L1.80991 6.78388C1.72041 6.85656 1.61742 6.91084 1.50688 6.94359C1.39633 6.97634 1.2804 6.98692 1.16575 6.97473C1.0511 6.96253 0.939991 6.9278 0.838809 6.87252C0.737627 6.81724 0.648367 6.74251 0.576159 6.65263C0.496027 6.56266 0.435338 6.45711 0.397894 6.34259C0.360451 6.22808 0.347061 6.10707 0.35856 5.98714C0.370061 5.86721 0.406203 5.75094 0.464726 5.64563C0.523249 5.54032 0.602891 5.44823 0.698661 5.37513L5.94866 1.14888C6.11061 1.03905 6.3047 0.986676 6.49991 1.00012Z" fill="white"></path>
+                    </svg>                    
+                </span>
                 </div>
+                <div class="s-search__filter-set">
+                    <label><input type="radio" name="search-type"><span></span>По категориям</label>
+                    <label><input type="radio" name="search-type"><span></span>По брендам</label>
+                    <label><input type="radio" name="search-type"><span></span>По продавцам
+                </label>
+                    <label><input type="radio" name="search-type" checked=""><span></span>По товарам</label>
+                    <label><input type="radio" name="search-type"><span></span>По товарам (SKU)</label>
+                    <label><input type="radio" name="search-type"><span></span>По URL</label>
+                </div>
+                <input id="AllCompo" class="s-search__input ui-autocomplete-input" placeholder="Введите SKU, Url или ключевое слово" autocomplete="off">
+                <button class="btn-or">Искать
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.6777 12.9296C15.8881 11.278 16.4302 9.23025 16.1956 7.19607C15.961 5.1619 14.967 3.29131 13.4124 1.95855C11.8579 0.625789 9.85741 -0.0708582 7.81127 0.00798323C5.76513 0.0868247 3.8242 0.93534 2.37681 2.38377C0.929411 3.8322 0.0822852 5.77373 0.0049079 7.81993C-0.0724694 9.86613 0.625609 11.8661 1.95948 13.4197C3.29335 14.9733 5.16465 15.966 7.199 16.1991C9.23334 16.4323 11.2807 15.8887 12.9315 14.6771H12.9302C12.9677 14.7271 13.0077 14.7746 13.0527 14.8209L17.8652 19.6334C18.0996 19.8679 18.4176 19.9998 18.7492 19.9999C19.0807 20 19.3988 19.8684 19.6333 19.634C19.8679 19.3996 19.9997 19.0817 19.9999 18.7501C20 18.4185 19.8684 18.1004 19.634 17.8659L14.8215 13.0534C14.7768 13.0082 14.7287 12.9664 14.6777 12.9284V12.9296ZM15.0002 8.12464C15.0002 9.02748 14.8224 9.92147 14.4769 10.7556C14.1314 11.5897 13.625 12.3476 12.9866 12.986C12.3482 13.6244 11.5903 14.1308 10.7562 14.4763C9.92206 14.8218 9.02806 14.9996 8.12522 14.9996C7.22238 14.9996 6.32839 14.8218 5.49427 14.4763C4.66016 14.1308 3.90227 13.6244 3.26386 12.986C2.62546 12.3476 2.11905 11.5897 1.77355 10.7556C1.42805 9.92147 1.25022 9.02748 1.25022 8.12464C1.25022 6.30127 1.97455 4.55259 3.26386 3.26328C4.55318 1.97397 6.30186 1.24964 8.12522 1.24964C9.94859 1.24964 11.6973 1.97397 12.9866 3.26328C14.2759 4.55259 15.0002 6.30127 15.0002 8.12464Z" fill="white"></path>
+                        </svg>
+                        
+                </button>
+                <a href="" class="s-search__more">К расширенному поиску 
+                <svg width="5" height="8" viewBox="0 0 5 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.00039 7.49997C0.883566 7.5002 0.770348 7.45951 0.680392 7.38497C0.629762 7.343 0.587912 7.29144 0.557236 7.23327C0.52656 7.1751 0.507661 7.11144 0.501623 7.04596C0.495585 6.98047 0.502527 6.91443 0.522049 6.85163C0.541571 6.78883 0.573291 6.73049 0.615392 6.67997L2.85539 3.99997L0.695392 1.31497C0.653859 1.26383 0.622843 1.20498 0.604127 1.14181C0.585411 1.07864 0.579364 1.01239 0.586334 0.946879C0.593304 0.881365 0.613152 0.817874 0.644739 0.760056C0.676326 0.702237 0.719029 0.651232 0.770392 0.60997C0.822125 0.564452 0.882708 0.530118 0.948339 0.509124C1.01397 0.488129 1.08323 0.480927 1.15178 0.48797C1.22033 0.495012 1.28668 0.516147 1.34667 0.550048C1.40666 0.583949 1.459 0.629884 1.50039 0.68497L3.91539 3.68497C3.98893 3.77444 4.02914 3.88666 4.02914 4.00247C4.02914 4.11828 3.98893 4.2305 3.91539 4.31997L1.41539 7.31997C1.36523 7.38048 1.30152 7.42831 1.22941 7.45958C1.15731 7.49086 1.07885 7.50469 1.00039 7.49997Z" fill="#A3A3A3"></path>
+                </svg>
+              </a>
+            </form>
+        </section>
+
+        <div class="breadcrumb">
+            <div class="wrap">
+                <ul>
+                    <li><a href="">Главная /</a></li>
+                    <li><a href="">Категории /</a></li>
+                    <li>Категория</li>
+                </ul>
             </div>
         </div>
 
-        <div class="modal fade" id="add-t" tabindex="-1" aria-labelledby="add-t" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-name">Добавить товар в группу</div>
-                    <div class="field-name">Название</div>
-                    <select>
-                        <option selected disabled hidden>Не выбрана</option>
-                        <option>група 1</option>
-                        <option>Група 2</option>
-                    </select>
-                    <div class="modal-btns">
-                        <button class="btn-or">Добавить</button>
-                        <button class="btn-bo" data-bs-dismiss="modal" aria-label="Close">Отмена</button>
+        <div class="lk">
+            <div class="wrap">
+                <div class="tabs lk-tabs">
+                    <div class="lk__caption__wrap">
+                        <ul class="tabs__caption">
+                            <li class="tab active">Личные данные</li>
+                            <li class="tab">О вашей компании</li>
+                            <li class="tab">Тарифы и оплата</li>
+                            <li class="tab">Обратная связь</li>
+                        </ul>
                     </div>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-            </div>
-        </div>
 
-        <div class="modal fade" id="add-t2" tabindex="-1" aria-labelledby="add-t2" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-name">Добавить товар в группу</div>
-                    <div class="field-name">Название</div>
-                    <select>
-                        <option selected disabled hidden>Не выбрана</option>
-                        <option>група 1</option>
-                        <option>Група 2</option>
-                    </select>
-                    <div class="field-name">Название новой группы</div>
-                    <input type="text" class="input" placeholder="Название новой группы">
-                    <div class="modal-btns">
-                        <button class="btn-or">Добавить</button>
-                        <button class="btn-bo" data-bs-dismiss="modal" aria-label="Close">Отмена</button>
-                    </div>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-            </div>
-        </div>
-
-        <div class="modal fade" id="preimenovat" tabindex="-1" aria-labelledby="preimenovat" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-name">Переименование группы товаров</div>
-                    <div class="field-name">Название</div>
-                    <input type="text" id="pereimenovat-input" class="input" placeholder="Название новой группы">
-                    <div class="modal-btns">
-                        <button class="btn-or">Переименовать</button>
-                        <button class="btn-bo" data-bs-dismiss="modal" aria-label="Close">Отмена</button>
-                    </div>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-            </div>
-        </div>
-
-        <div class="modal fade" id="sozdat" tabindex="-1" aria-labelledby="sozdat" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-name">Переименование группы товаров</div>
-                    <div class="field-name">Название</div>
-                    <input type="text" id="soc-input2" class="input" placeholder="Название новой группы">
-                    <div class="modal-btns">
-                        <button class="btn-or">Переименовать</button>
-                        <button class="btn-bo" data-bs-dismiss="modal" aria-label="Close">Отмена</button>
-                    </div>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-            </div>
-        </div>
-
-        <div class="modal fade" id="delete" tabindex="-1" aria-labelledby="delete" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="delete__wrap">
-                        <img src="./img/modals/delete.svg">
-
-                        <div class="modal-name" style="margin-bottom: 15px;">Внимание!</div>
-                        <div class="delete__text">
-                            Вы уверены что хотите удалить группу <b>“косм”</b>?
-                        </div>
-                    </div>
-                    <div class="modal-btns">
-                        <button class="btn-or">Удалить</button>
-                        <button class="btn-bo" data-bs-dismiss="modal" aria-label="Close">Отмена</button>
-                    </div>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-            </div>
-        </div>
-
-        <div class="modal fade" id="m-demo" tabindex="-1" aria-labelledby="m-demo" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-demo">
-                        <div class="modal-name" style="margin-bottom: 10px;">Демонстрация системы и тестовый доступ</div>
-                        <div class="modal-name2" style="margin-bottom: 10px;">Профессиональный инструмент для аналитики продаж на маркетплейсах</div>
-                        <div class="modal-text">Наш менеджер с радостью проведет Вам демонстрацию, ответит на все вопросы, это не займет много времени - средняя продолжительность сессии от 15 до 20 минут. По итогам этой встречи мы предоставим бесплатный ознакомительный доступ
-                            к системе на сутки.</div>
-                        <div class="modal-demo__wrap">
-                            <div class="field-name">Название</div>
-                            <input type="text" class="input">
-
-                            <div class="field-name">Ваш email</div>
-                            <input type="text" class="input">
-
-                            <div class="field-name">Ваш телефон</div>
-                            <input type="text" class="input">
-
-                            <div class="field-name">Ваш логин в Telegram, если так удобнее</div>
-                            <input type="text" class="input">
-
-                            <div class="field-name">Уже работаете с маркетплейсами?</div>
-                            <div class="checkbox__wrap">
-                                <label class="checkbox">
-                                    <input type="checkbox">
-                                    <span></span>
-                                    Wieldberries
-                                </label>
-                                <label class="checkbox">
-                                    <input type="checkbox">
-                                    <span></span>
-                                    Ozon
-                                </label>
-                                <label class="checkbox">
-                                    <input type="checkbox">
-                                    <span></span>
-                                    Beru
-                                </label>
-                                <label class="checkbox">
-                                    <input type="checkbox">
-                                    <span></span>
-                                    Lamoda
-                                </label>
-                                <label class="checkbox">
-                                    <input type="checkbox">
-                                    <span></span>
-                                    Другие
-                                </label>
+                    <div class="tabs__content active">
+                        <form class="lk-form">
+                            <h3>Ваши данные</h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-label">Имя</div>
+                                    <input class="input" type="text">
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-label">Фамилия</div>
+                                    <input class="input" type="text">
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-label">Email</div>
+                                    <input class="input" type="text">
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-label">Telegram</div>
+                                    <input class="input" type="text">
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-label">Телефон</div>
+                                    <input class="input" type="text">
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-label">Адрес</div>
+                                    <select>
+                                        <option>Москва</option>
+                                        <option>Санкт-Петербург</option>
+                                        <option>Екатеренбург</option>
+                                    </select>
+                                </div>
                             </div>
-                        </div>
-                        <div class="modal-btns">
-                            <button class="btn-or">Готов к демонстрации</button>
-                        </div>
+                            <button class="btn-or" type="submit">Сохранить</button>
+                        </form>
+
+                        <form class="lk-form">
+                            <h3>Смена пароля</h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-label">Старый пароль</div>
+                                    <input class="input" type="password">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-label">Новый пароль</div>
+                                    <input class="input" type="password">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-label">Повторите новый пароль</div>
+                                    <input class="input" type="password">
+                                </div>
+                            </div>
+                            <button class="btn-or" type="submit">Сохранить</button>
+                        </form>
                     </div>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div class="tabs__content">
+                        <form class="lk-form">
+                            <h3>Информация о компании</h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-label">Как называется компания</div>
+                                    <input class="input" type="text">
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-label">Сайт</div>
+                                    <input class="input" type="text">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-label">Численность сотрудников</div>
+                                    <input class="input" type="text">
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-label">Годовые обороты</div>
+                                    <input class="input" type="text">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-label">Телефон</div>
+                                    <input class="input" type="text">
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-label">На каких планируете продавать?</div>
+                                    <input class="input" type="text">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-label">На каких маркетплейсах вы уже продаете товар?</div>
+                                    <input class="input" type="text">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-label">Какие категории товаров вам интересны?</div>
+                                    <input class="input" type="text">
+                                </div>
+                            </div>
+                            <button class="btn-or" type="submit">Сохранить</button>
+                        </form>
+                    </div>
+                    <div class="tabs__content"></div>
+                    <div class="tabs__content">
+                        <form class="lk-form">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-label">Как называется компания</div>
+                                    <input class="input" type="text">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4 col-md-6">
+                                    <div class="form-label">Email</div>
+                                    <input class="input" type="text">
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <div class="form-label">Пароль</div>
+                                    <input class="input" type="text">
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <div class="form-label">Как называется компания</div>
+                                    <input class="input" type="text">
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-label">Телефон</div>
+                                    <input class="input" type="text">
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-label">Страна</div>
+                                    <select>
+                                        <option>Москва</option>
+                                        <option>Санкт-Петербург</option>
+                                        <option>Екатеренбург</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-label">Соосбщение</div>
+                                    <textarea class="textarea"></textarea>
+                                </div>
+                            </div>
+                            <button class="btn-center btn-or">Отправить</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
+
     </div>
-    </div>
+
     <footer class="footer">
         <div class="wrap">
             <div class="footer__content">
@@ -444,39 +488,13 @@
         </div>
     </footer>
     <!-- плагины -->
-    <script src="./libs/jquery/jquery.min.js?v=f390f337f38f565de418564528f8a70e"></script>
-    <script src="./libs/jquery/jq-ui.js?v=f390f337f38f565de418564528f8a70e"></script>
-    <script src="./libs/bootstrap.bundle.min.js?v=f390f337f38f565de418564528f8a70e"></script>
-    <script src="./libs/selectric/selectric.min.js?v=f390f337f38f565de418564528f8a70e"></script>
+    <script src="./libs/jquery/jquery.min.js"></script>
+    <script src="./libs/jquery/jq-ui.js"></script>
+    <script src="./libs/bootstrap.bundle.min.js"></script>
+    <script src="./libs/selectric/selectric.min.js"></script>
 
     <!-- main.js -->
-    <script src="./js/main.js?v=f390f337f38f565de418564528f8a70e"></script>
-
-    <!-- скрипты этой страницы -->
-    <script>
-        var Countries = ['Косметология',
-            'Tables',
-            'Charts',
-            'Icones',
-            'Maps'
-        ];
-
-        $('#pereimenovat-input').autocomplete({
-            source: Countries,
-            minLength: 0,
-            scroll: true
-        }).focus(function() {
-            $(this).autocomplete("search", "");
-        });
-
-        $('#soc-input2').autocomplete({
-            source: Countries,
-            minLength: 0,
-            scroll: true
-        }).focus(function() {
-            $(this).autocomplete("search", "");
-        });
-    </script>
+    <script src="./js/main.js"></script>
 </body>
 
 </html>

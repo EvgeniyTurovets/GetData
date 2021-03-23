@@ -1,0 +1,91 @@
+.breadcrumb {
+    margin-bottom: 42px;
+}
+
+.breadcrumb ul {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 12px;
+    line-height: 15px;
+    /* identical to box height */
+    font-weight: 500;
+}
+
+.breadcrumb ul li {
+    margin-right: 4px;
+    margin-bottom: 5px;
+}
+
+.breadcrumb ul a {
+    color: #A2A2A2;
+    transition: 0.3s all;
+    font-weight: 400;
+}
+
+.breadcrumb ul a:hover {
+    color: #000;
+}
+
+.lk__caption__wrap {
+    overflow: auto;
+    width: 100%;
+}
+
+.tabs.lk-tabs .tab {
+    width: auto;
+    padding: 13px 20px;
+    white-space: nowrap;
+    max-width: initial;
+    min-width: initial;
+}
+
+.tabs.lk-tabs .tabs__caption {
+    width: auto;
+    overflow: visible;
+}
+
+.lk .tabs__content {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.lk-form {
+    margin-bottom: 50px;
+    .form-label {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 170%;
+        /* or 27px */
+        letter-spacing: 0.05em;
+        color: #000000;
+    }
+    .row {
+        padding-top: 0;
+        padding-bottom: 0;
+        border: 0;
+    }
+    h3 {
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 24px;
+        color: #2F2F2F;
+        margin-bottom: 20px;
+    }
+    .input {
+        height: 55px;
+        margin-bottom: 20px;
+    }
+    .btn-or {
+        width: 249px;
+        height: 55px;
+    }
+    .selectric .button {
+        background-image: url('../img/lk/polygon.svg');
+    }
+    .btn-center {
+        width: 368px;
+        max-width: 100%;
+        margin: 0 auto;
+        display: block;
+    }
+}

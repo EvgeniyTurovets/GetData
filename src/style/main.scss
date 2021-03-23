@@ -8,6 +8,10 @@ a {
     color: inherit;
 }
 
+input[type="password"] {
+    -webkit-text-security: circle;
+}
+
 .form-switch {
     cursor: pointer;
 }
@@ -530,6 +534,7 @@ body {
 .s-search__filter-set {
     display: none;
     position: absolute;
+    z-index: 5;
     flex-direction: column;
     top: calc(100% + 5px);
     width: 235px;
@@ -1716,6 +1721,33 @@ h1 {
     transition: 0.3s all;
 }
 
+.textarea {
+    border: 1px solid #C4C4C4;
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-size: 14px;
+    line-height: 170%;
+    /* or 24px */
+    letter-spacing: 0.05em;
+    height: 255px;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 18px;
+    font-family: var(--main-font);
+    transition: 0.3s all;
+    margin-bottom: 20px;
+    padding: 18px;
+}
+
+.textarea::placeholder {
+    color: #BDBDBD;
+    font-family: var(--main-font);
+}
+
+.textarea:focus {
+    border: 1px solid #7379F8;
+}
+
 .input.error {
     border: 1px solid #FF4D4D;
 }
@@ -1964,5 +1996,19 @@ h1 {
     margin-bottom: 20px;
 }
 
+.selectric-wrapper.selectric-open .selectric .button {
+    transform: rotateX(180deg);
+}
+
+.selectric .label {
+    height: 55px;
+    margin-left: 18px;
+}
+
+.selectric-items li {
+    padding: 10px 18px;
+}
+
 @import './template/cart.scss';
 @import './template/auth.scss';
+@import './template/lk.scss';
