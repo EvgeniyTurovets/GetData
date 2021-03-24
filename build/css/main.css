@@ -1433,6 +1433,10 @@ a.ui-button:active,
   cursor: pointer;
   margin-bottom: -2px; }
 
+@media (max-width: 767px) {
+  .tab {
+    font-size: 14px; } }
+
 .tab:not(.active):hover {
   color: #7379F8; }
 
@@ -1583,7 +1587,8 @@ h1 {
   font-family: var(--main-font);
   transition: 0.3s all;
   margin-bottom: 20px;
-  padding: 18px; }
+  padding: 18px;
+  resize: none; }
 
 .textarea::-webkit-input-placeholder {
   color: #BDBDBD;
@@ -2202,6 +2207,13 @@ h1 {
   padding-top: 30px;
   padding-bottom: 30px; }
 
+.lk h3 {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  color: #2F2F2F;
+  margin-bottom: 20px; }
+
 .lk-form {
   margin-bottom: 50px; }
   .lk-form .form-label {
@@ -2215,12 +2227,6 @@ h1 {
     padding-top: 0;
     padding-bottom: 0;
     border: 0; }
-  .lk-form h3 {
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 24px;
-    color: #2F2F2F;
-    margin-bottom: 20px; }
   .lk-form .input {
     height: 55px;
     margin-bottom: 20px; }
@@ -2234,3 +2240,157 @@ h1 {
     max-width: 100%;
     margin: 0 auto;
     display: block; }
+
+.tarif__item {
+  padding: 40px 25px 32px 25px;
+  background: #FFFFFF;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); }
+  .tarif__item .plan1__block3 span {
+    font-size: 32px;
+    margin-right: 9px;
+    line-height: 1;
+    display: inline-block; }
+  .tarif__item .plan1__block3 span:after {
+    font-size: 11px;
+    top: 0;
+    right: -12px; }
+  .tarif__item .plan1__block3 {
+    font-size: 11px;
+    line-height: 1; }
+
+@media (max-width: 767px) {
+  .tarif__item {
+    padding: 25px 15px; }
+  .lk-form .textarea {
+    height: 200px; } }
+
+.tafif__item__h svg {
+  margin-top: 16px;
+  max-width: 100%; }
+
+.card-payment-option {
+  font-size: 14px; }
+
+.tarif__item__name {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0.02em;
+  color: #252525;
+  margin-bottom: 15px; }
+
+.tarif__item__b {
+  padding-top: 16px;
+  padding-bottom: 26px; }
+
+.tarif__list__item {
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 14px;
+  line-height: 17px;
+  margin-bottom: 14px; }
+  .tarif__list__item svg {
+    -ms-flex: 0 0 20px;
+        flex: 0 0 20px;
+    margin-right: 10px; }
+
+.tarif__item .btn-bo {
+  width: 100%;
+  height: 40px; }
+
+.lk-tarifi__wrap {
+  display: -ms-flexbox;
+  display: flex; }
+  .lk-tarifi__wrap .tarif__item {
+    max-width: 380px;
+    margin-bottom: 40px; }
+
+.card-title-lk {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 150%; }
+
+.card .text-primary {
+  font-size: 12px; }
+
+.card .text-primary:hover {
+  text-decoration: underline; }
+
+.card .text-muted {
+  font-size: 14px; }
+
+.card-body {
+  padding: 28px 24px; }
+
+.card {
+  margin-bottom: 25px; }
+  .card .card-payment-btn {
+    border: 1px solid #7EBCFF;
+    border-radius: 5px;
+    padding: 9px 16px;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+    color: #7EBCFF;
+    background-color: transparent;
+    transition: 0.3s all; }
+  .card .card-payment-btn:hover {
+    box-shadow: 0 0 5px rgba(126, 188, 255, 0.5); }
+
+.payment-bottom {
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 22px; }
+  .payment-bottom img {
+    margin-right: 22px; }
+
+.badge {
+  border-radius: 10px;
+  width: 129px;
+  height: 30px;
+  line-height: 21px; }
+
+.badge.badge-soft-success {
+  background: #2DDAB5; }
+
+.badge.badge-soft-danger {
+  background: #EF4D56; }
+
+.thead-light th {
+  background: #F1F5FA; }
+
+.table > :not(caption) > * > * {
+  padding: 15px; }
+
+table.table-bordered.dataTable td {
+  border: 1px solid #E2EAF4;
+  border-left-width: 1px;
+  border-right-width: 1px; }
+
+table.table-bordered.dataTable tbody td {
+  border-bottom-width: 1px; }
+
+table.table-bordered.dataTable td:last-child {
+  border-right-width: 1px; }
+
+table.dataTable {
+  border-collapse: collapse !important; }
+
+#datatable {
+  min-width: 600px; }
+
+.dash-social .dataTables_length {
+  display: none; }
+
+.dash-social .dataTables_filter {
+  display: none; }
+
+.dash-social div.dataTables_wrapper div.dataTables_info {
+  display: none; }
+
+div.table-responsive > div.dataTables_wrapper > div.row {
+  padding: 0;
+  margin: 0;
+  border-bottom: 0; }

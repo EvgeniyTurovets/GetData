@@ -1552,6 +1552,12 @@ a.ui-button:active,
     margin-bottom: -2px;
 }
 
+@media(max-width: 767px) {
+    .tab {
+        font-size: 14px;
+    }
+}
+
 .tab:not(.active):hover {
     color: #7379F8;
 }
@@ -1737,6 +1743,7 @@ h1 {
     transition: 0.3s all;
     margin-bottom: 20px;
     padding: 18px;
+    resize: none;
 }
 
 .textarea::placeholder {
