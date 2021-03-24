@@ -223,6 +223,10 @@
     width: 129px;
     height: 30px;
     line-height: 21px;
+    font-weight: 500;
+    font-size: 12px;
+    /* identical to box height */
+    letter-spacing: 0.02em;
 }
 
 .badge.badge-soft-success {
@@ -245,6 +249,11 @@ table.table-bordered.dataTable td {
     border: 1px solid #E2EAF4;
     border-left-width: 1px;
     border-right-width: 1px;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height */
+    letter-spacing: 0.02em;
+    color: #252525;
 }
 
 table.table-bordered.dataTable tbody td {
@@ -257,10 +266,6 @@ table.table-bordered.dataTable td:last-child {
 
 table.dataTable {
     border-collapse: collapse!important;
-}
-
-#datatable {
-    min-width: 600px;
 }
 
 .dash-social {

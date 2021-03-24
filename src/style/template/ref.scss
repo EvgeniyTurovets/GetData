@@ -1,0 +1,201 @@
+.referal-top {
+    background: #FFF1E2;
+    padding: 48px 0 17px 0;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+
+.referal-title {
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 30px;
+    letter-spacing: 0.02em;
+    margin-bottom: 15px;
+    span {
+        color: var(--orang)
+    }
+}
+
+.referal-text {
+    font-size: 16px;
+    line-height: 175%;
+    /* or 28px */
+    text-align: center;
+    color: #252525;
+    padding-bottom: 30px;
+    border-bottom: 2px solid #D3D3D3;
+    margin-bottom: 15px;
+}
+
+.referal-length {
+    text-align: left;
+    font-size: 14px;
+    line-height: 175%;
+    /* identical to box height, or 24px */
+    color: #252525;
+}
+
+.ref-stat {
+    margin-bottom: 27px;
+}
+
+.ref-stat__item {
+    width: calc(100% / 4 - 30px);
+    margin: 0 15px;
+    background: #FFFFFF;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba($color: #000000, $alpha: 0.2);
+    padding: 33px 30px 25px;
+    margin-bottom: 30px;
+}
+
+.ref-stat__wrap {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+}
+
+.ref-stat__img {
+    margin-bottom: 12px;
+}
+
+.ref-stat__name {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height */
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.ref-stat__data {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+    color: #7379F8;
+    margin-bottom: 5px;
+}
+
+.ref-stat__bot {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+    color: #000000;
+}
+
+@media(max-width: 991px) {
+    .ref-stat__item {
+        width: calc(100% / 2 - 30px);
+    }
+}
+
+@media(max-width: 499px) {
+    .ref-stat__item {
+        width: calc(100% / 1 - 30px);
+    }
+}
+
+.ref-link {
+    background: #F8F8F8;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    margin-bottom: 37px;
+    text-align: center;
+}
+
+.ref-link__title {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 175%;
+    /* identical to box height, or 35px */
+    color: #252525;
+    margin-bottom: 12px;
+}
+
+.ref-link__link {
+    font-size: 16px;
+    line-height: 175%;
+    /* identical to box height, or 28px */
+    color: #000000;
+    margin-bottom: 19px;
+    cursor: pointer;
+    word-wrap: break-word;
+    padding: 0 15px;
+}
+
+.ref-link__about {
+    font-size: 14px;
+    line-height: 175%;
+    /* or 24px */
+    text-align: center;
+    color: #252525;
+}
+
+.tooltip-inner {
+    background-color: var(--orang);
+    color: #FFFFFF;
+}
+
+.bs-tooltip-auto[data-popper-placement^=top] .tooltip-arrow::before,
+.bs-tooltip-top .tooltip-arrow::before {
+    border-top-color: var(--orang);
+}
+
+.tooltip.show {
+    opacity: 1;
+}
+
+.apexcharts-toolbar {
+    display: none!important;
+}
+
+.chart__set {
+    display: flex;
+    flex-wrap: wrap;
+    .selectric {
+        height: 40px;
+    }
+    .selectric .label {
+        height: 40px;
+        line-height: 40px;
+    }
+    .selectric .button {
+        height: 40px;
+    }
+}
+
+.grafic h3 {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height */
+    color: #2F2F2F;
+    margin-bottom: 30px;
+}
+
+.chart-data {
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+
+.chart-data input {
+    height: 40px;
+    width: 215px;
+}
+
+.grafic {
+    margin-bottom: 40px;
+}
+
+@media(max-width: 767px) {
+    .chart__wrap {
+        overflow: auto;
+    }
+}
+
+.chart {
+    min-width: 600px;
+    width: 100%;
+}
