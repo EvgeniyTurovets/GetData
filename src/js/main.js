@@ -123,23 +123,4 @@ $(function() {
 
     $('select').selectric();
 
-
-    $('#ref-link').on('click', function() {
-        copytext($(this))
-        $(this).tooltip('dispose').attr('title', "Текст скопирован").tooltip('show');
-    })
-    $('#ref-link').on('mouseover', function() {
-        $(this).tooltip('dispose').attr('title', "Нажмите что бы скопировать").tooltip('show');
-    })
-
-    function copytext(el) {
-        var $tmp = $("<textarea>");
-        $("body").append($tmp);
-        $tmp.val($(el).text()).select();
-        document.execCommand("copy");
-        $tmp.remove();
-    }
-
-
-
 })

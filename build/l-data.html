@@ -259,6 +259,7 @@
                             <li class="tab">О вашей компании</li>
                             <li class="tab">Тарифы и оплата</li>
                             <li class="tab">Обратная связь</li>
+                            <li class="tab">Смена пароля</li>
                         </ul>
                     </div>
 
@@ -298,28 +299,7 @@
                             <button class="btn-or" type="submit">Сохранить</button>
                         </form>
 
-                        <form class="lk-form">
-                            <h3>Смена пароля</h3>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-label">Старый пароль</div>
-                                    <input class="input" type="password">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-label">Новый пароль</div>
-                                    <input class="input" type="password">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-label">Повторите новый пароль</div>
-                                    <input class="input" type="password">
-                                </div>
-                            </div>
-                            <button class="btn-or" type="submit">Сохранить</button>
-                        </form>
+
                     </div>
                     <div class="tabs__content">
                         <form class="lk-form">
@@ -532,7 +512,7 @@
                         </div>
 
                     </div>
-                    <div class="tabs__content ">
+                    <div class="tabs__content">
                         <form class="lk-form ">
                             <div class="row ">
                                 <div class="col-12 ">
@@ -571,6 +551,30 @@
                                 </div>
                             </div>
                             <button class="btn-center btn-or ">Отправить</button>
+                        </form>
+                    </div>
+                    <div class="tabs__content">
+                        <form class="lk-form">
+                            <h3>Смена пароля</h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-label">Старый пароль</div>
+                                    <input class="input" type="password">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-label">Новый пароль</div>
+                                    <input class="input" type="password">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-label">Повторите новый пароль</div>
+                                    <input class="input" type="password">
+                                </div>
+                            </div>
+                            <button class="btn-or" type="submit">Сохранить</button>
                         </form>
                     </div>
                 </div>
@@ -650,14 +654,18 @@
         </div>
     </footer>
     <!-- плагины -->
-    <script src="./libs/jquery/jquery.min.js "></script>
-    <script src="./libs/jquery/jq-ui.js "></script>
-    <script src="./libs/bootstrap.bundle.min.js "></script>
-    <script src="./libs/selectric/selectric.min.js "></script>
+    <script src="./libs/jquery/jquery.min.js"></script>
+    <script src="./libs/jquery/jq-ui.js"></script>
+    <script src="./libs/bootstrap.bundle.min.js"></script>
+    <script src="./libs/datatables/jquery.tablesorter.min.js"></script>
+    <script src="./libs/selectric/selectric.min.js"></script>
 
     <!-- main.js -->
     <script src="./js/main.js "></script>
 
+    <script>
+        $('#datatable').tablesorter();
+    </script>
 </body>
 
 </html>

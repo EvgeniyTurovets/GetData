@@ -364,8 +364,7 @@
                     </div>
                 </div>
                 <div class="chart__wrap">
-                    <div id="chart" class="chart">
-                    </div>
+                    <div id="chart" class="chart"></div>
                 </div>
 
                 <div class="table-responsive dash-social mt-4">
@@ -568,12 +567,26 @@
         var chart = new ApexCharts(document.querySelector("#chart"), options);
         chart.render();
 
+        $('#ref-link').on('click', function() {
+            copytext($(this))
+            $(this).tooltip('dispose').attr('title', "Текст скопирован").tooltip('show');
+        })
+        $('#ref-link').on('mouseover', function() {
+            $(this).tooltip('dispose').attr('title', "Нажмите что бы скопировать").tooltip('show');
+        })
 
+        function copytext(el) {
+            var $tmp = $("<textarea>");
+            $("body").append($tmp);
+            $tmp.val($(el).text()).select();
+            document.execCommand("copy");
+            $tmp.remove();
+        }
         $('[data-toggle="tooltip"]').tooltip()
 
         $("#datepicker").daterangepicker({
             locale: {
-                "format": "MM/DD/YYYY",
+                "format": "MM.DD.YYYY",
                 "separator": " - ",
                 "applyLabel": "Применить",
                 "cancelLabel": "Закрыть",
