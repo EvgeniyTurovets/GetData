@@ -7,19 +7,19 @@
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap&v=a63ad3825ffa565601adebe2074726a5" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- плагины -->
-    <link rel='stylesheet' type='text/css' media='screen' href='./libs/jquery/jq-ui.css?v=a63ad3825ffa565601adebe2074726a5'>
-    <link rel='stylesheet' type='text/css' media='screen' href='./libs/bootstrap.min.css?v=a63ad3825ffa565601adebe2074726a5'>
-    <link rel='stylesheet' type='text/css' media='screen' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css?v=a63ad3825ffa565601adebe2074726a5'>
-    <link rel='stylesheet' type='text/css' media='screen' href='./libs/selectric/selectric.css?v=a63ad3825ffa565601adebe2074726a5'>
-    <link rel='stylesheet' type='text/css' media='screen' href='./libs/charts/apexcharts.css?v=a63ad3825ffa565601adebe2074726a5'>
-    <!-- <link rel='stylesheet' type='text/css' media='screen' href='./libs/datatables/theme.default.min.css?v=a63ad3825ffa565601adebe2074726a5'> -->
-    <link rel='stylesheet' type='text/css' media='screen' href='./libs/datapicker/css/daterangepicker.css?v=a63ad3825ffa565601adebe2074726a5'>
+    <link rel='stylesheet' type='text/css' media='screen' href='./libs/jquery/jq-ui.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='./libs/bootstrap.min.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='./libs/selectric/selectric.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='./libs/charts/apexcharts.css'>
+    <!-- <link rel='stylesheet' type='text/css' media='screen' href='./libs/datatables/theme.default.min.css'> -->
+    <link rel='stylesheet' type='text/css' media='screen' href='./libs/datapicker/css/daterangepicker.css'>
 
     <!-- стили -->
-    <link rel='stylesheet' type='text/css' media='screen' href='./css/main.min.css?v=a63ad3825ffa565601adebe2074726a5'>
+    <link rel='stylesheet' type='text/css' media='screen' href='./css/main.min.css'>
 </head>
 
 <body>
@@ -843,20 +843,20 @@
         </div>
     </div>
     <!-- плагины -->
-    <script src="./libs/jquery/jquery.min.js?v=a63ad3825ffa565601adebe2074726a5"></script>
-    <script src="./libs/jquery/jq-ui.js?v=a63ad3825ffa565601adebe2074726a5"></script>
-    <script src="./libs/bootstrap.bundle.min.js?v=a63ad3825ffa565601adebe2074726a5"></script>
-    <script src="./libs/selectric/selectric.min.js?v=a63ad3825ffa565601adebe2074726a5"></script>
-    <script src="./libs/charts/apexcharts.min.js?v=a63ad3825ffa565601adebe2074726a5"></script>
-    <script src="./libs/datapicker/js/moment.min.js?v=a63ad3825ffa565601adebe2074726a5"></script>
-    <script src="./libs/datapicker/js/daterangepicker.js?v=a63ad3825ffa565601adebe2074726a5"></script>
-    <script src="./libs/datatables/jquery.tablesorter.min.js?v=a63ad3825ffa565601adebe2074726a5"></script>
-    <script src="./libs/sparklines-chart/jquery.sparkline.min.js?v=a63ad3825ffa565601adebe2074726a5"></script>
-    <script src="./libs/ag-table/ag-grid-lang.js?v=a63ad3825ffa565601adebe2074726a5"></script>
-    <script src="./libs/ag-table/ag-grid.js?v=a63ad3825ffa565601adebe2074726a5"></script>
+    <script src="./libs/jquery/jquery.min.js"></script>
+    <script src="./libs/jquery/jq-ui.js"></script>
+    <script src="./libs/bootstrap.bundle.min.js"></script>
+    <script src="./libs/selectric/selectric.min.js"></script>
+    <script src="./libs/charts/apexcharts.min.js"></script>
+    <script src="./libs/datapicker/js/moment.min.js"></script>
+    <script src="./libs/datapicker/js/daterangepicker.js"></script>
+    <script src="./libs/datatables/jquery.tablesorter.min.js"></script>
+    <script src="./libs/sparklines-chart/jquery.sparkline.min.js"></script>
+    <script src="./libs/ag-table/ag-grid-lang.js"></script>
+    <script src="./libs/ag-table/ag-grid.js"></script>
 
     <!-- main.js -->
-    <script src="./js/main.js?v=a63ad3825ffa565601adebe2074726a5"></script>
+    <script src="./js/main.js"></script>
 
     <script>
         $(function() {
@@ -970,7 +970,10 @@
                 width: '100%',
                 chart: {
                     height: 350,
-                    type: 'area'
+                    type: 'area',
+                    zoom: {
+                        enabled: false
+                    }
                 },
                 dataLabels: {
                     enabled: false
@@ -1000,27 +1003,6 @@
                 toolbar: {
                     show: false,
                 },
-                locales: [{
-                    "name": "en",
-                    "options": {
-                        "months": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
-                        "shortMonths": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                        "days": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-                        "shortDays": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
-                        "toolbar": {
-                            "exportToSVG": "Скачать SVG",
-                            "exportToPNG": "Скачать PNG",
-                            "menu": "Меню",
-                            "selection": "Selection",
-                            "selectionZoom": "Selection Zoom",
-                            "zoomIn": "Увеличить",
-                            "zoomOut": "Уменьшить",
-                            "pan": "Panning",
-                            "reset": "Сбросить"
-                        }
-                    }
-                }],
-                defaultLocale: "en",
                 responsive: [{
                     breakpoint: 600,
                     options: {
@@ -1056,7 +1038,10 @@
                 width: '100%',
                 chart: {
                     height: 350,
-                    type: 'area'
+                    type: 'area',
+                    zoom: {
+                        enabled: false
+                    }
                 },
                 dataLabels: {
                     enabled: false

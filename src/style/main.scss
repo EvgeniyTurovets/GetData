@@ -2125,6 +2125,7 @@ h1 {
     --ag-border-color: #E2EAF4;
     --ag-alpine-active-color: var(--orang);
     --ag-control-panel-background-color: #fff;
+    --ag-row-hover-color: #F8F8F8;
 }
 
 .ag-theme-alpine .ag-ltr input[class^=ag-][type=text] {
@@ -2213,6 +2214,8 @@ h1 {
 .ag-theme-alpine .ag-ltr input[class^=ag-][type=number]::placeholder {
     font-size: 12px;
 }
+
+.ag-theme-alpine .ag-row-hover {}
 
 @import './template/cart.scss';
 @import './template/auth.scss';

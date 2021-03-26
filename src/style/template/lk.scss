@@ -288,3 +288,19 @@ div.table-responsive>div.dataTables_wrapper>div.row {
     margin: 0;
     border-bottom: 0;
 }
+
+.plan1__block4 {
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+    color: #000000;
+    margin-top: 10px;
+    text-align: center;
+    a {
+        color: #7379F8;
+        transition: 0.3s all;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+}

@@ -1933,7 +1933,8 @@ h1 {
   --ag-header-background-color: #F1F5FA;
   --ag-border-color: #E2EAF4;
   --ag-alpine-active-color: var(--orang);
-  --ag-control-panel-background-color: #fff; }
+  --ag-control-panel-background-color: #fff;
+  --ag-row-hover-color: #F8F8F8; }
 
 .ag-theme-alpine .ag-ltr input[class^=ag-][type=text] {
   font-size: 10px; }
@@ -2579,6 +2580,19 @@ div.table-responsive > div.dataTables_wrapper > div.row {
   margin: 0;
   border-bottom: 0; }
 
+.plan1__block4 {
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+  color: #000000;
+  margin-top: 10px;
+  text-align: center; }
+  .plan1__block4 a {
+    color: #7379F8;
+    transition: 0.3s all; }
+  .plan1__block4 a:hover {
+    text-decoration: underline; }
+
 .referal-top {
   background: #FFF1E2;
   padding: 48px 0 17px 0;
@@ -2798,7 +2812,8 @@ div.table-responsive > div.dataTables_wrapper > div.row {
 .analiz__breadcrumb li {
   margin-right: 5px; }
 
-.analiz__breadcrumb a {
+.analiz__breadcrumb a,
+.analiz__breadcrumb span {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
@@ -3265,6 +3280,49 @@ div.table-responsive > div.dataTables_wrapper > div.row {
 
 .btn-group-add:hover {
   background: #0b9799; }
+
+.breadcrumb-change-categori {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  position: relative;
+  cursor: pointer; }
+  .breadcrumb-change-categori button {
+    background-color: transparent;
+    margin-left: 5px; }
+
+.breadcrumb-change-categori__wrap {
+  display: none;
+  position: absolute;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  right: 15px;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  top: 100%;
+  background-color: #fff;
+  padding: 17px 15px; }
+  .breadcrumb-change-categori__wrap ul {
+    -ms-flex-direction: column;
+        flex-direction: column;
+    -ms-flex-align: start;
+        align-items: flex-start; }
+  .breadcrumb-change-categori__wrap li {
+    margin-bottom: 10px; }
+  .breadcrumb-change-categori__wrap li a {
+    font-size: 12px;
+    line-height: 15px;
+    /* identical to box height */
+    letter-spacing: 0.02em;
+    color: #252525;
+    cursor: pointer; }
+  .breadcrumb-change-categori__wrap li:last-child {
+    margin-bottom: 0; }
+  .breadcrumb-change-categori__wrap li a:hover {
+    color: var(--orang); }
+
+.breadcrumb-change-categori.active .breadcrumb-change-categori__wrap {
+  display: block; }
 
 .tarifi__top h1 {
   text-align: center; }
