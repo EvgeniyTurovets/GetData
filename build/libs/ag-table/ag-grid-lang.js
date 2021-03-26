@@ -31,8 +31,8 @@ const AG_GRID_LOCALE_ZZZ = {
     dateFormatOoo: 'yyyy-mm-dd',
 
     // Filter Conditions
-    andCondition: 'AND',
-    orCondition: 'OR',
+    andCondition: 'И',
+    orCondition: 'ИЛИ',
 
     // Filter Buttons
     applyFilter: 'Apply',
