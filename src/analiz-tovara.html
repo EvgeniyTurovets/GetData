@@ -852,6 +852,7 @@
     <script src="./libs/datapicker/js/daterangepicker.js"></script>
     <script src="./libs/datatables/jquery.tablesorter.min.js"></script>
     <script src="./libs/sparklines-chart/jquery.sparkline.min.js"></script>
+    <script src="./libs/ag-table/ag-grid-lang.js"></script>
     <script src="./libs/ag-table/ag-grid.js"></script>
 
     <!-- main.js -->
@@ -1178,34 +1179,34 @@
     <script>
         // таблица
         var columnDefs = [{
-            field: 'athlete',
-            width: 150,
+            field: 'Неделя',
+            width: 100,
             filter: false
         }, {
-            field: 'gold',
+            field: 'Продаж',
             width: 100,
             filter: 'customNumberFilter',
             suppressMenu: true,
         }, {
-            field: 'silver',
+            field: 'Выручка',
             width: 100,
             filter: 'customNumberFilter',
             suppressMenu: true,
         }, {
-            field: 'bronze',
+            field: 'Товаров',
             width: 100,
             filter: 'customNumberFilter',
             suppressMenu: true,
         }, {
-            field: 'total',
+            field: 'Продавцов',
             width: 100,
             filter: 'customNumberFilter',
             suppressMenu: true,
         }, ];
-
+        var localeText = AG_GRID_LOCALE_ZZZ;
         var gridOptions = {
             defaultColDef: {
-                editable: true,
+                editable: false,
                 sortable: true,
                 flex: 1,
                 minWidth: 100,
@@ -1218,8 +1219,29 @@
             },
             columnDefs: columnDefs,
             rowData: null,
-            sideBar: true,
+            sideBar: {
+                toolPanels: [{
+                    id: 'columns',
+                    labelDefault: 'Columns',
+                    labelKey: 'columns',
+                    iconKey: 'columns',
+                    toolPanel: 'agColumnsToolPanel',
+                }, {
+                    id: 'filters',
+                    labelDefault: 'Filters',
+                    labelKey: 'filters',
+                    iconKey: 'filter',
+                    toolPanel: 'agFiltersToolPanel',
+                }, ],
+                position: 'right',
+                defaultToolPanel: 'filters',
+            },
+            localeText: localeText,
         };
+
+        function closeToolPanel() {
+            gridOptions.api.closeToolPanel();
+        }
 
         function isNumeric(n) {
             return !isNaN(parseFloat(n)) && isFinite(n);
@@ -1241,7 +1263,7 @@
                 this.gui.innerHTML =
                     '<div style="padding: 4px;">' +
                     '<div style="font-weight: bold;">Greater than: </div>' +
-                    '<div><input style="margin: 4px 0px 4px 0px;" type="number" id="filterText" placeholder="Number of medals..."/></div>' +
+                    '<div><input style="margin: 4px 0px 4px 0px;" type="number" id="filterText" placeholder="Фильтровать..."/></div>' +
                     '</div>';
 
                 var that = this;
@@ -1309,11 +1331,12 @@
 
             agGrid
                 .simpleHttpRequest({
-                    url: 'https://www.ag-grid.com/example-assets/olympic-winners.json',
+                    url: 'https://evgeniyturovets.github.io/GetData/table.json',
                 })
                 .then(function(data) {
                     gridOptions.api.setRowData(data);
                 });
+            closeToolPanel()
         });
     </script>
 </body>

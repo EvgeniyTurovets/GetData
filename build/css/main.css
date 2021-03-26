@@ -1900,6 +1900,51 @@ h1 {
 .ag-body-viewport.ag-layout-normal::-webkit-scrollbar-thumb:hover {
   background: #7379F8; }
 
+.ag-theme-alpine .ag-icon.ag-icon-filter:before {
+  display: none; }
+
+.ag-theme-alpine .ag-icon.ag-icon-filter {
+  background-image: url("../img/filter-icon.svg");
+  background-position: center;
+  width: 15px;
+  height: 15px;
+  background-repeat: no-repeat; }
+
+.ag-side-button-icon-wrapper .ag-icon.ag-icon-filter {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  background-size: 10px; }
+
+.ag-theme-alpine .ag-side-button-icon-wrapper {
+  width: 100%; }
+
+:root {
+  --ag-header-background-color: #F1F5FA;
+  --ag-border-color: #E2EAF4; }
+
+.ag-theme-alpine .ag-header {
+  background-color: #F1F5FA;
+  background-color: var(--ag-header-background-color, #f8f8f8);
+  border-bottom: 1px solid #babfc7;
+  border-bottom-color: var(--ag-border-color, #babfc7); }
+
+.ag-theme-alpine .ag-side-buttons {
+  width: 20px !important; }
+
+.ag-theme-alpine .ag-side-button {
+  border-bottom: 1px solid #E2EAF4;
+  border-top: 1px solid #E2EAF4; }
+
+.ag-theme-alpine .ag-icon-columns:before {
+  display: none; }
+
+.ag-theme-alpine .ag-icon-columns {
+  background-image: url("../img/filter-column.svg");
+  background-position: center;
+  width: 15px;
+  height: 15px;
+  background-repeat: no-repeat; }
+
 .cart {
   padding-bottom: 50px;
   font-size: 14px; }
@@ -3023,7 +3068,7 @@ div.table-responsive > div.dataTables_wrapper > div.row {
 
 .pie-chart svg {
   overflow: visible;
-  width: 100%; }
+  width: 500px; }
 
 .pie-chart .apexcharts-legend.position-bottom.apexcharts-align-center,
 .pie-chart .apexcharts-legend.position-top.apexcharts-align-center {
@@ -3092,7 +3137,9 @@ div.table-responsive > div.dataTables_wrapper > div.row {
     -ms-flex-pack: center;
         justify-content: center;
     width: 100%;
-    inset: auto 0 0 0 !important; } }
+    inset: auto 0 0 0 !important; }
+  .pie-chart svg {
+    width: 100%; } }
 
 .product-table-icons {
   color: #506ee4; }

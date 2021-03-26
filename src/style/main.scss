@@ -2088,6 +2088,60 @@ h1 {
     background: #7379F8;
 }
 
+.ag-theme-alpine .ag-icon.ag-icon-filter:before {
+    display: none;
+}
+
+.ag-theme-alpine .ag-icon.ag-icon-filter {
+    background-image: url('../img/filter-icon.svg');
+    background-position: center;
+    width: 15px;
+    height: 15px;
+    background-repeat: no-repeat
+}
+
+.ag-side-button-icon-wrapper .ag-icon.ag-icon-filter {
+    transform: rotate(90deg);
+    background-size: 10px
+}
+
+.ag-theme-alpine .ag-side-button-icon-wrapper {
+    width: 100%;
+}
+
+:root {
+    --ag-header-background-color: #F1F5FA;
+    --ag-border-color: #E2EAF4;
+}
+
+.ag-theme-alpine .ag-header {
+    background-color: #F1F5FA;
+    background-color: var(--ag-header-background-color, #f8f8f8);
+    border-bottom: 1px solid #babfc7;
+    border-bottom-color: var(--ag-border-color, #babfc7);
+}
+
+.ag-theme-alpine .ag-side-buttons {
+    width: 20px!important;
+}
+
+.ag-theme-alpine .ag-side-button {
+    border-bottom: 1px solid #E2EAF4;
+    border-top: 1px solid #E2EAF4;
+}
+
+.ag-theme-alpine .ag-icon-columns:before {
+    display: none;
+}
+
+.ag-theme-alpine .ag-icon-columns {
+    background-image: url('../img/filter-column.svg');
+    background-position: center;
+    width: 15px;
+    height: 15px;
+    background-repeat: no-repeat
+}
+
 @import './template/cart.scss';
 @import './template/auth.scss';
 @import './template/lk.scss';

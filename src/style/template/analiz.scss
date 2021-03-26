@@ -439,7 +439,7 @@
     }
     svg {
         overflow: visible;
-        width: 100%;
+        width: 500px;
     }
     .apexcharts-legend.position-bottom.apexcharts-align-center,
     .apexcharts-legend.position-top.apexcharts-align-center {
@@ -517,6 +517,9 @@
             justify-content: center;
             width: 100%;
             inset: auto 0 0 0!important;
+        }
+        svg {
+            width: 100%;
         }
     }
 }
