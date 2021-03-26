@@ -524,3 +524,48 @@
 .product-table-icons {
     color: #506ee4;
 }
+
+.add-group-wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.add-group-wrap span {
+    display: flex;
+    height: 35px;
+    align-items: center;
+    justify-content: space-between;
+    background: #7379F8;
+    border: 1px solid #7379F8;
+    border-radius: 5px;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+    color: #FFFFFF;
+    padding: 0 11px;
+    padding-right: 0;
+    margin-right: 17px;
+    margin-bottom: 10px;
+    button {
+        background-color: transparent;
+        padding: 5px;
+        border: 0;
+    }
+}
+
+.btn-group-add {
+    margin-bottom: 10px;
+    height: 35px;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height */
+    color: #FFFFFF;
+    background: #0CACAE;
+    border-radius: 5px;
+    padding: 0 18px;
+    transition: 0.3s all;
+}
+
+.btn-group-add:hover {
+    background: #0b9799;
+}

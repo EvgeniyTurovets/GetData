@@ -363,8 +363,23 @@
                                                 <td>Xiaomi</td>
                                             </tr>
                                             <tr class="info__tovar__row">
-                                                <td><span>Категория</span></td>
-                                                <td>Видеорегистраторы</td>
+                                                <td><span>Групы</span></td>
+                                                <td>
+                                                    <div class="add-group-wrap">
+                                                        <span class="btn-grou-name">
+                                                            ryfh
+                                                            <button type="button">
+                                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path d="M14 8C14 4.6875 11.3125 2 8 2C4.6875 2 2 4.6875 2 8C2 11.3125 4.6875 14 8 14C11.3125 14 14 11.3125 14 8Z" stroke="white" stroke-miterlimit="10"/>
+                                                                    <path d="M10 10L6 6" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                                                                    <path d="M6 10L10 6" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                                                                    </svg>                                                                
+                                                            </button>
+                                                        </span>
+                                                        <button type="button" class="btn-group-add" data-bs-toggle="modal" data-bs-target="#add-t">Добавить</button>
+                                                    </div>
+
+                                                </td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -809,6 +824,24 @@
             </div>
         </div>
     </footer>
+    <!-- модалки -->
+    <div class="modal fade" id="add-t" tabindex="-1" aria-labelledby="add-t" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-name">Добавить товар в группу</div>
+                <div class="field-name">Название</div>
+                <select>
+                    <option>група 1</option>
+                    <option>Група 2</option>
+                </select>
+                <div class="modal-btns">
+                    <button class="btn-or">Добавить</button>
+                    <button class="btn-bo" data-bs-dismiss="modal" aria-label="Close">Отмена</button>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
     <!-- плагины -->
     <script src="./libs/jquery/jquery.min.js"></script>
     <script src="./libs/jquery/jq-ui.js"></script>
@@ -826,6 +859,19 @@
 
     <script>
         $(function() {
+            // добавление групы
+            var myModal = new bootstrap.Modal(document.getElementById('add-t'), {
+                keyboard: false
+            })
+            $('#add-t .btn-or').on('click', function() {
+                $('.add-group-wrap').prepend('<span class="btn-grou-name">' + $('#add-t select').val() + '<button type="button"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 8C14 4.6875 11.3125 2 8 2C4.6875 2 2 4.6875 2 8C2 11.3125 4.6875 14 8 14C11.3125 14 14 11.3125 14 8Z" stroke="white" stroke-miterlimit="10"></path><path d="M10 10L6 6" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path><path d="M6 10L10 6" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path></svg></button></span>')
+                myModal.hide()
+            })
+
+            $(document).on('click', '.btn-grou-name button', function() {
+                $(this).parent().remove()
+            })
+
             // мини графики
             $('#sparkline-cat1').sparkline([15, 23, 55, 35, 54, 45, 66, 47, 30], {
                 type: 'line',
@@ -893,196 +939,197 @@
                 highlightLineColor: 'rgba(0,0,0,.1)',
                 highlightSpotColor: 'rgba(0,0,0,.2)'
             });
+
+
+            // график продаж
+            var options = {
+                series: [{
+                    name: 'Продажи',
+                    data: [31, 40, 28, 51, 42, 109, 100]
+                }, {
+                    name: 'Остаток',
+                    data: [11, 32, 45, 12, 34, 52, 45]
+                }, {
+                    name: 'Цена',
+                    data: [11, 32, 45, 52, 34, 52, 33]
+                }, {
+                    name: 'Выручка',
+                    data: [11, 32, 45, 22, 34, 52, 22]
+                }],
+                yaxis: [{
+                    title: {
+                        text: ""
+                    },
+                }, {
+                    opposite: true,
+                    title: {
+                        text: ""
+                    }
+                }],
+                width: '100%',
+                chart: {
+                    height: 350,
+                    type: 'area'
+                },
+                dataLabels: {
+                    enabled: false
+                },
+                stroke: {
+                    curve: 'smooth'
+                },
+                xaxis: {
+                    type: 'datetime',
+                    categories: ["2018-09-19T00:00:00.000Z", "2018-09-19T01:30:00.000Z", "2018-09-19T02:30:00.000Z", "2018-09-19T03:30:00.000Z", "2018-09-19T04:30:00.000Z", "2018-09-19T05:30:00.000Z", "2018-09-19T06:30:00.000Z"]
+                },
+                tooltip: {
+                    x: {
+                        format: 'dd/MM/yy HH:mm'
+                    },
+                },
+                legend: {
+                    position: 'top',
+                    horizontalAlign: 'center',
+                    markers: {
+                        width: 30,
+                        height: 12,
+                        radius: 0,
+                    },
+                },
+
+                toolbar: {
+                    show: false,
+                },
+                locales: [{
+                    "name": "en",
+                    "options": {
+                        "months": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+                        "shortMonths": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                        "days": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                        "shortDays": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+                        "toolbar": {
+                            "exportToSVG": "Скачать SVG",
+                            "exportToPNG": "Скачать PNG",
+                            "menu": "Меню",
+                            "selection": "Selection",
+                            "selectionZoom": "Selection Zoom",
+                            "zoomIn": "Увеличить",
+                            "zoomOut": "Уменьшить",
+                            "pan": "Panning",
+                            "reset": "Сбросить"
+                        }
+                    }
+                }],
+                defaultLocale: "en",
+                responsive: [{
+                    breakpoint: 600,
+                    options: {
+                        legend: {
+                            horizontalAlign: 'left',
+                        }
+                    }
+                }]
+            };
+
+            var chart = new ApexCharts(document.querySelector("#chart-stat"), options);
+            chart.render();
+
+            //график остатков
+            var options = {
+                series: [{
+                    name: 'Сума',
+                    data: [31, 40, 28, 51, 42, 109, 100]
+                }, {
+                    name: 'Количество',
+                    data: [11, 32, 45, 32, 34, 52, 41]
+                }],
+                yaxis: [{
+                    title: {
+                        text: ""
+                    },
+                }, {
+                    opposite: true,
+                    title: {
+                        text: ""
+                    }
+                }],
+                width: '100%',
+                chart: {
+                    height: 350,
+                    type: 'area'
+                },
+                dataLabels: {
+                    enabled: false
+                },
+                stroke: {
+                    curve: 'smooth'
+                },
+                xaxis: {
+                    type: 'datetime',
+                    categories: ["2018-09-19T00:00:00.000Z", "2018-09-19T01:30:00.000Z", "2018-09-19T02:30:00.000Z", "2018-09-19T03:30:00.000Z", "2018-09-19T04:30:00.000Z", "2018-09-19T05:30:00.000Z", "2018-09-19T06:30:00.000Z"]
+                },
+                tooltip: {
+                    x: {
+                        format: 'dd/MM/yy HH:mm'
+                    },
+                },
+                legend: {
+                    position: 'top',
+                    horizontalAlign: 'center',
+                    markers: {
+                        width: 30,
+                        height: 12,
+                        radius: 0,
+                    },
+                },
+
+                toolbar: {
+                    show: false,
+                },
+                responsive: [{
+                    breakpoint: 600,
+                    options: {
+                        legend: {
+                            horizontalAlign: 'left',
+                        }
+                    }
+                }]
+            };
+
+            var ostchart = new ApexCharts(document.querySelector("#ost-chart"), options);
+            ostchart.render()
+
+            // Datatable
+            $("#datatable").tablesorter();
+            $("#datatable2").tablesorter();
+            $("#datatable3").tablesorter();
+
+            // datapicker
+            let opensVal
+            if ($(window).width() < 768) {
+                opensVal = 'right'
+            } else {
+                opensVal = 'left'
+            }
+            $('#tovar-stat').daterangepicker({
+                locale: {
+                    "format": "MM.DD.YYYY",
+                    "separator": " - ",
+                    "applyLabel": "Применить",
+                    "cancelLabel": "Закрыть",
+                    "fromLabel": "От",
+                    "toLabel": "До",
+                    "customRangeLabel": "Custom",
+                    "weekLabel": "W",
+                    "daysOfWeek": ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+                    "monthNames": ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+                    "firstDay": 1
+                },
+                opens: opensVal,
+                drops: 'down'
+            }, function(start, end, label) {
+                console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+            });
         })
-
-        // график продаж
-        var options = {
-            series: [{
-                name: 'Продажи',
-                data: [31, 40, 28, 51, 42, 109, 100]
-            }, {
-                name: 'Остаток',
-                data: [11, 32, 45, 12, 34, 52, 45]
-            }, {
-                name: 'Цена',
-                data: [11, 32, 45, 52, 34, 52, 33]
-            }, {
-                name: 'Выручка',
-                data: [11, 32, 45, 22, 34, 52, 22]
-            }],
-            yaxis: [{
-                title: {
-                    text: ""
-                },
-            }, {
-                opposite: true,
-                title: {
-                    text: ""
-                }
-            }],
-            width: '100%',
-            chart: {
-                height: 350,
-                type: 'area'
-            },
-            dataLabels: {
-                enabled: false
-            },
-            stroke: {
-                curve: 'smooth'
-            },
-            xaxis: {
-                type: 'datetime',
-                categories: ["2018-09-19T00:00:00.000Z", "2018-09-19T01:30:00.000Z", "2018-09-19T02:30:00.000Z", "2018-09-19T03:30:00.000Z", "2018-09-19T04:30:00.000Z", "2018-09-19T05:30:00.000Z", "2018-09-19T06:30:00.000Z"]
-            },
-            tooltip: {
-                x: {
-                    format: 'dd/MM/yy HH:mm'
-                },
-            },
-            legend: {
-                position: 'top',
-                horizontalAlign: 'center',
-                markers: {
-                    width: 30,
-                    height: 12,
-                    radius: 0,
-                },
-            },
-
-            toolbar: {
-                show: false,
-            },
-            locales: [{
-                "name": "en",
-                "options": {
-                    "months": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
-                    "shortMonths": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                    "days": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-                    "shortDays": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
-                    "toolbar": {
-                        "exportToSVG": "Скачать SVG",
-                        "exportToPNG": "Скачать PNG",
-                        "menu": "Меню",
-                        "selection": "Selection",
-                        "selectionZoom": "Selection Zoom",
-                        "zoomIn": "Увеличить",
-                        "zoomOut": "Уменьшить",
-                        "pan": "Panning",
-                        "reset": "Сбросить"
-                    }
-                }
-            }],
-            defaultLocale: "en",
-            responsive: [{
-                breakpoint: 600,
-                options: {
-                    legend: {
-                        horizontalAlign: 'left',
-                    }
-                }
-            }]
-        };
-
-        var chart = new ApexCharts(document.querySelector("#chart-stat"), options);
-        chart.render();
-
-        //график остатков
-        var options = {
-            series: [{
-                name: 'Сума',
-                data: [31, 40, 28, 51, 42, 109, 100]
-            }, {
-                name: 'Количество',
-                data: [11, 32, 45, 32, 34, 52, 41]
-            }],
-            yaxis: [{
-                title: {
-                    text: ""
-                },
-            }, {
-                opposite: true,
-                title: {
-                    text: ""
-                }
-            }],
-            width: '100%',
-            chart: {
-                height: 350,
-                type: 'area'
-            },
-            dataLabels: {
-                enabled: false
-            },
-            stroke: {
-                curve: 'smooth'
-            },
-            xaxis: {
-                type: 'datetime',
-                categories: ["2018-09-19T00:00:00.000Z", "2018-09-19T01:30:00.000Z", "2018-09-19T02:30:00.000Z", "2018-09-19T03:30:00.000Z", "2018-09-19T04:30:00.000Z", "2018-09-19T05:30:00.000Z", "2018-09-19T06:30:00.000Z"]
-            },
-            tooltip: {
-                x: {
-                    format: 'dd/MM/yy HH:mm'
-                },
-            },
-            legend: {
-                position: 'top',
-                horizontalAlign: 'center',
-                markers: {
-                    width: 30,
-                    height: 12,
-                    radius: 0,
-                },
-            },
-
-            toolbar: {
-                show: false,
-            },
-            responsive: [{
-                breakpoint: 600,
-                options: {
-                    legend: {
-                        horizontalAlign: 'left',
-                    }
-                }
-            }]
-        };
-
-        var ostchart = new ApexCharts(document.querySelector("#ost-chart"), options);
-        ostchart.render()
-
-        // Datatable
-        $("#datatable").tablesorter();
-        $("#datatable2").tablesorter();
-        $("#datatable3").tablesorter();
-
-        // datapicker
-        let opensVal
-        if ($(window).width() < 768) {
-            opensVal = 'right'
-        } else {
-            opensVal = 'left'
-        }
-        $('#tovar-stat').daterangepicker({
-            locale: {
-                "format": "MM.DD.YYYY",
-                "separator": " - ",
-                "applyLabel": "Применить",
-                "cancelLabel": "Закрыть",
-                "fromLabel": "От",
-                "toLabel": "До",
-                "customRangeLabel": "Custom",
-                "weekLabel": "W",
-                "daysOfWeek": ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
-                "monthNames": ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
-                "firstDay": 1
-            },
-            opens: opensVal,
-            drops: 'down'
-        }, function(start, end, label) {
-            console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
-        });
     </script>
 
     <script>
