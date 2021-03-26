@@ -1885,6 +1885,21 @@ h1 {
 .tablesorter-default {
   font-family: var(--main-font); }
 
+.ag-body-viewport.ag-layout-normal::-webkit-scrollbar {
+  width: 10px; }
+
+/* Track */
+.ag-body-viewport.ag-layout-normal::-webkit-scrollbar-track {
+  background: #f1f1f1; }
+
+/* Handle */
+.ag-body-viewport.ag-layout-normal::-webkit-scrollbar-thumb {
+  background: #7379F8; }
+
+/* Handle on hover */
+.ag-body-viewport.ag-layout-normal::-webkit-scrollbar-thumb:hover {
+  background: #7379F8; }
+
 .cart {
   padding-bottom: 50px;
   font-size: 14px; }
@@ -2616,6 +2631,37 @@ div.table-responsive > div.dataTables_wrapper > div.row {
 .izb {
   margin-top: 35px; }
 
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://example.com/MaterialIcons-Regular.eot);
+  /* For IE6-8 */
+  src: local("Material Icons"), local("MaterialIcons-Regular"), url(https://example.com/MaterialIcons-Regular.woff2) format("woff2"), url(https://example.com/MaterialIcons-Regular.woff) format("woff"), url(https://example.com/MaterialIcons-Regular.ttf) format("truetype"); }
+
+.mdi {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  -webkit-font-feature-settings: 'liga';
+          font-feature-settings: 'liga'; }
+
 .analiz__breadcrumb ul {
   display: -ms-flexbox;
   display: flex;
@@ -2977,7 +3023,7 @@ div.table-responsive > div.dataTables_wrapper > div.row {
 
 .pie-chart svg {
   overflow: visible;
-  width: 500px; }
+  width: 100%; }
 
 .pie-chart .apexcharts-legend.position-bottom.apexcharts-align-center,
 .pie-chart .apexcharts-legend.position-top.apexcharts-align-center {
@@ -2986,9 +3032,70 @@ div.table-responsive > div.dataTables_wrapper > div.row {
   width: 500px; }
 
 .tovar__sklad .tab {
-  width: auto;
+  max-width: initial;
+  min-width: initial;
   padding-left: 10px;
-  padding-right: 10px; }
+  padding-right: 10px;
+  width: 50%; }
+
+.tovar__sklad .free__times {
+  margin-bottom: 18px; }
+
+.tovar__sklad .tabs__content {
+  padding-top: 30px;
+  padding-bottom: 30px; }
+
+.tovar__sklad .table-responsive {
+  max-width: 100%;
+  width: 432px; }
+
+.tablesorter-header-inner {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  cursor: pointer; }
+
+.tablesorter-header-inner:after {
+  content: "";
+  display: block;
+  height: 12px;
+  width: 12px;
+  background-image: url("../img/analiz/tsort.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-left: 10px;
+  opacity: 0; }
+
+.tablesorter-headerAsc .tablesorter-header-inner:after {
+  opacity: 1; }
+
+.tablesorter-headerDesc .tablesorter-header-inner:after {
+  opacity: 1;
+  -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg); }
+
+@media (max-width: 1024px) {
+  .tovar__sklad__wrap {
+    -ms-flex-direction: column;
+        flex-direction: column; }
+  .tovar__sklad__left,
+  .tovar__sklad__right {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 25px; } }
+
+@media (max-width: 600px) {
+  .pie-chart .apexcharts-legend.position-bottom.apexcharts-align-center,
+  .pie-chart .apexcharts-legend.position-top.apexcharts-align-center {
+    -ms-flex-pack: center;
+        justify-content: center;
+    width: 100%;
+    inset: auto 0 0 0 !important; } }
+
+.product-table-icons {
+  color: #506ee4; }
 
 .tarifi__top h1 {
   text-align: center; }

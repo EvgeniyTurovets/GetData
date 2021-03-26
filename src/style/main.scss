@@ -2063,6 +2063,31 @@ h1 {
     font-family: var(--main-font);
 }
 
+.ag-body-viewport.ag-layout-normal::-webkit-scrollbar {
+    width: 10px;
+}
+
+
+/* Track */
+
+.ag-body-viewport.ag-layout-normal::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+
+/* Handle */
+
+.ag-body-viewport.ag-layout-normal::-webkit-scrollbar-thumb {
+    background: #7379F8;
+}
+
+
+/* Handle on hover */
+
+.ag-body-viewport.ag-layout-normal::-webkit-scrollbar-thumb:hover {
+    background: #7379F8;
+}
+
 @import './template/cart.scss';
 @import './template/auth.scss';
 @import './template/lk.scss';

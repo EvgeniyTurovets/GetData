@@ -12,6 +12,7 @@
     <!-- плагины -->
     <link rel='stylesheet' type='text/css' media='screen' href='./libs/jquery/jq-ui.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='./libs/bootstrap.min.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='./libs/selectric/selectric.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='./libs/charts/apexcharts.css'>
     <!-- <link rel='stylesheet' type='text/css' media='screen' href='./libs/datatables/theme.default.min.css'> -->
@@ -432,8 +433,8 @@
                                     <td><span class="badge badge-soft-success">Recomended</span></td>
                                     <td>
                                         <div class="product-table-icons">
-                                            <i class="mdi mdi-star-off"></i>
-                                            <i class="mdi mdi-truck-delivery"></i>
+                                            <i class="far fa-star"></i>
+                                            <i class="fas fa-truck"></i>
                                         </div>
                                     </td>
                                 </tr>
@@ -448,8 +449,8 @@
                                     <td><span class="badge badge-soft-success">Recomended</span></td>
                                     <td>
                                         <div class="product-table-icons">
-                                            <i class="mdi mdi-star-off"></i>
-                                            <i class="mdi mdi-truck-delivery"></i>
+                                            <i class="far fa-star"></i>
+                                            <i class="fas fa-truck"></i>
                                         </div>
                                     </td>
                                 </tr>
@@ -464,8 +465,8 @@
                                     <td><span class="badge badge-soft-success">Recomended</span></td>
                                     <td>
                                         <div class="product-table-icons">
-                                            <i class="mdi mdi-star-off"></i>
-                                            <i class="mdi mdi-truck-delivery"></i>
+                                            <i class="far fa-star"></i>
+                                            <i class="fas fa-truck"></i>
                                         </div>
                                     </td>
                                 </tr>
@@ -480,8 +481,8 @@
                                     <td><span class="badge badge-soft-success">Recomended</span></td>
                                     <td>
                                         <div class="product-table-icons">
-                                            <i class="mdi mdi-star-off"></i>
-                                            <i class="mdi mdi-truck-delivery"></i>
+                                            <i class="far fa-star"></i>
+                                            <i class="fas fa-truck"></i>
                                         </div>
                                     </td>
                                 </tr>
@@ -496,8 +497,8 @@
                                     <td>Not recomended</td>
                                     <td>
                                         <div class="product-table-icons">
-                                            <i class="mdi mdi-star-off"></i>
-                                            <i class="mdi mdi-truck-delivery"></i>
+                                            <i class="far fa-star"></i>
+                                            <i class="fas fa-truck"></i>
                                         </div>
                                     </td>
                                 </tr>
@@ -649,14 +650,88 @@
                                     <li class="tab">Продажи по складам в шт</li>
                                 </ul>
                                 <div class="tabs__content active">
-
                                     <div id="pie-chart1" class="pie-chart"></div>
-
                                 </div>
-                                <div class="tabs__content"></div>
+                                <div class="tabs__content">
+                                    <div id="pie-chart2" class="pie-chart"></div>
+                                </div>
                             </div>
                         </div>
-                        <div class="tovar__sklad__right"></div>
+                        <div class="tovar__sklad__right">
+                            <div class="tabs">
+                                <ul class="tabs__caption">
+                                    <li class="tab active">Остатки по складам в %</li>
+                                    <li class="tab">Остатки по складам в шт</li>
+                                </ul>
+                                <div class="tabs__content active">
+                                    <div class="table-responsive dash-social">
+                                        <table id="datatable2" class="table table-bordered">
+                                            <thead class="thead-light">
+                                                <tr>
+                                                    <th>Склад</th>
+                                                    <th>Продажи</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Пушкино </td>
+                                                    <td>154</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Екатеринбург </td>
+                                                    <td>2</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Коледино </td>
+                                                    <td>2</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Санкт-Петербург </td>
+                                                    <td>1</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="tabs__content">
+                                    <div class="table-responsive dash-social">
+                                        <table id="datatable3" class="table table-bordered">
+                                            <thead class="thead-light">
+                                                <tr>
+                                                    <th>Склад</th>
+                                                    <th>Продажи</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Пушкино </td>
+                                                    <td>154</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Екатеринбург </td>
+                                                    <td>2</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Коледино </td>
+                                                    <td>2</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Санкт-Петербург </td>
+                                                    <td>1</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grafic">
+                    <h3>История продаж и остатков по складам</h3>
+                    <div class="chart__wrap">
+                        <div id="ost-chart" class="chart"></div>
                     </div>
                 </div>
 
@@ -751,6 +826,7 @@
 
     <script>
         $(function() {
+            // мини графики
             $('#sparkline-cat1').sparkline([15, 23, 55, 35, 54, 45, 66, 47, 30], {
                 type: 'line',
                 width: '87',
@@ -819,32 +895,7 @@
             });
         })
 
-        let opensVal
-        if ($(window).width() < 768) {
-            opensVal = 'right'
-        } else {
-            opensVal = 'left'
-        }
-        $('#tovar-stat').daterangepicker({
-            locale: {
-                "format": "MM.DD.YYYY",
-                "separator": " - ",
-                "applyLabel": "Применить",
-                "cancelLabel": "Закрыть",
-                "fromLabel": "От",
-                "toLabel": "До",
-                "customRangeLabel": "Custom",
-                "weekLabel": "W",
-                "daysOfWeek": ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
-                "monthNames": ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
-                "firstDay": 1
-            },
-            opens: opensVal,
-            drops: 'down'
-        }, function(start, end, label) {
-            console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
-        });
-
+        // график продаж
         var options = {
             series: [{
                 name: 'Продажи',
@@ -936,11 +987,103 @@
         var chart = new ApexCharts(document.querySelector("#chart-stat"), options);
         chart.render();
 
+        //график остатков
+        var options = {
+            series: [{
+                name: 'Сума',
+                data: [31, 40, 28, 51, 42, 109, 100]
+            }, {
+                name: 'Количество',
+                data: [11, 32, 45, 32, 34, 52, 41]
+            }],
+            yaxis: [{
+                title: {
+                    text: ""
+                },
+            }, {
+                opposite: true,
+                title: {
+                    text: ""
+                }
+            }],
+            width: '100%',
+            chart: {
+                height: 350,
+                type: 'area'
+            },
+            dataLabels: {
+                enabled: false
+            },
+            stroke: {
+                curve: 'smooth'
+            },
+            xaxis: {
+                type: 'datetime',
+                categories: ["2018-09-19T00:00:00.000Z", "2018-09-19T01:30:00.000Z", "2018-09-19T02:30:00.000Z", "2018-09-19T03:30:00.000Z", "2018-09-19T04:30:00.000Z", "2018-09-19T05:30:00.000Z", "2018-09-19T06:30:00.000Z"]
+            },
+            tooltip: {
+                x: {
+                    format: 'dd/MM/yy HH:mm'
+                },
+            },
+            legend: {
+                position: 'top',
+                horizontalAlign: 'center',
+                markers: {
+                    width: 30,
+                    height: 12,
+                    radius: 0,
+                },
+            },
+
+            toolbar: {
+                show: false,
+            },
+            responsive: [{
+                breakpoint: 600,
+                options: {
+                    legend: {
+                        horizontalAlign: 'left',
+                    }
+                }
+            }]
+        };
+
+        var ostchart = new ApexCharts(document.querySelector("#ost-chart"), options);
+        ostchart.render()
+
         // Datatable
         $("#datatable").tablesorter();
+        $("#datatable2").tablesorter();
+        $("#datatable3").tablesorter();
+
+        // datapicker
+        let opensVal
+        if ($(window).width() < 768) {
+            opensVal = 'right'
+        } else {
+            opensVal = 'left'
+        }
+        $('#tovar-stat').daterangepicker({
+            locale: {
+                "format": "MM.DD.YYYY",
+                "separator": " - ",
+                "applyLabel": "Применить",
+                "cancelLabel": "Закрыть",
+                "fromLabel": "От",
+                "toLabel": "До",
+                "customRangeLabel": "Custom",
+                "weekLabel": "W",
+                "daysOfWeek": ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+                "monthNames": ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+                "firstDay": 1
+            },
+            opens: opensVal,
+            drops: 'down'
+        }, function(start, end, label) {
+            console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+        });
     </script>
-
-
 
     <script>
         // круглые графики
@@ -973,10 +1116,7 @@
                 breakpoint: 600,
                 options: {
                     chart: {
-                        height: 240
-                    },
-                    legend: {
-                        show: false
+                        width: '100%',
                     },
                 }
             }]
@@ -984,6 +1124,9 @@
 
         var chart = new ApexCharts(document.querySelector("#pie-chart1"), pieOptions);
         chart.render();
+
+        var chart2 = new ApexCharts(document.querySelector("#pie-chart2"), pieOptions);
+        chart2.render();
     </script>
     <script>
         // таблица
