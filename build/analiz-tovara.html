@@ -7,19 +7,19 @@
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap&v=697a51e4932a60967034ee32841b546c" rel="stylesheet">
 
     <!-- плагины -->
-    <link rel='stylesheet' type='text/css' media='screen' href='./libs/jquery/jq-ui.css'>
-    <link rel='stylesheet' type='text/css' media='screen' href='./libs/bootstrap.min.css'>
-    <link rel='stylesheet' type='text/css' media='screen' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css'>
-    <link rel='stylesheet' type='text/css' media='screen' href='./libs/selectric/selectric.css'>
-    <link rel='stylesheet' type='text/css' media='screen' href='./libs/charts/apexcharts.css'>
-    <!-- <link rel='stylesheet' type='text/css' media='screen' href='./libs/datatables/theme.default.min.css'> -->
-    <link rel='stylesheet' type='text/css' media='screen' href='./libs/datapicker/css/daterangepicker.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='./libs/jquery/jq-ui.css?v=697a51e4932a60967034ee32841b546c'>
+    <link rel='stylesheet' type='text/css' media='screen' href='./libs/bootstrap.min.css?v=697a51e4932a60967034ee32841b546c'>
+    <link rel='stylesheet' type='text/css' media='screen' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css?v=697a51e4932a60967034ee32841b546c'>
+    <link rel='stylesheet' type='text/css' media='screen' href='./libs/selectric/selectric.css?v=697a51e4932a60967034ee32841b546c'>
+    <link rel='stylesheet' type='text/css' media='screen' href='./libs/charts/apexcharts.css?v=697a51e4932a60967034ee32841b546c'>
+    <!-- <link rel='stylesheet' type='text/css' media='screen' href='./libs/datatables/theme.default.min.css?v=697a51e4932a60967034ee32841b546c'> -->
+    <link rel='stylesheet' type='text/css' media='screen' href='./libs/datapicker/css/daterangepicker.css?v=697a51e4932a60967034ee32841b546c'>
 
     <!-- стили -->
-    <link rel='stylesheet' type='text/css' media='screen' href='./css/main.min.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='./css/main.min.css?v=697a51e4932a60967034ee32841b546c'>
 </head>
 
 <body>
@@ -843,20 +843,20 @@
         </div>
     </div>
     <!-- плагины -->
-    <script src="./libs/jquery/jquery.min.js"></script>
-    <script src="./libs/jquery/jq-ui.js"></script>
-    <script src="./libs/bootstrap.bundle.min.js"></script>
-    <script src="./libs/selectric/selectric.min.js"></script>
-    <script src="./libs/charts/apexcharts.min.js"></script>
-    <script src="./libs/datapicker/js/moment.min.js"></script>
-    <script src="./libs/datapicker/js/daterangepicker.js"></script>
-    <script src="./libs/datatables/jquery.tablesorter.min.js"></script>
-    <script src="./libs/sparklines-chart/jquery.sparkline.min.js"></script>
-    <script src="./libs/ag-table/ag-grid-lang.js"></script>
-    <script src="./libs/ag-table/ag-grid.js"></script>
+    <script src="./libs/jquery/jquery.min.js?v=697a51e4932a60967034ee32841b546c"></script>
+    <script src="./libs/jquery/jq-ui.js?v=697a51e4932a60967034ee32841b546c"></script>
+    <script src="./libs/bootstrap.bundle.min.js?v=697a51e4932a60967034ee32841b546c"></script>
+    <script src="./libs/selectric/selectric.min.js?v=697a51e4932a60967034ee32841b546c"></script>
+    <script src="./libs/charts/apexcharts.min.js?v=697a51e4932a60967034ee32841b546c"></script>
+    <script src="./libs/datapicker/js/moment.min.js?v=697a51e4932a60967034ee32841b546c"></script>
+    <script src="./libs/datapicker/js/daterangepicker.js?v=697a51e4932a60967034ee32841b546c"></script>
+    <script src="./libs/datatables/jquery.tablesorter.min.js?v=697a51e4932a60967034ee32841b546c"></script>
+    <script src="./libs/sparklines-chart/jquery.sparkline.min.js?v=697a51e4932a60967034ee32841b546c"></script>
+    <script src="./libs/ag-table/ag-grid-lang.js?v=697a51e4932a60967034ee32841b546c"></script>
+    <script src="./libs/ag-table/ag-grid.js?v=697a51e4932a60967034ee32841b546c"></script>
 
     <!-- main.js -->
-    <script src="./js/main.js"></script>
+    <script src="./js/main.js?v=697a51e4932a60967034ee32841b546c"></script>
 
     <script>
         $(function() {
@@ -1185,23 +1185,19 @@
         }, {
             field: 'Продаж',
             width: 100,
-            filter: 'customNumberFilter',
-            suppressMenu: true,
+            filter: 'agNumberColumnFilter',
         }, {
             field: 'Выручка',
             width: 100,
-            filter: 'customNumberFilter',
-            suppressMenu: true,
+            filter: 'agNumberColumnFilter',
         }, {
             field: 'Товаров',
             width: 100,
-            filter: 'customNumberFilter',
-            suppressMenu: true,
+            filter: 'agNumberColumnFilter',
         }, {
             field: 'Продавцов',
             width: 100,
-            filter: 'customNumberFilter',
-            suppressMenu: true,
+            filter: 'agNumberColumnFilter',
         }, ];
         var localeText = AG_GRID_LOCALE_ZZZ;
         var gridOptions = {
@@ -1214,9 +1210,6 @@
                 floatingFilter: true,
                 resizable: true,
             },
-            components: {
-                customNumberFilter: getNumberFilterComponent(),
-            },
             columnDefs: columnDefs,
             rowData: null,
             sideBar: {
@@ -1226,6 +1219,16 @@
                     labelKey: 'columns',
                     iconKey: 'columns',
                     toolPanel: 'agColumnsToolPanel',
+                    toolPanelParams: {
+                        suppressRowGroups: true,
+                        suppressValues: true,
+                        suppressPivots: true,
+                        suppressPivotMode: true,
+                        suppressSideButtons: true,
+                        suppressColumnFilter: false,
+                        suppressColumnSelectAll: false,
+                        suppressColumnExpandAll: false,
+                    },
                 }, {
                     id: 'filters',
                     labelDefault: 'Filters',
@@ -1243,86 +1246,6 @@
             gridOptions.api.closeToolPanel();
         }
 
-        function isNumeric(n) {
-            return !isNaN(parseFloat(n)) && isFinite(n);
-        }
-
-        function getNumberFilterComponent() {
-            function NumberFilter() {}
-
-            NumberFilter.prototype.init = function(params) {
-                this.valueGetter = params.valueGetter;
-                this.filterText = null;
-                this.params = params;
-                this.setupGui();
-            };
-
-            // not called by AG Grid, just for us to help setup
-            NumberFilter.prototype.setupGui = function() {
-                this.gui = document.createElement('div');
-                this.gui.innerHTML =
-                    '<div style="padding: 4px;">' +
-                    '<div style="font-weight: bold;">Greater than: </div>' +
-                    '<div><input style="margin: 4px 0px 4px 0px;" type="number" id="filterText" placeholder="Фильтровать..."/></div>' +
-                    '</div>';
-
-                var that = this;
-                this.onFilterChanged = function() {
-                    that.extractFilterText();
-                    that.params.filterChangedCallback();
-                };
-
-                this.eFilterText = this.gui.querySelector('#filterText');
-                this.eFilterText.addEventListener('input', this.onFilterChanged);
-            };
-
-            NumberFilter.prototype.extractFilterText = function() {
-                this.filterText = this.eFilterText.value;
-            };
-
-            NumberFilter.prototype.getGui = function() {
-                return this.gui;
-            };
-
-            NumberFilter.prototype.doesFilterPass = function(params) {
-                var valueGetter = this.valueGetter;
-                var value = valueGetter(params);
-                var filterValue = this.filterText;
-
-                if (this.isFilterActive()) {
-                    if (!value) return false;
-                    return Number(value) > Number(filterValue);
-                }
-            };
-
-            NumberFilter.prototype.isFilterActive = function() {
-                return (
-                    this.filterText !== null &&
-                    this.filterText !== undefined &&
-                    this.filterText !== '' &&
-                    isNumeric(this.filterText)
-                );
-            };
-
-            NumberFilter.prototype.getModel = function() {
-                return this.isFilterActive() ? Number(this.eFilterText.value) : null;
-            };
-
-            NumberFilter.prototype.setModel = function(model) {
-                this.eFilterText.value = model;
-                this.extractFilterText();
-            };
-
-            NumberFilter.prototype.destroy = function() {
-                this.eFilterText.removeEventListener('input', this.onFilterChanged);
-            };
-
-            NumberFilter.prototype.getModelAsString = function() {
-                return this.isFilterActive() ? '>' + this.filterText : '';
-            };
-
-            return NumberFilter;
-        }
 
         // первая таблица
         document.addEventListener('DOMContentLoaded', function() {

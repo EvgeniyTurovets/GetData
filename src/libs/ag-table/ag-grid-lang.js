@@ -7,25 +7,25 @@ const AG_GRID_LOCALE_ZZZ = {
     noMatches: 'No matches',
 
     // Number Filter & Text Filter
-    filterOoo: 'Filter...',
-    equals: 'Equals',
-    notEqual: 'Not equal',
+    filterOoo: 'Фильтровать...',
+    equals: 'Равно',
+    notEqual: 'Не равно',
     empty: 'Choose One',
 
     // Number Filter
-    lessThan: 'Less than',
-    greaterThan: 'Greater than',
-    lessThanOrEqual: 'Less than or equal',
-    greaterThanOrEqual: 'Greater than or equal',
-    inRange: 'In range',
-    inRangeStart: 'to',
-    inRangeEnd: 'from',
+    lessThan: 'Меньше чем',
+    greaterThan: 'Больше чем',
+    lessThanOrEqual: 'Меньше или равно',
+    greaterThanOrEqual: 'Больше или равно',
+    inRange: 'В промежутке',
+    inRangeStart: 'До',
+    inRangeEnd: 'От',
 
     // Text Filter
-    contains: 'Contains',
-    notContains: 'Not contains',
-    startsWith: 'Starts with',
-    endsWith: 'Ends with',
+    contains: 'Содержит',
+    notContains: 'Не содержит',
+    startsWith: 'Начинается с',
+    endsWith: 'Заканчивается на ',
 
     // Date Filter
     dateFormatOoo: 'yyyy-mm-dd',
@@ -63,21 +63,21 @@ const AG_GRID_LOCALE_ZZZ = {
     group: 'Group',
 
     // Other
-    loadingOoo: 'Loading...',
+    loadingOoo: 'Загрузка...',
     noRowsToShow: 'No Rows To Show',
     enabled: 'Enabled',
 
     // Menu
-    pinColumn: 'Pin Column',
-    pinLeft: 'Pin Left',
-    pinRight: 'Pin Right',
-    noPin: 'No Pin',
+    pinColumn: 'Закрепить колонку',
+    pinLeft: 'Закрепить слева',
+    pinRight: 'Закрепить справа',
+    noPin: 'Не закреплять',
     valueAggregation: 'Value Aggregation',
-    autosizeThiscolumn: 'Autosize This Column',
-    autosizeAllColumns: 'Autosize All Columns',
+    autosizeThiscolumn: 'Автоматически задавать размер этой колонки',
+    autosizeAllColumns: 'Автоматически задавать размер всем колонкам',
     groupBy: 'Group by',
     ungroupBy: 'Un-Group by',
-    resetColumns: 'Reset Columns',
+    resetColumns: 'Сбросить столбцы',
     expandAll: 'Expand All',
     collapseAll: 'Close All',
     copy: 'Копировать',
