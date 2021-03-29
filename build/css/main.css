@@ -3332,7 +3332,9 @@ div.table-responsive > div.dataTables_wrapper > div.row {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-      align-items: center; }
+      align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
 
 .categori__radios-item {
   display: -ms-flexbox;
@@ -3391,7 +3393,12 @@ div.table-responsive > div.dataTables_wrapper > div.row {
   font-size: 16px; }
 
 .categori__tabs .tabs__content {
-  padding-top: 38px; }
+  padding-top: 38px;
+  padding-bottom: 57px; }
+
+.categori__tabs .tabs__content .row:last-child {
+  padding-top: 0;
+  padding-bottom: 0; }
 
 .range__slider {
   width: 100%;
@@ -3474,6 +3481,25 @@ div.table-responsive > div.dataTables_wrapper > div.row {
   -ms-flex-align: center;
       align-items: center;
   margin-bottom: 17px; }
+  .dif-table__top input {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height */
+    color: #2F2F2F;
+    cursor: pointer; }
+
+@media (max-width: 767px) {
+  .dif-table__top {
+    -ms-flex-direction: column;
+        flex-direction: column;
+    -ms-flex-align: start;
+        align-items: flex-start; }
+    .dif-table__top input {
+      margin-bottom: 15px; } }
+
+.grafic-2 .pie-chart {
+  margin-bottom: 35px; }
 
 .tarifi__top h1 {
   text-align: center; }
