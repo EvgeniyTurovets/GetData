@@ -319,10 +319,71 @@
                         </div>
                     </div>
                 </div>
-                <div class="categori__radio">
-                    <label class="">
-                        
+                <div class="categori__radios">
+                    <label class="categori__radios-item categori__radios1">
+                        <input type="radio" name="categori__radios">
+                        <span></span>
+                        Последняя неделя
                     </label>
+                    <label class="categori__radios-item categori__radios2">
+                        <input type="radio" checked name="categori__radios">
+                        <span></span>
+                        Предыдущая неделя
+                    </label>
+                </div>
+                <div class="categori__tabs tabs">
+                    <div class="categori__tabs__wrap">
+                        <ul class="tabs__caption">
+                            <li class="tab active">Все товары</li>
+                            <li class="tab">Товары в тренде</li>
+                            <li class="tab">Новинки</li>
+                            <li class="tab">Обзор подкатегорий</li>
+                            <li class="tab">Бренды</li>
+                            <li class="tab">Продавцы</li>
+                            <li class="tab">Тренды</li>
+                            <li class="tab">Тренды по дням</li>
+                            <li class="tab">По складам</li>
+                        </ul>
+                    </div>
+
+                    <div class="tabs__content active">
+                        <div class="grafic">
+                            <h3>Распределение числа продаж от цены на товар </h3>
+                            <div class="budgets_chart__wrap">
+                                <div id="budgets_chart" style="min-width: 1000px;"></div>
+                            </div>
+
+                            <div class="range__slider">
+                                <div id="slider-range"></div>
+                            </div>
+
+                            <div class="grafic__range">
+                                <div class="range__text">
+                                    <label for="amount">Выбранный дипазон цен:</label>
+                                    <input type="text" id="amount" readonly>
+                                </div>
+
+                                <button type="button" class="btn-blue">Показать товары</button>
+                            </div>
+
+                        </div>
+                        <div class="tovar__table1">
+                            <div class="dif-table__top">
+                                <input id="tovar-stat" value="03.18.2013 - 03.23.2013">
+                                <a href="https://evgeniyturovets.github.io/GetData/table.json" download class="btn-blue dark">Скачать в SCV</a>
+                            </div>
+                            <div id="myGrid" class="ag-theme-alpine" style="height: 475px;"></div>
+                        </div>
+
+                    </div>
+                    <div class="tabs__content"></div>
+                    <div class="tabs__content"></div>
+                    <div class="tabs__content"></div>
+                    <div class="tabs__content"></div>
+                    <div class="tabs__content"></div>
+                    <div class="tabs__content"></div>
+                    <div class="tabs__content"></div>
+                    <div class="tabs__content"></div>
                 </div>
             </div>
         </div>
@@ -430,6 +491,7 @@
         <!-- main.js -->
         <script src="./js/main.js"></script>
 
+        <!-- js этой страницы -->
         <script>
             //выбор категории
             $('.breadcrumb-change-categori').on('click', function() {
@@ -513,6 +575,232 @@
                 highlightSpotColor: 'rgba(0,0,0,.2)'
             });
         </script>
+
+        <script>
+            // все товары столбчатая диаграма
+            $(function() {
+                var options = {
+                    chart: {
+                        height: 300,
+                        type: 'bar',
+                        toolbar: {
+                            show: false
+                        }
+                    },
+                    plotOptions: {
+                        bar: {
+                            horizontal: false,
+                            endingShape: 'rounded',
+                            columnWidth: '25%',
+                        },
+                    },
+                    dataLabels: {
+                        enabled: false
+                    },
+                    stroke: {
+                        show: true,
+                        width: 5,
+                        colors: ['transparent'],
+                    },
+                    colors: ["#7680ff"],
+                    series: [{
+                        name: 'Сума',
+                        data: [68, 71, 65, 75, 80, 90, 90, 90, 90, 90, 90, 101, 112, 123, 134, 145, 156, 177, 188, 199, 300]
+                    }],
+                    xaxis: {
+                        categories: [0, 200, 400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200, 2400, 2600, 2800, 3000, 3200, 3400, 3600, 3800, 4000],
+                        axisBorder: {
+                            show: true,
+                            color: '#f7f8f9',
+                        },
+                        axisTicks: {
+                            show: true,
+                            color: '#bec7e0',
+                        },
+                    },
+                    yaxis: {
+                        labels: {
+                            formatter: (val) => {
+                                return val + "k руб."
+                            }
+                        },
+                        title: {
+                            text: 'Продажи (шт)'
+                        }
+                    },
+                    legend: {
+                        offsetY: 6
+                    },
+
+                    fill: {
+                        opacity: 1
+
+                    },
+                    grid: {
+                        row: {
+                            colors: ['transparent', 'transparent'], // takes an array which will be repeated on columns
+                            opacity: 0.2
+                        },
+                        borderColor: '#f1f3fa',
+                        strokeDashArray: 4,
+                    },
+                    tooltip: {
+                        y: {
+                            formatter: function(val) {
+                                return val + "k руб."
+                            }
+                        }
+                    }
+                }
+
+                var chart = new ApexCharts(
+                    document.querySelector("#budgets_chart"),
+                    options
+                );
+
+                chart.render();
+
+                // рендж слайдер
+                $("#slider-range").slider({
+                    range: true,
+                    min: 0,
+                    max: 500,
+                    values: [75, 300],
+                    slide: function(event, ui) {
+                        $("#amount").val(ui.values[0] + " руб." + ' - ' + ui.values[1] + " руб.");
+                    }
+                });
+                $("#amount").val($("#slider-range").slider("values", 0) + " руб." + ' - ' +
+                    $("#slider-range").slider("values", 1) + " руб.");
+
+            })
+
+
+            $('#tovar-stat').daterangepicker({
+                locale: {
+                    "format": "MM.DD.YYYY",
+                    "separator": " - ",
+                    "applyLabel": "Применить",
+                    "cancelLabel": "Закрыть",
+                    "fromLabel": "От",
+                    "toLabel": "До",
+                    "customRangeLabel": "Custom",
+                    "weekLabel": "W",
+                    "daysOfWeek": ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+                    "monthNames": ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+                    "firstDay": 1
+                },
+                opens: 'right',
+                drops: 'down'
+            }, function(start, end, label) {
+                console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+            });
+
+
+            // таблица
+
+            const deltaIndicator = (params) => {
+                const element = document.createElement('span');
+                const imageElement = document.createElement('img');
+
+                // visually indicate if this months value is higher or lower than last months value
+
+                imageElement.src =
+                    'https://flags.fmcdn.net/data/flags/mini/ie.png';
+                element.appendChild(imageElement);
+                element.appendChild(document.createTextNode(params.value));
+                return element;
+            };
+
+
+            var columnDefs = [{
+                field: 'Неделя',
+                checkboxSelection: true,
+                width: 100,
+                cellRenderer: 'deltaIndicator',
+                filter: false
+            }, {
+                field: 'Продаж',
+                width: 100,
+                filter: 'agNumberColumnFilter',
+            }, {
+                field: 'Выручка',
+                width: 100,
+                filter: 'agNumberColumnFilter',
+            }, {
+                field: 'Товаров',
+                width: 100,
+                filter: 'agNumberColumnFilter',
+            }, {
+                field: 'Продавцов',
+                width: 100,
+                filter: 'agNumberColumnFilter',
+            }, ];
+            var localeText = AG_GRID_LOCALE_ZZZ;
+            var gridOptions = {
+                defaultColDef: {
+                    editable: false,
+                    sortable: true,
+                    flex: 1,
+                    minWidth: 100,
+                    filter: true,
+                    floatingFilter: true,
+                    resizable: true,
+                },
+                columnDefs: columnDefs,
+                rowData: null,
+                components: {
+                    deltaIndicator: deltaIndicator,
+                },
+                sideBar: {
+                    toolPanels: [{
+                        id: 'columns',
+                        labelDefault: 'Columns',
+                        labelKey: 'columns',
+                        iconKey: 'columns',
+                        toolPanel: 'agColumnsToolPanel',
+                        toolPanelParams: {
+                            suppressRowGroups: true,
+                            suppressValues: true,
+                            suppressPivots: true,
+                            suppressPivotMode: true,
+                            suppressSideButtons: true,
+                            suppressColumnFilter: false,
+                            suppressColumnSelectAll: false,
+                            suppressColumnExpandAll: false,
+                        },
+                    }, {
+                        id: 'filters',
+                        labelDefault: 'Filters',
+                        labelKey: 'filters',
+                        iconKey: 'filter',
+                        toolPanel: 'agFiltersToolPanel',
+                    }, ],
+                    position: 'right',
+                    defaultToolPanel: 'filters',
+                },
+                localeText: localeText,
+            };
+
+            function closeToolPanel() {
+                gridOptions.api.closeToolPanel();
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+                var gridDiv = document.querySelector('#myGrid');
+                new agGrid.Grid(gridDiv, gridOptions);
+
+                agGrid
+                    .simpleHttpRequest({
+                        url: 'https://evgeniyturovets.github.io/GetData/table2.json',
+                    })
+                    .then(function(data) {
+                        gridOptions.api.setRowData(data);
+                    });
+                closeToolPanel()
+            });
+        </script>
+
 </body>
 
 </html>

@@ -2215,7 +2215,10 @@ h1 {
     font-size: 12px;
 }
 
-.ag-theme-alpine .ag-row-hover {}
+.apexcharts-yaxis-title-text {
+    font-family: var(--main-font)!important;
+    font-weight: 400;
+}
 
 @import './template/cart.scss';
 @import './template/auth.scss';
