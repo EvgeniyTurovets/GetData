@@ -1,5 +1,5 @@
 .breadcrumb {
-    margin-bottom: 42px;
+    margin-bottom: 20px;
 }
 
 .breadcrumb ul {
@@ -24,6 +24,10 @@
 
 .breadcrumb ul a:hover {
     color: #000;
+}
+
+.lk {
+    margin-top: 40px;
 }
 
 .lk__caption__wrap {
@@ -115,7 +119,7 @@
 
 @media(max-width: 767px) {
     .tarif__item {
-        padding: 25px 15px;
+        padding: 40px 15px;
     }
     .lk-form .textarea {
         height: 200px;
@@ -164,6 +168,7 @@
 
 .lk-tarifi__wrap {
     display: flex;
+    justify-content: center;
     .tarif__item {
         max-width: 380px;
         margin-bottom: 40px;

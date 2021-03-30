@@ -1,0 +1,230 @@
+.top__col {
+    padding: 18px 25px;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+.top__col__title {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height */
+    color: #000000;
+    margin-bottom: 16px;
+}
+
+.top__checkbox__title {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+    letter-spacing: 0.02em;
+    color: #252525;
+    margin-bottom: 10px;
+}
+
+.top__checkbox__wrap {
+    display: flex;
+    flex-wrap: wrap;
+    label {
+        width: calc(100% / 4);
+        padding: 5px 0;
+        padding-right: 5px;
+        margin-bottom: 5px;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 15px;
+        /* identical to box height */
+        letter-spacing: 0.02em;
+        color: #252525;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+    label input {
+        display: none;
+    }
+    label input+span {
+        border: 1px solid #FF7B1B;
+        border-radius: 3px;
+        display: block;
+        width: 13px;
+        min-width: 13px;
+        height: 13px;
+        margin-right: 4px;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    label input:checked+span {
+        background-image: url("../img/top/checked.svg");
+    }
+}
+
+.top__col__bot {
+    display: flex;
+    margin-top: 10px;
+    .top__checkbox {
+        width: 145px;
+    }
+    .top__checkbox__wrap label {
+        width: 100%;
+    }
+}
+
+@media(max-width: 767px) {
+    .top__checkbox__wrap label {
+        width: calc(100% / 3);
+    }
+    .top__col {
+        padding: 15px;
+    }
+}
+
+@media(max-width: 575px) {
+    .top__checkbox__wrap label {
+        width: calc(100% / 2);
+    }
+    .top__col__bot .top__checkbox {
+        width: 50%;
+    }
+}
+
+.range__row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.range__row__label {
+    flex: 0 0 85px;
+    padding-right: 15px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    /* identical to box height */
+    letter-spacing: 0.02em;
+    color: #252525;
+}
+
+.irs-grid-pol {
+    opacity: 0;
+}
+
+.irs-grid-text {
+    bottom: 5px;
+}
+
+.js-range-slider__wrap {
+    flex: 1;
+}
+
+.irs--flat .irs-bar {
+    background: #7379F8;
+}
+
+.irs--flat .irs-handle>i:first-child {
+    background-color: #7379F8;
+}
+
+.irs--flat .irs-single {
+    background-color: #7379F8;
+}
+
+.irs--flat .irs-single:before {
+    border-top-color: #7379F8;
+}
+
+.irs--flat .irs-handle:hover>i:first-child {
+    cursor: grab;
+    background-color: #3d46f5;
+}
+
+.irs {
+    font-family: var(--main-font);
+}
+
+.irs--flat .irs-min,
+.irs--flat .irs-max {
+    background: #F1F5FA;
+    border-radius: 5px;
+    font-size: 10px;
+    line-height: 12px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: #393939;
+}
+
+.irs-single {
+    cursor: grab;
+}
+
+.irs--flat .irs-handle i:first-child {
+    background-color: #3d46f5!important;
+}
+
+.irs-grid {
+    left: 0!important;
+    width: 100%!important;
+}
+
+.irs-grid-text.js-grid-text-0 {
+    margin-left: 0!important;
+}
+
+.irs-grid-text:last-child {
+    transform: translateX(-50%);
+}
+
+@media(max-width: 767px) {
+    .range__row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .range__row__label {
+        flex: auto;
+        margin-bottom: 15px;
+        br {
+            display: none;
+        }
+    }
+    .js-range-slider__wrap {
+        flex: auto;
+        width: 100%;
+    }
+}
+
+.top-approve {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 27px;
+    button {
+        padding: 13px 49px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+        /* identical to box height */
+        color: #FFFFFF;
+    }
+}
+
+.top-page .tabs__content {
+    padding-top: 20px;
+    padding-bottom: 50px;
+}
+
+.top-table .t-cat {
+    width: 335px;
+    display: flex;
+    align-items: flex-start;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    /* identical to box height */
+    letter-spacing: 0.02em;
+    color: #252525;
+    img {
+        margin-right: 9px;
+    }
+}

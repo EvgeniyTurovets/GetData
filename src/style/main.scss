@@ -1860,7 +1860,7 @@ h1 {
 
 .ui-widget.ui-widget-content {
     position: absolute;
-    z-index: 1051;
+    z-index: 2;
 }
 
 .selectric {
@@ -2220,6 +2220,24 @@ h1 {
     font-weight: 400;
 }
 
+.ag-theme-alpine .ag-header {
+    height: 75px!important;
+    min-height: 75px!important;
+}
+
+.ag-theme-alpine .ag-header-row.ag-header-row-column {
+    height: 30px!important;
+}
+
+.ag-theme-alpine .ag-header-row.ag-header-row-floating-filter {
+    height: 45px!important;
+    top: 30px!important;
+}
+
+.ag-theme-alpine .ag-side-buttons {
+    padding-top: 30px!important;
+}
+
 @import './template/cart.scss';
 @import './template/auth.scss';
 @import './template/lk.scss';
@@ -2227,3 +2245,4 @@ h1 {
 @import './template/izb.scss';
 @import './template/analiz.scss';
 @import './template/tarifi.scss';
+@import './template/top.scss';

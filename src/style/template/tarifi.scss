@@ -6,5 +6,145 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    button {}
+    margin-bottom: 40px;
+    margin-top: 24px;
+    button {
+        font-size: 14px;
+        line-height: 17px;
+        color: #989898;
+        height: 40px;
+        background-color: #fff;
+        border: 1px solid #989898;
+        width: 113px;
+        transition: 0.3s all;
+    }
+    button:first-child {
+        border-radius: 5px 0 0 5px;
+    }
+    button:last-child {
+        border-radius: 0 5px 5px 0;
+    }
+    button:hover,
+    button.active {
+        background: #FF7B1B;
+        border: 1px solid #FF7B1B;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 17px;
+        /* identical to box height */
+        color: #FFFFFF;
+    }
+}
+
+.tarif__item {
+    position: relative;
+}
+
+.tarif-label {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #7379F8;
+    border-radius: 5px;
+    padding: 6px 16px;
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 12px;
+    color: #FFFFFF;
+}
+
+.change__tarif__bot {
+    margin-bottom: 25px;
+}
+
+.change__tarif__bot__item {
+    display: flex;
+    max-width: 725px;
+    font-size: 14px;
+    line-height: 175%;
+    /* or 24px */
+    color: #252525;
+    margin-bottom: 20px;
+    a {
+        color: var(--orang);
+        text-decoration: underline;
+        display: inline-block;
+    }
+    svg {
+        flex: 0 0 35px;
+        margin-right: 11px;
+        margin-top: 5px;
+    }
+}
+
+.somnev {
+    text-align: center;
+    background: #FFF1E2;
+    padding-top: 48px;
+    padding-bottom: 35px;
+    margin-top: 35px;
+    h3 {
+        font-weight: 600;
+        font-size: 25px;
+        line-height: 30px;
+        letter-spacing: 0.02em;
+        margin-bottom: 15px;
+    }
+    span {
+        font-size: 16px;
+        line-height: 175%;
+        text-align: center;
+        color: #252525;
+        margin-bottom: 25px;
+        display: block;
+    }
+}
+
+.somnev__btns {
+    button,
+    a {
+        font-size: 16px;
+        font-weight: 500;
+        max-width: 100%;
+        height: 45px;
+        display: block;
+        margin: 0;
+        line-height: 43px;
+        padding: 0;
+        margin-bottom: 15px;
+    }
+    .btn-or {
+        width: 269px;
+        margin-left: auto;
+    }
+    .btn-bo {
+        width: 224px;
+        margin-right: auto;
+    }
+}
+
+@media(max-width: 480px) {
+    .tarifi__change {
+        flex-wrap: wrap;
+        margin: 0 -7px;
+    }
+    .tarifi__change button {
+        width: calc(50% - 14px);
+        margin: 0 7px;
+        margin-bottom: 14px;
+    }
+    .tarifi__change button {
+        border-radius: 5px!important;
+    }
+}
+
+@media(max-width: 575px) {
+    .somnev__btns a,
+    .somnev__btns button {
+        margin: 0 auto;
+        margin-bottom: 15px;
+    }
+    .change__tarif__bot__item {
+        font-size: 12px;
+    }
 }

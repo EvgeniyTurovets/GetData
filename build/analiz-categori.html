@@ -15,7 +15,6 @@
     <link rel='stylesheet' type='text/css' media='screen' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='./libs/selectric/selectric.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='./libs/charts/apexcharts.css'>
-    <!-- <link rel='stylesheet' type='text/css' media='screen' href='./libs/datatables/theme.default.min.css'> -->
     <link rel='stylesheet' type='text/css' media='screen' href='./libs/datapicker/css/daterangepicker.css'>
 
     <!-- стили -->
@@ -287,8 +286,8 @@
                         <div class="col-lg-4 col-sm-6">
                             <div class="analiz__item">
                                 <div class="analiz__left">
-                                    <div class="analiz__text1">Продажи</div>
                                     <div class="analiz__text2">200000000 руб.</div>
+                                    <div class="analiz__text1">Продажи</div>
                                 </div>
                                 <div class="analiz__right">
                                     <div id="sparkline-cat1"></div>
@@ -298,8 +297,8 @@
                         <div class="col-lg-4 col-sm-6">
                             <div class="analiz__item">
                                 <div class="analiz__left">
-                                    <div class="analiz__text1">Товары</div>
                                     <div class="analiz__text2">500000000 шт.</div>
+                                    <div class="analiz__text1">Товары</div>
                                 </div>
                                 <div class="analiz__right">
                                     <div id="sparkline-cat2"></div>
@@ -309,8 +308,8 @@
                         <div class="col-lg-4 col-sm-6">
                             <div class="analiz__item">
                                 <div class="analiz__left">
-                                    <div class="analiz__text1">Средняя цена за неделю</div>
                                     <div class="analiz__text2">555 руб.</div>
+                                    <div class="analiz__text1">Средняя цена за неделю</div>
                                 </div>
                                 <div class="analiz__right">
                                     <div id="sparkline-cat3"></div>
@@ -412,10 +411,38 @@
                         Продавцы
                     </div>
                     <div class="tabs__content">
-                        Тренды
+                        <div class="grafic">
+                            <div class="chart__wrap">
+                                <div id="trand-chart" class="chart"></div>
+                            </div>
+                        </div>
+                        <div class="tovar__stat__top">
+                            <div></div>
+                            <div class="two-btns">
+                                <button type="button" class="btn-bo">Избранное</button>
+                                <button type="button" class="btn-blue">Скачать в SCV</button>
+                            </div>
+                        </div>
+                        <div class="ag-theme-alpine" id="myGrid3" style="height: 475px;"></div>
                     </div>
                     <div class="tabs__content">
-                        Тренды по дням
+                        <div class="grafic">
+                            <div class="chart__wrap">
+                                <div id="trand-chart2" class="chart"></div>
+                            </div>
+                        </div>
+                        <div class="tovar__stat__top">
+                            <div class="free__times">
+                                <button>7 дней</button>
+                                <button class="active">14 дней</button>
+                                <button>30 дней</button>
+                            </div>
+                            <div class="two-btns">
+                                <button type="button" class="btn-bo">Избранное</button>
+                                <button type="button" class="btn-blue">Скачать в SCV</button>
+                            </div>
+                        </div>
+                        <div class="ag-theme-alpine" id="myGrid4" style="height: 475px;"></div>
                     </div>
                     <div class="tabs__content">
                         По складам
@@ -763,11 +790,162 @@
             })
         </script>
         <script>
+            // Тренды
+            // график продаж
+            var options = {
+                series: [{
+                    name: 'Продажи',
+                    data: [31, 40, 28, 51, 42, 109, 100]
+                }, {
+                    name: 'Остаток',
+                    data: [11, 32, 45, 12, 34, 52, 45]
+                }, {
+                    name: 'Цена',
+                    data: [11, 32, 45, 52, 34, 52, 33]
+                }, {
+                    name: 'Выручка',
+                    data: [11, 32, 45, 22, 34, 52, 22]
+                }],
+                yaxis: [{
+                    title: {
+                        text: ""
+                    },
+                }, {
+                    opposite: true,
+                    title: {
+                        text: ""
+                    }
+                }],
+                width: '100%',
+                chart: {
+                    height: 350,
+                    type: 'area',
+                    zoom: {
+                        enabled: false
+                    }
+                },
+                dataLabels: {
+                    enabled: false
+                },
+                stroke: {
+                    curve: 'smooth'
+                },
+                xaxis: {
+                    type: 'datetime',
+                    categories: ["2018-09-19T00:00:00.000Z", "2018-09-19T01:30:00.000Z", "2018-09-19T02:30:00.000Z", "2018-09-19T03:30:00.000Z", "2018-09-19T04:30:00.000Z", "2018-09-19T05:30:00.000Z", "2018-09-19T06:30:00.000Z"]
+                },
+                tooltip: {
+                    x: {
+                        format: 'dd/MM/yy HH:mm'
+                    },
+                },
+                legend: {
+                    position: 'right',
+                    verticalAlign: 'center',
+                    markers: {
+                        width: 30,
+                        height: 12,
+                        radius: 0,
+                    },
+                },
+
+                toolbar: {
+                    show: false,
+                },
+                responsive: [{
+                    breakpoint: 600,
+                    options: {
+                        legend: {
+                            horizontalAlign: 'left',
+                        }
+                    }
+                }]
+            };
+
+            var chart = new ApexCharts(document.querySelector("#trand-chart"), options);
+            chart.render();
+
+            // Тренды по дням
+            var options = {
+                series: [{
+                    name: 'Продажи',
+                    data: [31, 40, 28, 51, 42, 109, 100]
+                }, {
+                    name: 'Остаток',
+                    data: [11, 32, 45, 12, 34, 52, 45]
+                }, {
+                    name: 'Цена',
+                    data: [11, 32, 45, 52, 34, 52, 33]
+                }, {
+                    name: 'Выручка',
+                    data: [11, 32, 45, 22, 34, 52, 22]
+                }],
+                yaxis: [{
+                    title: {
+                        text: ""
+                    },
+                }, {
+                    opposite: true,
+                    title: {
+                        text: ""
+                    }
+                }],
+                width: '100%',
+                chart: {
+                    height: 350,
+                    type: 'area',
+                    zoom: {
+                        enabled: false
+                    }
+                },
+                dataLabels: {
+                    enabled: false
+                },
+                stroke: {
+                    curve: 'smooth'
+                },
+                xaxis: {
+                    type: 'datetime',
+                    categories: ["2018-09-19T00:00:00.000Z", "2018-09-19T01:30:00.000Z", "2018-09-19T02:30:00.000Z", "2018-09-19T03:30:00.000Z", "2018-09-19T04:30:00.000Z", "2018-09-19T05:30:00.000Z", "2018-09-19T06:30:00.000Z"]
+                },
+                tooltip: {
+                    x: {
+                        format: 'dd/MM/yy HH:mm'
+                    },
+                },
+                legend: {
+                    position: 'top',
+                    horizontalAlign: 'center',
+                    markers: {
+                        width: 30,
+                        height: 12,
+                        radius: 0,
+                    },
+                },
+
+                toolbar: {
+                    show: false,
+                },
+                responsive: [{
+                    breakpoint: 600,
+                    options: {
+                        legend: {
+                            horizontalAlign: 'left',
+                        }
+                    }
+                }]
+            };
+
+            var chart = new ApexCharts(document.querySelector("#trand-chart2"), options);
+            chart.render();
+        </script>
+        <script>
             // таблица
             var columnDefs = [{
                 field: 'Неделя',
                 checkboxSelection: true,
-                width: 100,
+                width: 220,
+                minWidth: 220,
                 cellRenderer: 'deltaIndicator',
                 filter: false
             }, {
@@ -873,9 +1051,97 @@
                 localeText: localeText,
             };
 
+            var gridOptions3 = {
+                defaultColDef: {
+                    editable: false,
+                    sortable: true,
+                    flex: 1,
+                    minWidth: 100,
+                    filter: true,
+                    floatingFilter: true,
+                    resizable: true,
+                },
+                columnDefs: columnDefs,
+                rowData: null,
+                rowSelection: 'multiple',
+                sideBar: {
+                    toolPanels: [{
+                        id: 'columns',
+                        labelDefault: 'Columns',
+                        labelKey: 'columns',
+                        iconKey: 'columns',
+                        toolPanel: 'agColumnsToolPanel',
+                        toolPanelParams: {
+                            suppressRowGroups: true,
+                            suppressValues: true,
+                            suppressPivots: true,
+                            suppressPivotMode: true,
+                            suppressSideButtons: true,
+                            suppressColumnFilter: false,
+                            suppressColumnSelectAll: false,
+                            suppressColumnExpandAll: false,
+                        },
+                    }, {
+                        id: 'filters',
+                        labelDefault: 'Filters',
+                        labelKey: 'filters',
+                        iconKey: 'filter',
+                        toolPanel: 'agFiltersToolPanel',
+                    }, ],
+                    position: 'right',
+                    defaultToolPanel: 'filters',
+                },
+                localeText: localeText,
+            };
+
+            var gridOptions4 = {
+                defaultColDef: {
+                    editable: false,
+                    sortable: true,
+                    flex: 1,
+                    minWidth: 100,
+                    filter: true,
+                    floatingFilter: true,
+                    resizable: true,
+                },
+                columnDefs: columnDefs,
+                rowData: null,
+                rowSelection: 'multiple',
+                sideBar: {
+                    toolPanels: [{
+                        id: 'columns',
+                        labelDefault: 'Columns',
+                        labelKey: 'columns',
+                        iconKey: 'columns',
+                        toolPanel: 'agColumnsToolPanel',
+                        toolPanelParams: {
+                            suppressRowGroups: true,
+                            suppressValues: true,
+                            suppressPivots: true,
+                            suppressPivotMode: true,
+                            suppressSideButtons: true,
+                            suppressColumnFilter: false,
+                            suppressColumnSelectAll: false,
+                            suppressColumnExpandAll: false,
+                        },
+                    }, {
+                        id: 'filters',
+                        labelDefault: 'Filters',
+                        labelKey: 'filters',
+                        iconKey: 'filter',
+                        toolPanel: 'agFiltersToolPanel',
+                    }, ],
+                    position: 'right',
+                    defaultToolPanel: 'filters',
+                },
+                localeText: localeText,
+            };
+
             function closeToolPanel() {
                 gridOptions.api.closeToolPanel();
                 gridOptions2.api.closeToolPanel();
+                gridOptions3.api.closeToolPanel();
+                gridOptions4.api.closeToolPanel();
             }
 
             document.addEventListener('DOMContentLoaded', function() {
@@ -885,13 +1151,21 @@
                 var gridDiv2 = document.querySelector('#myGrid2');
                 new agGrid.Grid(gridDiv2, gridOptions2);
 
+                var gridDiv3 = document.querySelector('#myGrid3');
+                new agGrid.Grid(gridDiv3, gridOptions3);
+
+                var gridDiv4 = document.querySelector('#myGrid4');
+                new agGrid.Grid(gridDiv4, gridOptions4);
+
                 agGrid
                     .simpleHttpRequest({
-                        url: './table.json',
+                        url: './libs/table.json',
                     })
                     .then(function(data) {
                         gridOptions.api.setRowData(data);
                         gridOptions2.api.setRowData(data);
+                        gridOptions3.api.setRowData(data);
+                        gridOptions4.api.setRowData(data);
                     });
                 closeToolPanel()
             });

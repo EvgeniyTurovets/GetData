@@ -76,13 +76,16 @@
     flex: 1;
 }
 
+.analiz__left div:first-child {
+    margin-bottom: 5px;
+}
+
 .analiz__text1 {
     font-weight: 500;
     font-size: 14px;
     line-height: 17px;
     /* identical to box height */
     color: #000000;
-    margin-bottom: 5px;
 }
 
 .analiz__text2 {
@@ -805,4 +808,23 @@
 
 .grafic-2 .pie-chart {
     margin-bottom: 35px;
+}
+
+.tovar__stat__top .two-btns {
+    display: flex;
+    button {
+        padding: 9px 11px;
+        margin-left: 14px;
+    }
+}
+
+@media(max-width: 767px) {
+    .tovar__stat__top .two-btns {
+        flex-direction: column;
+        align-items: flex-start;
+        button {
+            margin-bottom: 14px;
+            margin-left: 0;
+        }
+    }
 }
