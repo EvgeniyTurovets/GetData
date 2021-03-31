@@ -481,6 +481,22 @@
 
     <!-- main.js -->
     <script src="./js/main.js"></script>
+
+    <style>
+        .tooltip-inner {
+            background-color: var(--orang);
+            color: #FFFFFF;
+        }
+        
+        .bs-tooltip-auto[data-popper-placement^=top] .tooltip-arrow::before,
+        .bs-tooltip-top .tooltip-arrow::before {
+            border-top-color: var(--orang);
+        }
+        
+        .tooltip.show {
+            opacity: 1;
+        }
+    </style>
     <script>
         var options = {
             series: [{

@@ -198,7 +198,7 @@
 .top-approve {
     display: flex;
     justify-content: center;
-    margin-bottom: 27px;
+    margin-bottom: 30px;
     button {
         padding: 13px 49px;
         font-weight: 500;
@@ -214,9 +214,17 @@
     padding-bottom: 50px;
 }
 
+.top-table td {
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+    letter-spacing: 0.02em;
+    color: #252525;
+}
+
 .top-table .t-cat {
-    width: 335px;
     display: flex;
+    max-width: 280px;
     align-items: flex-start;
     font-weight: 500;
     font-size: 12px;
@@ -226,5 +234,198 @@
     color: #252525;
     img {
         margin-right: 9px;
+    }
+}
+
+.top-table__flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .free__times {
+        padding-bottom: 10px;
+    }
+}
+
+.top-table .tablesorter-header-inner {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+    letter-spacing: 0.02em;
+    color: #252525;
+    white-space: nowrap;
+}
+
+.top-table .tablesorter-header-inner:after {
+    display: none;
+}
+
+.top-table .sort {
+    display: block;
+    margin-left: 3px;
+    width: 12px;
+    height: 12px;
+    background-image: url('../img/top/sort.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-top: 2px;
+    cursor: pointer;
+}
+
+.top-table .info {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 12px;
+    height: 12px;
+    transform: translate(50%, -50%);
+    background-image: url('../img/top/info.svg');
+    cursor: pointer;
+}
+
+.top-table .info:hover .myTooltip {
+    display: block;
+}
+
+.top-table .header,
+.top-table .tablesorter-header {
+    padding: 15px 13px;
+}
+
+.top-table {
+    .tablesorter-header.tablesorter-headerAsc .sort {
+        background-image: url('../img/top/sort-asc.svg');
+    }
+    .tablesorter-header.tablesorter-headerDesc .sort {
+        background-image: url('../img/top/sort-desc.svg');
+    }
+}
+
+.top-table.table>:not(caption)>*>* {
+    padding: 13px 10px;
+}
+
+.top-table tr:nth-child(2n) td {
+    background: #F8F8F8;
+}
+
+.tablesorter-header {
+    cursor: pointer;
+}
+
+.top-table-active {
+    width: 16px;
+    height: 16px;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    position: relative;
+    cursor: pointer;
+}
+
+.top-table-active:hover .myTooltip {
+    display: block;
+}
+
+.top-table-active.del {
+    background-image: url('../img/top/del.svg');
+}
+
+.top-table-active.add {
+    background-image: url('../img/top/add.svg');
+}
+
+.top-table-active.in {
+    background-image: url('../img/top/in.svg');
+}
+
+.myTooltip {
+    position: absolute;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 15px;
+    /* identical to box height */
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: #252525;
+    max-width: 170px;
+    width: max-content;
+    padding: 8px 5px;
+    display: none;
+    white-space: pre-wrap;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: #252525;
+    font-weight: 400;
+    z-index: 5;
+}
+
+.myTooltip.left {
+    left: -5px;
+    top: 50%;
+    transform: translate(-100%, -50%);
+}
+
+.myTooltip.top {
+    top: -5px;
+    left: 50%;
+    transform: translate(-50%, -100%);
+}
+
+.myTooltip:after {
+    content: "";
+    display: block;
+    width: 4px;
+    height: 4px;
+    position: absolute;
+    background-color: #fff;
+}
+
+.myTooltip.left:after {
+    top: 50%;
+    right: 0;
+    transform: translate(50%, -50%) rotate(45deg);
+}
+
+.myTooltip.top:after {
+    bottom: 0;
+    right: 50%;
+    transform: translate(50%, 50%) rotate(45deg);
+}
+
+@media(max-width: 1050px) {
+    .top-table__wrap {
+        overflow: auto;
+        .myTooltip.top:after {
+            bottom: auto;
+            top: 0;
+            right: 50%;
+            transform: translate(50%, -50%) rotate(45deg);
+        }
+        .myTooltip.top {
+            top: auto;
+            bottom: -5px;
+            left: 50%;
+            transform: translate(-50%, 100%);
+        }
+    }
+    .top-table__flex {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        .free__times {
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+        .categori__tabs__wrap {
+            margin-bottom: 15px;
+            width: 100%;
+        }
     }
 }

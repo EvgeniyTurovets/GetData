@@ -133,20 +133,6 @@
     color: #252525;
 }
 
-.tooltip-inner {
-    background-color: var(--orang);
-    color: #FFFFFF;
-}
-
-.bs-tooltip-auto[data-popper-placement^=top] .tooltip-arrow::before,
-.bs-tooltip-top .tooltip-arrow::before {
-    border-top-color: var(--orang);
-}
-
-.tooltip.show {
-    opacity: 1;
-}
-
 .apexcharts-toolbar {
     display: none!important;
 }

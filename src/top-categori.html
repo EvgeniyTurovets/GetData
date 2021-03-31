@@ -13,6 +13,7 @@
     <link rel='stylesheet' type='text/css' media='screen' href='./libs/jquery/jq-ui.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='./libs/bootstrap.min.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='./libs/selectric/selectric.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='./libs/tooltip/tooltip.css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css" />
 
 
@@ -442,52 +443,90 @@
                     </div>
                 </div>
             </div>
+
             <div class="top-approve">
                 <button class="btn-or">Применить</button>
             </div>
 
             <div class="tabs">
-                <div class="categori__tabs__wrap">
-                    <ul class="tabs__caption">
-                        <li class="tab active">Wildberries</li>
-                        <li class="tab">Ozon</li>
-                        <li class="tab">Яндекс Маркет</li>
-                    </ul>
+                <div class="top-table__flex">
+                    <div class="categori__tabs__wrap">
+                        <ul class="tabs__caption">
+                            <li class="tab active">Wildberries</li>
+                            <li class="tab">Ozon</li>
+                            <li class="tab">Яндекс Маркет</li>
+                        </ul>
+                    </div>
+                    <div class="free__times">
+                        <button>7 дней</button>
+                        <button class="active">14 дней</button>
+                        <button>30 дней</button>
+                    </div>
                 </div>
+
                 <div class="tabs__content active">
-                    <div class="table-responsive dash-social">
+                    <div class="top-table__wrap">
                         <table id="datatable" class="table top-table table-bordered">
                             <thead class="thead-light">
                                 <tr>
-                                    <th>Категория</th>
-                                    <th>Продавцов</th>
-                                    <th>Брендов</th>
-                                    <th>Товаров</th>
-                                    <th>Средний чек</th>
-                                    <th>Продаж</th>
-                                    <th>Выручка</th>
-                                    <th>TstS</th>
-                                    <th>TstS</th>
+                                    <th data-sorter="false">Категория</th>
+                                    <th>Продавцов
+                                        <div class="sort"></div>
+                                    </th>
+                                    <th>Брендов
+                                        <div class="sort"></div>
+                                    </th>
+                                    <th>Товаров
+                                        <div class="sort"></div>
+                                    </th>
+                                    <th>Средний чек
+                                        <div class="sort"></div>
+                                    </th>
+                                    <th>Продаж
+                                        <div class="sort"></div>
+                                    </th>
+                                    <th>Выручка
+                                        <div class="sort"></div>
+                                    </th>
+                                    <th>TstS
+                                        <div class="sort"></div>
+                                        <div class="info">
+                                            <span class="myTooltip top">Количество продаж, приходящего на одного продавца</span>
+                                        </div>
+                                    </th>
+                                    <th>TstS
+                                        <div class="sort"></div>
+                                        <div class="info">
+                                            <span class="myTooltip top">Количество продаж, приходящего на одного продавца</span>
+                                        </div>
+                                    </th>
+                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>
-                                        <div class="t-cat"><img src="./img/top/1.png">Электронные сигареты и товары для курения</div>
+                                        <div class="t-cat"><img src="./img/top/1.png">Электронные сигареты и товары</div>
                                     </td>
                                     <td>1</td>
                                     <td>1</td>
+                                    <td>2346</td>
+                                    <td>0 руб.</td>
+                                    <td>1</td>
+                                    <td>0 руб.</td>
                                     <td>1</td>
                                     <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
+                                    <td>
+                                        <div class="top-table-active add">
+                                            <span class="myTooltip left">Добавить в избранное</span>
+                                        </div>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <div class="t-cat"><img src="./img/top/1.png">Электронные сигареты и товары для курения</div>
+                                        <div class="t-cat"><img src="./img/top/1.png">Электронные сигареты и товары</div>
                                     </td>
+                                    <td>2</td>
                                     <td>1</td>
                                     <td>1</td>
                                     <td>1</td>
@@ -495,11 +534,70 @@
                                     <td>1</td>
                                     <td>1</td>
                                     <td>1</td>
+                                    <td>
+                                        <div class="top-table-active in">
+                                            <span class="myTooltip left">В избранном</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="t-cat"><img src="./img/top/1.png">Электронные сигареты и товары</div>
+                                    </td>
+                                    <td>3</td>
                                     <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>
+                                        <div class="top-table-active in">
+                                            <span class="myTooltip left">В избранном</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="t-cat"><img src="./img/top/1.png">Электронные сигареты и товары</div>
+                                    </td>
+                                    <td>4</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>
+                                        <div class="top-table-active in">
+                                            <span class="myTooltip left">В избранном</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="t-cat"><img src="./img/top/1.png">Электронные сигареты и товары</div>
+                                    </td>
+                                    <td>5</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>
+                                        <div class="top-table-active in">
+                                            <span class="myTooltip left">В избранном</span>
+                                        </div>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
+
                 </div>
                 <div class="tabs__content">
                     Ozon
@@ -587,6 +685,7 @@
     <script src="./libs/bootstrap.bundle.min.js"></script>
     <script src="./libs/selectric/selectric.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"></script>
+    <script src="./libs/tooltip/tooltip.js"></script>
     <script src="./libs/datatables/jquery.tablesorter.min.js" class=""></script>
 
     <!-- main.js -->
@@ -599,8 +698,7 @@
                 step: 1000,
             });
 
-            // Datatable
-            $("#datatable").tablesorter();
+            $('#datatable').tablesorter()
         })
     </script>
 </body>
