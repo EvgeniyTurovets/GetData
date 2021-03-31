@@ -562,28 +562,45 @@
         })
 
         // таблица
+        class MedalCellRenderer {
+            constructor() {}
+
+            // init method gets the details of the cell to be renderer
+            init(params) {
+                this.eGui = document.createElement('img');
+                this.eGui.setAttribute('src', params.value)
+            }
+
+            getGui() {
+                return this.eGui;
+            }
+        }
+
         var columnDefs = [{
             field: 'Неделя',
             checkboxSelection: true,
-            width: 220,
-            minWidth: 220,
-            cellRenderer: 'deltaIndicator',
+            width: 100,
+            cellRenderer: 'medalCellRenderer',
             filter: false
         }, {
             field: 'Продаж',
             width: 100,
             filter: 'agNumberColumnFilter',
+            flex: 1,
         }, {
             field: 'Выручка',
             width: 100,
+            flex: 1,
             filter: 'agNumberColumnFilter',
         }, {
             field: 'Товаров',
             width: 100,
+            flex: 1,
             filter: 'agNumberColumnFilter',
         }, {
             field: 'Продавцов',
             width: 100,
+            flex: 1,
             filter: 'agNumberColumnFilter',
         }, ];
 
@@ -593,8 +610,7 @@
             defaultColDef: {
                 editable: false,
                 sortable: true,
-                flex: 1,
-                minWidth: 100,
+                minWidth: 50,
                 filter: true,
                 floatingFilter: true,
                 resizable: true,
@@ -629,6 +645,9 @@
                 position: 'right',
                 defaultToolPanel: 'filters',
             },
+            components: {
+                medalCellRenderer: MedalCellRenderer
+            },
             localeText: localeText,
         };
 
@@ -642,7 +661,7 @@
 
             agGrid
                 .simpleHttpRequest({
-                    url: './libs/table.json',
+                    url: './libs/table-img.json',
                 })
                 .then(function(data) {
                     gridOptions.api.setRowData(data);
