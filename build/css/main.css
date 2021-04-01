@@ -2077,6 +2077,19 @@ h1 {
 .table tbody td:last-child {
   border-right-width: 1px; }
 
+.ag-side-button-icon-wrapper .ag-icon.ag-icon-custom-stats {
+  background-position: center;
+  width: 15px;
+  height: 15px;
+  background-repeat: no-repeat;
+  background-image: url("../img/top/settings.svg"); }
+
+.ag-theme-alpine .ag-side-button:hover .ag-icon.ag-icon-custom-stats {
+  background-image: url("../img/top/settings-h.svg"); }
+
+.ag-theme-alpine .ag-side-button.ag-selected .ag-icon.ag-icon-custom-stats {
+  background-image: url("../img/top/settings-h.svg"); }
+
 .cart {
   padding-bottom: 50px;
   font-size: 14px; }
