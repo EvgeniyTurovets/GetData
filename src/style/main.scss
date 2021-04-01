@@ -2266,6 +2266,23 @@ h1 {
     background-repeat: no-repeat;
 }
 
+.ag-theme-alpine .ag-input-field-input {
+    border-radius: 5px!important;
+}
+
+.table tbody td {
+    border-right-width: 0;
+    border-left-width: 0;
+}
+
+.table tbody td:first-child {
+    border-left-width: 1px;
+}
+
+.table tbody td:last-child {
+    border-right-width: 1px;
+}
+
 @import './template/cart.scss';
 @import './template/auth.scss';
 @import './template/lk.scss';

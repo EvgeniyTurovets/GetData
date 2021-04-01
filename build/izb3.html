@@ -13,10 +13,7 @@
     <link rel='stylesheet' type='text/css' media='screen' href='./libs/jquery/jq-ui.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='./libs/bootstrap.min.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='./libs/selectric/selectric.css'>
-    <link rel='stylesheet' type='text/css' media='screen' href='./libs/tooltip/tooltip.css'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css" />
-
-
+    <link rel='stylesheet' type='text/css' media='screen' href='./libs/datapicker/css/daterangepicker.css'>
     <!-- стили -->
     <link rel='stylesheet' type='text/css' media='screen' href='./css/main.min.css'>
 </head>
@@ -194,7 +191,6 @@
             </li>
         </ul>
     </nav>
-
     <div class="content">
         <section class="s-search">
             <form>
@@ -254,424 +250,159 @@
             </div>
         </div>
         <div class="wrap">
-            <h1>Топ товаров - Лидер продаж</h1>
+            <h1>Избранное</h1>
         </div>
-    </div>
-    <div class="top-page">
-        <div class="wrap">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="top__col">
-                        <div class="top__col__title">Расширенные фильтры</div>
-                        <div class="top__checkbox">
-                            <div class="top__checkbox__title">Категории</div>
-                            <div class="top__checkbox__wrap">
-                                <label>
-                                    <input type="checkbox">
-                                    <span></span>
-                                    Premium
-                                </label>
-                                <label>
-                                    <input type="checkbox">
-                                    <span></span>
-                                    Автотовары
-                                </label>
-                                <label>
-                                    <input type="checkbox">
-                                    <span></span>
-                                    Аксессуары
-                                </label>
-                                <label>
-                                    <input type="checkbox">
-                                    <span></span>
-                                    Новинки
-                                </label>
-
-                                <label>
-                                    <input type="checkbox">
-                                    <span></span>
-                                    Бытовая техника
-                                </label>
-                                <label>
-                                    <input type="checkbox">
-                                    <span></span>
-                                    Детям
-                                </label>
-                                <label>
-                                    <input type="checkbox">
-                                    <span></span>
-                                    Для ремонта
-                                </label>
-                                <label>
-                                    <input type="checkbox">
-                                    <span></span>
-                                    Продукты
-                                </label>
-
-                                <label>
-                                    <input type="checkbox">
-                                    <span></span>
-                                    Дом
-                                </label>
-                                <label>
-                                    <input type="checkbox">
-                                    <span></span>
-                                    Женщинам
-                                </label>
-                                <label>
-                                    <input type="checkbox">
-                                    <span></span>
-                                    Здоровье
-                                </label>
-                                <label>
-                                    <input type="checkbox">
-                                    <span></span>
-                                    Тренды
-                                </label>
-
-                                <label>
-                                    <input type="checkbox">
-                                    <span></span>
-                                    Зоотовары
-                                </label>
-                                <label>
-                                    <input type="checkbox">
-                                    <span></span>
-                                    Игрушки
-                                </label>
-                                <label>
-                                    <input type="checkbox">
-                                    <span></span>
-                                    Канцтовары
-                                </label>
-                                <label>
-                                    <input type="checkbox">
-                                    <span></span>
-                                    Обувь
-                                </label>
-
-                                <label>
-                                    <input type="checkbox">
-                                    <span></span>
-                                    Книги
-                                </label>
-                                <label>
-                                    <input type="checkbox">
-                                    <span></span>
-                                    Красота
-                                </label>
-                                <label>
-                                    <input type="checkbox">
-                                    <span></span>
-                                    Мужчинам
-                                </label>
-                                <label>
-                                    <input type="checkbox">
-                                    <span></span>
-                                    Спорт
-                                </label>
-                            </div>
+        <div class="izb">
+            <div class="wrap">
+                <div class="izb3__wrap1">
+                    <label>
+                        <input type="checkbox">
+                        <div class="big-checkbox">
+                            <span>FBO</span>
+                            <span>FBS</span>
                         </div>
-                        <div class="top__col__bot">
-                            <div class="top__checkbox">
-                                <div class="top__checkbox__title">Вид продажи</div>
-                                <div class="top__checkbox__wrap">
-                                    <label>
-                                        <input type="checkbox">
-                                        <span></span>
-                                        FBA
-                                    </label>
-                                    <label>
-                                        <input type="checkbox">
-                                        <span></span>
-                                        FBM
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="top__checkbox">
-                                <div class="top__checkbox__title">Вид продажи</div>
-                                <div class="top__checkbox__wrap">
-                                    <label>
-                                        <input type="checkbox">
-                                        <span></span>
-                                        FBA
-                                    </label>
-                                    <label>
-                                        <input type="checkbox">
-                                        <span></span>
-                                        FBM
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    </label>
+
+                    <button class="btn-dblue">Добавить товар</button>
                 </div>
-                <div class="col-lg-6">
-                    <div class="top__col">
-                        <div class="top__col__title">Фильтр</div>
-                        <div class="range__row">
-                            <div class="range__row__label">Рейтинг</div>
-                            <div class="js-range-slider__wrap">
-                                <input type="text" class="js-range-slider" name="my_range" value="" data-grid="true" data-min="1000" data-max="1000000" />
-                            </div>
-                        </div>
-                        <div class="range__row">
-                            <div class="range__row__label">Цена</div>
-                            <div class="js-range-slider__wrap">
-                                <input type="text" class="js-range-slider" name="my_range" value="" data-grid="true" data-min="1000" data-max="1000000" />
-                            </div>
-                        </div>
-                        <div class="range__row">
-                            <div class="range__row__label">Заказы<br> в день</div>
-                            <div class="js-range-slider__wrap">
-                                <input type="text" class="js-range-slider" name="my_range" value="" data-grid="true" data-min="1000" data-max="1000000" />
-                            </div>
-                        </div>
-                        <div class="range__row">
-                            <div class="range__row__label">Выручка<br> в день</div>
-                            <div class="js-range-slider__wrap">
-                                <input type="text" class="js-range-slider" name="my_range" value="" data-grid="true" data-min="1000" data-max="1000000" />
-                            </div>
-                        </div>
-                        <div class="range__row">
-                            <div class="range__row__label">Количество отзывов
-                            </div>
-                            <div class="js-range-slider__wrap">
-                                <input type="text" class="js-range-slider" name="my_range" value="" data-grid="true" data-min="1000" data-max="1000000" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="top-approve">
-                <button class="btn-or">Применить</button>
-            </div>
-
-            <div class="tabs">
-                <div class="top-table__flex">
-                    <div class="categori__tabs__wrap">
-                        <ul class="tabs__caption">
-                            <li class="tab active">Wildberries</li>
-                            <li class="tab">Ozon</li>
-                            <li class="tab">Яндекс Маркет</li>
-                        </ul>
-                    </div>
-                    <div class="free__times">
-                        <button>7 дней</button>
-                        <button class="active">14 дней</button>
-                        <button>30 дней</button>
+                <div class="izb3__wrap2">
+                    <div class="dif-table__top">
+                        <input id="tovar-stat" value="03.18.2013 - 03.23.2013" readonly="">
                     </div>
                 </div>
 
-                <div class="tabs__content active">
-                    <div class="top-table__wrap">
-                        <table id="datatable" class="table top-table table-bordered">
-                            <thead class="thead-light">
-                                <tr>
-                                    <th data-sorter="false">Категория</th>
-                                    <th>Продавцов
-                                        <div class="sort"></div>
-                                    </th>
-                                    <th>Брендов
-                                        <div class="sort"></div>
-                                    </th>
-                                    <th>Товаров
-                                        <div class="sort"></div>
-                                    </th>
-                                    <th>Средний чек
-                                        <div class="sort"></div>
-                                    </th>
-                                    <th>Продаж
-                                        <div class="sort"></div>
-                                    </th>
-                                    <th>Выручка
-                                        <div class="sort"></div>
-                                    </th>
-                                    <th>TstS
-                                        <div class="sort"></div>
-                                        <div class="info">
-                                            <span class="myTooltip top">Количество продаж, приходящего на одного продавца</span>
-                                        </div>
-                                    </th>
-                                    <th>TstS
-                                        <div class="sort"></div>
-                                        <div class="info">
-                                            <span class="myTooltip top">Количество продаж, приходящего на одного продавца</span>
-                                        </div>
-                                    </th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <div class="t-cat"><img src="./img/top/1.png">Электронные сигареты и товары</div>
-                                    </td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>2346</td>
-                                    <td>0 руб.</td>
-                                    <td>1</td>
-                                    <td>0 руб.</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>
-                                        <div class="top-table-active add">
-                                            <span class="myTooltip left">Добавить в избранное</span>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="t-cat"><img src="./img/top/1.png">Электронные сигареты и товары</div>
-                                    </td>
-                                    <td>2</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>
-                                        <div class="top-table-active in">
-                                            <span class="myTooltip left">В избранном</span>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="t-cat"><img src="./img/top/1.png">Электронные сигареты и товары</div>
-                                    </td>
-                                    <td>3</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>
-                                        <div class="top-table-active in">
-                                            <span class="myTooltip left">В избранном</span>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="t-cat"><img src="./img/top/1.png">Электронные сигареты и товары</div>
-                                    </td>
-                                    <td>4</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>
-                                        <div class="top-table-active in">
-                                            <span class="myTooltip left">В избранном</span>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="t-cat"><img src="./img/top/1.png">Электронные сигареты и товары</div>
-                                    </td>
-                                    <td>5</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>
-                                        <div class="top-table-active in">
-                                            <span class="myTooltip left">В избранном</span>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                <div class="izb-table2 top-table__wrap">
+                    <table id="datatable" class="table top-table table-bordered">
+                        <thead class="thead-light">
+                            <tr>
+                                <th data-sorter="false">Категория</th>
+                                <th>Продавцов
+                                    <div class="sort"></div>
+                                </th>
+                                <th>Брендов
+                                    <div class="sort"></div>
+                                </th>
+                                <th>Товаров
+                                    <div class="sort"></div>
+                                </th>
+                                <th>Средний чек
+                                    <div class="sort"></div>
+                                </th>
+                                <th>Продаж
+                                    <div class="sort"></div>
+                                </th>
+                                <th>Оборот
+                                    <div class="sort"></div>
+                                </th>
+                                <th data-sorter="false">Динамика (шт)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="izb-text">
+                                        <div class="t-cat"><img src="./img/top/1.png">Женщины / Одежда / Верхняя одежда</div>
+                                    </div>
 
+                                </td>
+                                <td>
+                                    <div class="izb-text">3456</div>
+                                </td>
+                                <td>
+                                    <div class="izb-text">3454</div>
+                                </td>
+                                <td>
+                                    <div class="izb-text">12345</div>
+                                </td>
+                                <td>
+                                    <div class="izb-text">4, 345 руб.</div>
+                                </td>
+                                <td>
+                                    <div class="izb-text">12345</div>
+                                </td>
+                                <td>
+                                    <div class="izb-text">1234567 руб.</div>
+                                </td>
+                                <td>
+                                    <div class="izb3__actions">
+                                        <div id="sparkline-cat3"></div>
+                                        <div class="top-table-active del"></div>
+                                    </div>
+
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-                <div class="tabs__content">
-                    Ozon
-                </div>
-                <div class="tabs__content">
-                    Яндекс Маркет
-                </div>
+
             </div>
         </div>
+
     </div>
 
-    <footer class="footer">
-        <div class="wrap">
-            <div class="footer__content">
-                <div class="footer__row">
-                    <div class="footer__item">
-                        <h2 class="footer__title">Get<span class="text__color">Data</span></h2>
-                        <span class="footer__subtitle">Выберите самые выгодные товары 
+    <footer class="footer ">
+        <div class="wrap ">
+            <div class="footer__content ">
+                <div class="footer__row ">
+                    <div class="footer__item ">
+                        <h2 class="footer__title ">Get<span class="text__color ">Data</span></h2>
+                        <span class="footer__subtitle ">Выберите самые выгодные товары 
                   для продажи на Wildberries в 1 клик!</span>
-                        <span class="footer__name">ИП Клепиков Д.С.</span>
-                        <ul class="footer__social-menu">
-                            <li class="footer__social-list">
-                                <a href="#" class="footer__social-link">
-                                    <img src="./img/main/tg.svg" alt="social-link">
+                        <span class="footer__name ">ИП Клепиков Д.С.</span>
+                        <ul class="footer__social-menu ">
+                            <li class="footer__social-list ">
+                                <a href="# " class="footer__social-link ">
+                                    <img src="./img/main/tg.svg " alt="social-link ">
                                 </a>
                             </li>
-                            <li class="footer__social-list">
-                                <a href="#" class="footer__social-link">
-                                    <img src="./img/main/fb.svg" alt="social-link">
+                            <li class="footer__social-list ">
+                                <a href="# " class="footer__social-link ">
+                                    <img src="./img/main/fb.svg " alt="social-link ">
                                 </a>
                             </li>
-                            <li class="footer__social-list">
-                                <a href="#" class="footer__social-link">
-                                    <img src="./img/main/you.svg" alt="social-link">
+                            <li class="footer__social-list ">
+                                <a href="# " class="footer__social-link ">
+                                    <img src="./img/main/you.svg " alt="social-link ">
                                 </a>
                             </li>
-                            <li class="footer__social-list">
-                                <a href="#" class="footer__social-link">
-                                    <img src="./img/main/tk.svg" alt="social-link">
+                            <li class="footer__social-list ">
+                                <a href="# " class="footer__social-link ">
+                                    <img src="./img/main/tk.svg " alt="social-link ">
                                 </a>
                             </li>
                         </ul>
                     </div>
-                    <div class="footer__item">
-                        <h2 class="footer__title">Наши услуги</h2>
-                        <ul class="footer__nav-menu">
-                            <li class="footer__nav-list">
-                                <a href="#services" class="footer__nav-link scroll-to">Продавцам</a>
+                    <div class="footer__item ">
+                        <h2 class="footer__title ">Наши услуги</h2>
+                        <ul class="footer__nav-menu ">
+                            <li class="footer__nav-list ">
+                                <a href="#services " class="footer__nav-link scroll-to ">Продавцам</a>
                             </li>
-                            <li class="footer__nav-list">
-                                <a href="#services" class="footer__nav-link scroll-to">Производителям и представителям брендов</a>
+                            <li class="footer__nav-list ">
+                                <a href="#services " class="footer__nav-link scroll-to ">Производителям и представителям брендов</a>
                             </li>
-                            <li class="footer__nav-list">
-                                <a href="#services" class="footer__nav-link scroll-to">Интернет-магазинам</a>
+                            <li class="footer__nav-list ">
+                                <a href="#services " class="footer__nav-link scroll-to ">Интернет-магазинам</a>
                             </li>
                         </ul>
                     </div>
-                    <div class="footer__item">
-                        <h2 class="footer__title">Информация</h2>
-                        <ul class="footer__nav-menu">
-                            <li class="footer__nav-list">
-                                <a href="#" class="footer__nav-link">Пользовательское соглашение</a>
+                    <div class="footer__item ">
+                        <h2 class="footer__title ">Информация</h2>
+                        <ul class="footer__nav-menu ">
+                            <li class="footer__nav-list ">
+                                <a href="# " class="footer__nav-link ">Пользовательское соглашение</a>
                             </li>
-                            <li class="footer__nav-list">
-                                <a href="#" class="footer__nav-link">Политика оплаты и возврата</a>
+                            <li class="footer__nav-list ">
+                                <a href="# " class="footer__nav-link ">Политика оплаты и возврата</a>
                             </li>
-                            <li class="footer__nav-list">
-                                <a href="#" class="footer__nav-link">Партнерская программа</a>
+                            <li class="footer__nav-list ">
+                                <a href="# " class="footer__nav-link ">Партнерская программа</a>
                             </li>
-                            <li class="footer__nav-list">
-                                <a href="#" class="footer__nav-link">API документация</a>
+                            <li class="footer__nav-list ">
+                                <a href="# " class="footer__nav-link ">API документация</a>
                             </li>
-                            <li class="footer__nav-list">
-                                <a href="#price" class="footer__nav-link">Тарифы</a>
+                            <li class="footer__nav-list ">
+                                <a href="#price " class="footer__nav-link ">Тарифы</a>
                             </li>
                         </ul>
                     </div>
@@ -684,21 +415,49 @@
     <script src="./libs/jquery/jq-ui.js"></script>
     <script src="./libs/bootstrap.bundle.min.js"></script>
     <script src="./libs/selectric/selectric.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"></script>
-    <script src="./libs/tooltip/tooltip.js"></script>
+    <script src="./libs/datapicker/js/moment.min.js"></script>
+    <script src="./libs/datapicker/js/daterangepicker.js"></script>
     <script src="./libs/datatables/jquery.tablesorter.min.js"></script>
-
+    <script src="./libs/sparklines-chart/jquery.sparkline.min.js"></script>
+    <script src="./libs/ag-table/ag-grid-lang.js"></script>
+    <script src="./libs/ag-table/ag-grid.js"></script>
     <!-- main.js -->
     <script src="./js/main.js"></script>
 
-    <!-- скрипты топа -->
     <script>
         $(function() {
-            $(".js-range-slider").ionRangeSlider({
-                step: 1000,
+            $('#datatable').tablesorter()
+
+
+            $('#tovar-stat').daterangepicker({
+                locale: {
+                    "format": "MM.DD.YYYY",
+                    "separator": " - ",
+                    "applyLabel": "Применить",
+                    "cancelLabel": "Закрыть",
+                    "fromLabel": "От",
+                    "toLabel": "До",
+                    "customRangeLabel": "Custom",
+                    "weekLabel": "W",
+                    "daysOfWeek": ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+                    "monthNames": ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+                    "firstDay": 1
+                },
+                opens: 'right',
+                drops: 'down'
+            }, function(start, end, label) {
+                console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
             });
 
-            $('#datatable').tablesorter()
+            $('#sparkline-cat3').sparkline([6, 8, 10, 9, 8], {
+                type: 'bar',
+                height: '26',
+                width: '36',
+                barWidth: '7',
+                resize: true,
+                barSpacing: '1',
+                barColor: '#7379F8'
+            });
         })
     </script>
 </body>

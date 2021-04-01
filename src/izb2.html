@@ -13,10 +13,7 @@
     <link rel='stylesheet' type='text/css' media='screen' href='./libs/jquery/jq-ui.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='./libs/bootstrap.min.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='./libs/selectric/selectric.css'>
-    <link rel='stylesheet' type='text/css' media='screen' href='./libs/tooltip/tooltip.css'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css" />
-
-
+    <link rel='stylesheet' type='text/css' media='screen' href='./libs/datapicker/css/daterangepicker.css'>
     <!-- стили -->
     <link rel='stylesheet' type='text/css' media='screen' href='./css/main.min.css'>
 </head>
@@ -194,7 +191,6 @@
             </li>
         </ul>
     </nav>
-
     <div class="content">
         <section class="s-search">
             <form>
@@ -254,424 +250,146 @@
             </div>
         </div>
         <div class="wrap">
-            <h1>Топ товаров - Лидер продаж</h1>
+            <h1>Избранное</h1>
         </div>
-    </div>
-    <div class="top-page">
-        <div class="wrap">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="top__col">
-                        <div class="top__col__title">Расширенные фильтры</div>
-                        <div class="top__checkbox">
-                            <div class="top__checkbox__title">Категории</div>
-                            <div class="top__checkbox__wrap">
-                                <label>
-                                    <input type="checkbox">
-                                    <span></span>
-                                    Premium
-                                </label>
-                                <label>
-                                    <input type="checkbox">
-                                    <span></span>
-                                    Автотовары
-                                </label>
-                                <label>
-                                    <input type="checkbox">
-                                    <span></span>
-                                    Аксессуары
-                                </label>
-                                <label>
-                                    <input type="checkbox">
-                                    <span></span>
-                                    Новинки
-                                </label>
-
-                                <label>
-                                    <input type="checkbox">
-                                    <span></span>
-                                    Бытовая техника
-                                </label>
-                                <label>
-                                    <input type="checkbox">
-                                    <span></span>
-                                    Детям
-                                </label>
-                                <label>
-                                    <input type="checkbox">
-                                    <span></span>
-                                    Для ремонта
-                                </label>
-                                <label>
-                                    <input type="checkbox">
-                                    <span></span>
-                                    Продукты
-                                </label>
-
-                                <label>
-                                    <input type="checkbox">
-                                    <span></span>
-                                    Дом
-                                </label>
-                                <label>
-                                    <input type="checkbox">
-                                    <span></span>
-                                    Женщинам
-                                </label>
-                                <label>
-                                    <input type="checkbox">
-                                    <span></span>
-                                    Здоровье
-                                </label>
-                                <label>
-                                    <input type="checkbox">
-                                    <span></span>
-                                    Тренды
-                                </label>
-
-                                <label>
-                                    <input type="checkbox">
-                                    <span></span>
-                                    Зоотовары
-                                </label>
-                                <label>
-                                    <input type="checkbox">
-                                    <span></span>
-                                    Игрушки
-                                </label>
-                                <label>
-                                    <input type="checkbox">
-                                    <span></span>
-                                    Канцтовары
-                                </label>
-                                <label>
-                                    <input type="checkbox">
-                                    <span></span>
-                                    Обувь
-                                </label>
-
-                                <label>
-                                    <input type="checkbox">
-                                    <span></span>
-                                    Книги
-                                </label>
-                                <label>
-                                    <input type="checkbox">
-                                    <span></span>
-                                    Красота
-                                </label>
-                                <label>
-                                    <input type="checkbox">
-                                    <span></span>
-                                    Мужчинам
-                                </label>
-                                <label>
-                                    <input type="checkbox">
-                                    <span></span>
-                                    Спорт
-                                </label>
-                            </div>
-                        </div>
-                        <div class="top__col__bot">
-                            <div class="top__checkbox">
-                                <div class="top__checkbox__title">Вид продажи</div>
-                                <div class="top__checkbox__wrap">
-                                    <label>
-                                        <input type="checkbox">
-                                        <span></span>
-                                        FBA
-                                    </label>
-                                    <label>
-                                        <input type="checkbox">
-                                        <span></span>
-                                        FBM
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="top__checkbox">
-                                <div class="top__checkbox__title">Вид продажи</div>
-                                <div class="top__checkbox__wrap">
-                                    <label>
-                                        <input type="checkbox">
-                                        <span></span>
-                                        FBA
-                                    </label>
-                                    <label>
-                                        <input type="checkbox">
-                                        <span></span>
-                                        FBM
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        <div class="izb">
+            <div class="wrap">
+                <div class="izb__wrap3">
+                    <button class="btn-dblue">Добавить товар</button>
+                    <input id="tovar-stat" value="03.18.2013 - 03.23.2013" readonly="">
                 </div>
-                <div class="col-lg-6">
-                    <div class="top__col">
-                        <div class="top__col__title">Фильтр</div>
-                        <div class="range__row">
-                            <div class="range__row__label">Рейтинг</div>
-                            <div class="js-range-slider__wrap">
-                                <input type="text" class="js-range-slider" name="my_range" value="" data-grid="true" data-min="1000" data-max="1000000" />
-                            </div>
-                        </div>
-                        <div class="range__row">
-                            <div class="range__row__label">Цена</div>
-                            <div class="js-range-slider__wrap">
-                                <input type="text" class="js-range-slider" name="my_range" value="" data-grid="true" data-min="1000" data-max="1000000" />
-                            </div>
-                        </div>
-                        <div class="range__row">
-                            <div class="range__row__label">Заказы<br> в день</div>
-                            <div class="js-range-slider__wrap">
-                                <input type="text" class="js-range-slider" name="my_range" value="" data-grid="true" data-min="1000" data-max="1000000" />
-                            </div>
-                        </div>
-                        <div class="range__row">
-                            <div class="range__row__label">Выручка<br> в день</div>
-                            <div class="js-range-slider__wrap">
-                                <input type="text" class="js-range-slider" name="my_range" value="" data-grid="true" data-min="1000" data-max="1000000" />
-                            </div>
-                        </div>
-                        <div class="range__row">
-                            <div class="range__row__label">Количество отзывов
-                            </div>
-                            <div class="js-range-slider__wrap">
-                                <input type="text" class="js-range-slider" name="my_range" value="" data-grid="true" data-min="1000" data-max="1000000" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="top-approve">
-                <button class="btn-or">Применить</button>
-            </div>
-
-            <div class="tabs">
-                <div class="top-table__flex">
+                <div class="categori__tabs tabs">
                     <div class="categori__tabs__wrap">
                         <ul class="tabs__caption">
-                            <li class="tab active">Wildberries</li>
-                            <li class="tab">Ozon</li>
-                            <li class="tab">Яндекс Маркет</li>
+                            <li class="tab active">Товары</li>
+                            <li class="tab">Бренды</li>
+                            <li class="tab">Продавцы</li>
+                            <li class="tab">Тренды</li>
+                            <li class="tab">По дням</li>
                         </ul>
                     </div>
-                    <div class="free__times">
-                        <button>7 дней</button>
-                        <button class="active">14 дней</button>
-                        <button>30 дней</button>
+                    <div class="tabs__content active">
+                        <div id="myGrid" class="ag-theme-alpine" style="height: 475px;"></div>
+                    </div>
+                    <div class="tabs__content">
+                        <div class="grafic grafic-2">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <h3>Продажи</h3>
+                                    <div id="pie-chart1" class="pie-chart"></div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <h3>Выручка</h3>
+                                    <div id="pie-chart2" class="pie-chart"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="myGrid2" class="ag-theme-alpine" style="height: 475px;"></div>
+                    </div>
+                    <div class="tabs__content">
+                        Продавцы
+                    </div>
+                    <div class="tabs__content">
+                        <div class="grafic">
+                            <div class="chart__wrap">
+                                <div id="trand-chart" class="chart"></div>
+                            </div>
+                        </div>
+                        <div class="tovar__stat__top">
+                            <div></div>
+                            <div class="two-btns">
+                                <button type="button" class="btn-bo">Избранное</button>
+                                <button type="button" class="btn-blue">Скачать в SCV</button>
+                            </div>
+                        </div>
+                        <div class="ag-theme-alpine" id="myGrid3" style="height: 475px;"></div>
+                    </div>
+                    <div class="tabs__content">
+                        <div class="grafic">
+                            <div class="chart__wrap">
+                                <div id="trand-chart2" class="chart"></div>
+                            </div>
+                        </div>
+                        <div class="tovar__stat__top">
+                            <div></div>
+                            <div class="two-btns">
+                                <button type="button" class="btn-bo">Избранное</button>
+                                <button type="button" class="btn-blue">Скачать в SCV</button>
+                            </div>
+                        </div>
+                        <div class="ag-theme-alpine" id="myGrid4" style="height: 475px;"></div>
                     </div>
                 </div>
 
-                <div class="tabs__content active">
-                    <div class="top-table__wrap">
-                        <table id="datatable" class="table top-table table-bordered">
-                            <thead class="thead-light">
-                                <tr>
-                                    <th data-sorter="false">Категория</th>
-                                    <th>Продавцов
-                                        <div class="sort"></div>
-                                    </th>
-                                    <th>Брендов
-                                        <div class="sort"></div>
-                                    </th>
-                                    <th>Товаров
-                                        <div class="sort"></div>
-                                    </th>
-                                    <th>Средний чек
-                                        <div class="sort"></div>
-                                    </th>
-                                    <th>Продаж
-                                        <div class="sort"></div>
-                                    </th>
-                                    <th>Выручка
-                                        <div class="sort"></div>
-                                    </th>
-                                    <th>TstS
-                                        <div class="sort"></div>
-                                        <div class="info">
-                                            <span class="myTooltip top">Количество продаж, приходящего на одного продавца</span>
-                                        </div>
-                                    </th>
-                                    <th>TstS
-                                        <div class="sort"></div>
-                                        <div class="info">
-                                            <span class="myTooltip top">Количество продаж, приходящего на одного продавца</span>
-                                        </div>
-                                    </th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <div class="t-cat"><img src="./img/top/1.png">Электронные сигареты и товары</div>
-                                    </td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>2346</td>
-                                    <td>0 руб.</td>
-                                    <td>1</td>
-                                    <td>0 руб.</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>
-                                        <div class="top-table-active add">
-                                            <span class="myTooltip left">Добавить в избранное</span>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="t-cat"><img src="./img/top/1.png">Электронные сигареты и товары</div>
-                                    </td>
-                                    <td>2</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>
-                                        <div class="top-table-active in">
-                                            <span class="myTooltip left">В избранном</span>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="t-cat"><img src="./img/top/1.png">Электронные сигареты и товары</div>
-                                    </td>
-                                    <td>3</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>
-                                        <div class="top-table-active in">
-                                            <span class="myTooltip left">В избранном</span>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="t-cat"><img src="./img/top/1.png">Электронные сигареты и товары</div>
-                                    </td>
-                                    <td>4</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>
-                                        <div class="top-table-active in">
-                                            <span class="myTooltip left">В избранном</span>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="t-cat"><img src="./img/top/1.png">Электронные сигареты и товары</div>
-                                    </td>
-                                    <td>5</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>
-                                        <div class="top-table-active in">
-                                            <span class="myTooltip left">В избранном</span>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                </div>
-                <div class="tabs__content">
-                    Ozon
-                </div>
-                <div class="tabs__content">
-                    Яндекс Маркет
-                </div>
             </div>
         </div>
+
     </div>
 
-    <footer class="footer">
-        <div class="wrap">
-            <div class="footer__content">
-                <div class="footer__row">
-                    <div class="footer__item">
-                        <h2 class="footer__title">Get<span class="text__color">Data</span></h2>
-                        <span class="footer__subtitle">Выберите самые выгодные товары 
+    <footer class="footer ">
+        <div class="wrap ">
+            <div class="footer__content ">
+                <div class="footer__row ">
+                    <div class="footer__item ">
+                        <h2 class="footer__title ">Get<span class="text__color ">Data</span></h2>
+                        <span class="footer__subtitle ">Выберите самые выгодные товары 
                   для продажи на Wildberries в 1 клик!</span>
-                        <span class="footer__name">ИП Клепиков Д.С.</span>
-                        <ul class="footer__social-menu">
-                            <li class="footer__social-list">
-                                <a href="#" class="footer__social-link">
-                                    <img src="./img/main/tg.svg" alt="social-link">
+                        <span class="footer__name ">ИП Клепиков Д.С.</span>
+                        <ul class="footer__social-menu ">
+                            <li class="footer__social-list ">
+                                <a href="# " class="footer__social-link ">
+                                    <img src="./img/main/tg.svg " alt="social-link ">
                                 </a>
                             </li>
-                            <li class="footer__social-list">
-                                <a href="#" class="footer__social-link">
-                                    <img src="./img/main/fb.svg" alt="social-link">
+                            <li class="footer__social-list ">
+                                <a href="# " class="footer__social-link ">
+                                    <img src="./img/main/fb.svg " alt="social-link ">
                                 </a>
                             </li>
-                            <li class="footer__social-list">
-                                <a href="#" class="footer__social-link">
-                                    <img src="./img/main/you.svg" alt="social-link">
+                            <li class="footer__social-list ">
+                                <a href="# " class="footer__social-link ">
+                                    <img src="./img/main/you.svg " alt="social-link ">
                                 </a>
                             </li>
-                            <li class="footer__social-list">
-                                <a href="#" class="footer__social-link">
-                                    <img src="./img/main/tk.svg" alt="social-link">
+                            <li class="footer__social-list ">
+                                <a href="# " class="footer__social-link ">
+                                    <img src="./img/main/tk.svg " alt="social-link ">
                                 </a>
                             </li>
                         </ul>
                     </div>
-                    <div class="footer__item">
-                        <h2 class="footer__title">Наши услуги</h2>
-                        <ul class="footer__nav-menu">
-                            <li class="footer__nav-list">
-                                <a href="#services" class="footer__nav-link scroll-to">Продавцам</a>
+                    <div class="footer__item ">
+                        <h2 class="footer__title ">Наши услуги</h2>
+                        <ul class="footer__nav-menu ">
+                            <li class="footer__nav-list ">
+                                <a href="#services " class="footer__nav-link scroll-to ">Продавцам</a>
                             </li>
-                            <li class="footer__nav-list">
-                                <a href="#services" class="footer__nav-link scroll-to">Производителям и представителям брендов</a>
+                            <li class="footer__nav-list ">
+                                <a href="#services " class="footer__nav-link scroll-to ">Производителям и представителям брендов</a>
                             </li>
-                            <li class="footer__nav-list">
-                                <a href="#services" class="footer__nav-link scroll-to">Интернет-магазинам</a>
+                            <li class="footer__nav-list ">
+                                <a href="#services " class="footer__nav-link scroll-to ">Интернет-магазинам</a>
                             </li>
                         </ul>
                     </div>
-                    <div class="footer__item">
-                        <h2 class="footer__title">Информация</h2>
-                        <ul class="footer__nav-menu">
-                            <li class="footer__nav-list">
-                                <a href="#" class="footer__nav-link">Пользовательское соглашение</a>
+                    <div class="footer__item ">
+                        <h2 class="footer__title ">Информация</h2>
+                        <ul class="footer__nav-menu ">
+                            <li class="footer__nav-list ">
+                                <a href="# " class="footer__nav-link ">Пользовательское соглашение</a>
                             </li>
-                            <li class="footer__nav-list">
-                                <a href="#" class="footer__nav-link">Политика оплаты и возврата</a>
+                            <li class="footer__nav-list ">
+                                <a href="# " class="footer__nav-link ">Политика оплаты и возврата</a>
                             </li>
-                            <li class="footer__nav-list">
-                                <a href="#" class="footer__nav-link">Партнерская программа</a>
+                            <li class="footer__nav-list ">
+                                <a href="# " class="footer__nav-link ">Партнерская программа</a>
                             </li>
-                            <li class="footer__nav-list">
-                                <a href="#" class="footer__nav-link">API документация</a>
+                            <li class="footer__nav-list ">
+                                <a href="# " class="footer__nav-link ">API документация</a>
                             </li>
-                            <li class="footer__nav-list">
-                                <a href="#price" class="footer__nav-link">Тарифы</a>
+                            <li class="footer__nav-list ">
+                                <a href="#price " class="footer__nav-link ">Тарифы</a>
                             </li>
                         </ul>
                     </div>
@@ -684,23 +402,486 @@
     <script src="./libs/jquery/jq-ui.js"></script>
     <script src="./libs/bootstrap.bundle.min.js"></script>
     <script src="./libs/selectric/selectric.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"></script>
-    <script src="./libs/tooltip/tooltip.js"></script>
-    <script src="./libs/datatables/jquery.tablesorter.min.js"></script>
-
+    <script src="./libs/datapicker/js/moment.min.js"></script>
+    <script src="./libs/charts/apexcharts.min.js"></script>
+    <script src="./libs/datapicker/js/daterangepicker.js"></script>
+    <script src="./libs/ag-table/ag-grid-lang.js"></script>
+    <script src="./libs/ag-table/ag-grid.js"></script>
     <!-- main.js -->
     <script src="./js/main.js"></script>
 
-    <!-- скрипты топа -->
     <script>
         $(function() {
-            $(".js-range-slider").ionRangeSlider({
-                step: 1000,
+            $('#tovar-stat').daterangepicker({
+                locale: {
+                    "format": "MM.DD.YYYY",
+                    "separator": " - ",
+                    "applyLabel": "Применить",
+                    "cancelLabel": "Закрыть",
+                    "fromLabel": "От",
+                    "toLabel": "До",
+                    "customRangeLabel": "Custom",
+                    "weekLabel": "W",
+                    "daysOfWeek": ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+                    "monthNames": ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+                    "firstDay": 1
+                },
+                opens: 'left',
+                drops: 'down'
+            }, function(start, end, label) {
+                console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
             });
+            // Обзор подкатегорий
+            // круглые графики
+            var pieOptions = {
+                chart: {
+                    height: 300,
+                    width: 230,
+                    type: 'pie',
 
-            $('#datatable').tablesorter()
+                },
+                stroke: {
+                    show: true,
+                    width: 2,
+                    colors: ['transparent']
+                },
+                series: [44, 55, 41, 17, 15],
+                labels: ["Текущая категория", "Увлажнители", "Обогрев помещения", "Аксессуары", "Остальное"],
+                colors: ["#a3cae0", "#232f5b", "#f06a6c", "#f1e299", "#08aeb0"],
+                legend: {
+                    show: true,
+                    position: 'bottom',
+                    horizontalAlign: 'center',
+                    verticalAlign: 'middle',
+                    floating: false,
+                    fontSize: '14px',
+                    offsetX: 0,
+                    offsetY: 6
+                },
+                responsive: [{
+                    breakpoint: 600,
+                    options: {
+                        chart: {
+                            width: '100%',
+                        },
+                    }
+                }]
+            }
+
+            var chart = new ApexCharts(document.querySelector("#pie-chart1"), pieOptions);
+            chart.render();
+
+            var chart2 = new ApexCharts(document.querySelector("#pie-chart2"), pieOptions);
+            chart2.render();
+
         })
     </script>
+    <script>
+        // Тренды
+        // график продаж
+        var options = {
+            series: [{
+                name: 'Продажи',
+                data: [31, 40, 28, 51, 42, 109, 100]
+            }, {
+                name: 'Остаток',
+                data: [11, 32, 45, 12, 34, 52, 45]
+            }, {
+                name: 'Цена',
+                data: [11, 32, 45, 52, 34, 52, 33]
+            }, {
+                name: 'Выручка',
+                data: [11, 32, 45, 22, 34, 52, 22]
+            }],
+            yaxis: [{
+                title: {
+                    text: ""
+                },
+            }, {
+                opposite: true,
+                title: {
+                    text: ""
+                }
+            }],
+            width: '100%',
+            chart: {
+                height: 350,
+                type: 'area',
+                zoom: {
+                    enabled: false
+                }
+            },
+            dataLabels: {
+                enabled: false
+            },
+            stroke: {
+                curve: 'smooth'
+            },
+            xaxis: {
+                type: 'datetime',
+                categories: ["2018-09-19T00:00:00.000Z", "2018-09-19T01:30:00.000Z", "2018-09-19T02:30:00.000Z", "2018-09-19T03:30:00.000Z", "2018-09-19T04:30:00.000Z", "2018-09-19T05:30:00.000Z", "2018-09-19T06:30:00.000Z"]
+            },
+            tooltip: {
+                x: {
+                    format: 'dd/MM/yy HH:mm'
+                },
+            },
+            legend: {
+                position: 'right',
+                verticalAlign: 'center',
+                markers: {
+                    width: 30,
+                    height: 12,
+                    radius: 0,
+                },
+            },
+
+            toolbar: {
+                show: false,
+            },
+            responsive: [{
+                breakpoint: 600,
+                options: {
+                    legend: {
+                        horizontalAlign: 'left',
+                    }
+                }
+            }]
+        };
+
+        var chart = new ApexCharts(document.querySelector("#trand-chart"), options);
+        chart.render();
+
+        // Тренды по дням
+        var options = {
+            series: [{
+                name: 'Продажи',
+                data: [31, 40, 28, 51, 42, 109, 100]
+            }, {
+                name: 'Остаток',
+                data: [11, 32, 45, 12, 34, 52, 45]
+            }, {
+                name: 'Цена',
+                data: [11, 32, 45, 52, 34, 52, 33]
+            }, {
+                name: 'Выручка',
+                data: [11, 32, 45, 22, 34, 52, 22]
+            }],
+            yaxis: [{
+                title: {
+                    text: ""
+                },
+            }, {
+                opposite: true,
+                title: {
+                    text: ""
+                }
+            }],
+            width: '100%',
+            chart: {
+                height: 350,
+                type: 'area',
+                zoom: {
+                    enabled: false
+                }
+            },
+            dataLabels: {
+                enabled: false
+            },
+            stroke: {
+                curve: 'smooth'
+            },
+            xaxis: {
+                type: 'datetime',
+                categories: ["2018-09-19T00:00:00.000Z", "2018-09-19T01:30:00.000Z", "2018-09-19T02:30:00.000Z", "2018-09-19T03:30:00.000Z", "2018-09-19T04:30:00.000Z", "2018-09-19T05:30:00.000Z", "2018-09-19T06:30:00.000Z"]
+            },
+            tooltip: {
+                x: {
+                    format: 'dd/MM/yy HH:mm'
+                },
+            },
+            legend: {
+                position: 'top',
+                horizontalAlign: 'center',
+                markers: {
+                    width: 30,
+                    height: 12,
+                    radius: 0,
+                },
+            },
+
+            toolbar: {
+                show: false,
+            },
+            responsive: [{
+                breakpoint: 600,
+                options: {
+                    legend: {
+                        horizontalAlign: 'left',
+                    }
+                }
+            }]
+        };
+
+        var chart = new ApexCharts(document.querySelector("#trand-chart2"), options);
+        chart.render();
+    </script>
+    <script>
+        // таблица
+        class MedalCellRenderer {
+            constructor() {}
+
+            // init method gets the details of the cell to be renderer
+            init(params) {
+                this.eGui = document.createElement('img');
+                this.eGui.setAttribute('src', params.value)
+            }
+
+            getGui() {
+                return this.eGui;
+            }
+        }
+        var columnDefs = [{
+            field: 'Неделя',
+            checkboxSelection: true,
+            width: 100,
+            flex: 1,
+            cellRenderer: 'medalCellRenderer',
+            filter: false
+        }, {
+            field: 'Продаж',
+            width: 100,
+            filter: 'agNumberColumnFilter',
+            flex: 1,
+        }, {
+            field: 'Выручка',
+            width: 100,
+            flex: 1,
+            filter: 'agNumberColumnFilter',
+        }, {
+            field: 'Товаров',
+            width: 100,
+            flex: 1,
+            filter: 'agNumberColumnFilter',
+        }, {
+            field: 'Продавцов',
+            width: 100,
+            flex: 1,
+            filter: 'agNumberColumnFilter',
+        }, ];
+
+        var localeText = AG_GRID_LOCALE_ZZZ;
+
+        var gridOptions = {
+            defaultColDef: {
+                editable: false,
+                sortable: true,
+                minWidth: 100,
+                filter: true,
+                floatingFilter: true,
+                resizable: true,
+            },
+            columnDefs: columnDefs,
+            rowData: null,
+            rowSelection: 'multiple',
+            sideBar: {
+                toolPanels: [{
+                    id: 'columns',
+                    labelDefault: 'Columns',
+                    labelKey: 'columns',
+                    iconKey: 'columns',
+                    toolPanel: 'agColumnsToolPanel',
+                    toolPanelParams: {
+                        suppressRowGroups: true,
+                        suppressValues: true,
+                        suppressPivots: true,
+                        suppressPivotMode: true,
+                        suppressSideButtons: true,
+                        suppressColumnFilter: false,
+                        suppressColumnSelectAll: false,
+                        suppressColumnExpandAll: false,
+                    },
+                }, {
+                    id: 'filters',
+                    labelDefault: 'Filters',
+                    labelKey: 'filters',
+                    iconKey: 'filter',
+                    toolPanel: 'agFiltersToolPanel',
+                }, ],
+                position: 'right',
+                defaultToolPanel: 'filters',
+            },
+            components: {
+                medalCellRenderer: MedalCellRenderer
+            },
+            localeText: localeText,
+        };
+        var gridOptions2 = {
+            defaultColDef: {
+                editable: false,
+                sortable: true,
+                minWidth: 100,
+                filter: true,
+                floatingFilter: true,
+                resizable: true,
+            },
+            columnDefs: columnDefs,
+            rowData: null,
+            rowSelection: 'multiple',
+            sideBar: {
+                toolPanels: [{
+                    id: 'columns',
+                    labelDefault: 'Columns',
+                    labelKey: 'columns',
+                    iconKey: 'columns',
+                    toolPanel: 'agColumnsToolPanel',
+                    toolPanelParams: {
+                        suppressRowGroups: true,
+                        suppressValues: true,
+                        suppressPivots: true,
+                        suppressPivotMode: true,
+                        suppressSideButtons: true,
+                        suppressColumnFilter: false,
+                        suppressColumnSelectAll: false,
+                        suppressColumnExpandAll: false,
+                    },
+                }, {
+                    id: 'filters',
+                    labelDefault: 'Filters',
+                    labelKey: 'filters',
+                    iconKey: 'filter',
+                    toolPanel: 'agFiltersToolPanel',
+                }, ],
+                position: 'right',
+                defaultToolPanel: 'filters',
+            },
+            localeText: localeText,
+        };
+
+        var gridOptions3 = {
+            defaultColDef: {
+                editable: false,
+                sortable: true,
+                minWidth: 100,
+                filter: true,
+                floatingFilter: true,
+                resizable: true,
+            },
+            columnDefs: columnDefs,
+            rowData: null,
+            rowSelection: 'multiple',
+            sideBar: {
+                toolPanels: [{
+                    id: 'columns',
+                    labelDefault: 'Columns',
+                    labelKey: 'columns',
+                    iconKey: 'columns',
+                    toolPanel: 'agColumnsToolPanel',
+                    toolPanelParams: {
+                        suppressRowGroups: true,
+                        suppressValues: true,
+                        suppressPivots: true,
+                        suppressPivotMode: true,
+                        suppressSideButtons: true,
+                        suppressColumnFilter: false,
+                        suppressColumnSelectAll: false,
+                        suppressColumnExpandAll: false,
+                    },
+                }, {
+                    id: 'filters',
+                    labelDefault: 'Filters',
+                    labelKey: 'filters',
+                    iconKey: 'filter',
+                    toolPanel: 'agFiltersToolPanel',
+                }, ],
+                position: 'right',
+                defaultToolPanel: 'filters',
+            },
+            localeText: localeText,
+        };
+
+        var gridOptions4 = {
+            defaultColDef: {
+                editable: false,
+                sortable: true,
+                minWidth: 100,
+                filter: true,
+                floatingFilter: true,
+                resizable: true,
+            },
+            columnDefs: columnDefs,
+            rowData: null,
+            rowSelection: 'multiple',
+            sideBar: {
+                toolPanels: [{
+                    id: 'columns',
+                    labelDefault: 'Columns',
+                    labelKey: 'columns',
+                    iconKey: 'columns',
+                    toolPanel: 'agColumnsToolPanel',
+                    toolPanelParams: {
+                        suppressRowGroups: true,
+                        suppressValues: true,
+                        suppressPivots: true,
+                        suppressPivotMode: true,
+                        suppressSideButtons: true,
+                        suppressColumnFilter: false,
+                        suppressColumnSelectAll: false,
+                        suppressColumnExpandAll: false,
+                    },
+                }, {
+                    id: 'filters',
+                    labelDefault: 'Filters',
+                    labelKey: 'filters',
+                    iconKey: 'filter',
+                    toolPanel: 'agFiltersToolPanel',
+                }, ],
+                position: 'right',
+                defaultToolPanel: 'filters',
+            },
+            localeText: localeText,
+        };
+
+        function closeToolPanel() {
+            gridOptions.api.closeToolPanel();
+            gridOptions2.api.closeToolPanel();
+            gridOptions3.api.closeToolPanel();
+            gridOptions4.api.closeToolPanel();
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var gridDiv = document.querySelector('#myGrid');
+            new agGrid.Grid(gridDiv, gridOptions);
+
+            var gridDiv2 = document.querySelector('#myGrid2');
+            new agGrid.Grid(gridDiv2, gridOptions2);
+
+            var gridDiv3 = document.querySelector('#myGrid3');
+            new agGrid.Grid(gridDiv3, gridOptions3);
+
+            var gridDiv4 = document.querySelector('#myGrid4');
+            new agGrid.Grid(gridDiv4, gridOptions4);
+
+            agGrid
+                .simpleHttpRequest({
+                    url: './libs/table-img.json',
+                })
+                .then(function(data) {
+                    gridOptions.api.setRowData(data);
+                });
+            agGrid
+                .simpleHttpRequest({
+                    url: './libs/table.json',
+                })
+                .then(function(data) {
+                    gridOptions2.api.setRowData(data);
+                    gridOptions3.api.setRowData(data);
+                    gridOptions4.api.setRowData(data);
+                });
+            closeToolPanel()
+        });
+    </script>
+
 </body>
 
 </html>

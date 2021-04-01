@@ -13,6 +13,7 @@
     <link rel='stylesheet' type='text/css' media='screen' href='./libs/jquery/jq-ui.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='./libs/bootstrap.min.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='./libs/selectric/selectric.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='./libs/datapicker/css/daterangepicker.css'>
     <!-- стили -->
     <link rel='stylesheet' type='text/css' media='screen' href='./css/main.min.css'>
 </head>
@@ -249,25 +250,19 @@
             </div>
         </div>
         <div class="wrap">
-            <h1>Избранное</h1>
+            <h1>Избранное - папка “Шины”</h1>
         </div>
         <div class="izb">
             <div class="wrap">
-                <div class="tabs lk-tabs">
-                    <div class="lk__caption__wrap">
-                        <ul class="tabs__caption">
-                            <li class="tab active">Товары</li>
-                            <li class="tab">Категории</li>
-                            <li class="tab">Бренды</li>
-                            <li class="tab">Продавцы</li>
-                        </ul>
+                <div class="dif-table__top">
+                    <div class="free__times">
+                        <button>7 дней</button>
+                        <button class="active">14 дней</button>
+                        <button>30 дней</button>
                     </div>
-
-                    <div class="tabs__content active">
-                        <div id="myGrid" class="ag-theme-alpine" style="height: 600px; width:500px;"></div>
-                    </div>
-
+                    <input id="tovar-stat" value="03.18.2013 - 03.23.2013" readonly="">
                 </div>
+                <div id="myGrid" class="ag-theme-alpine" style="height: 475px; margin-bottom: 50px;"></div>
             </div>
         </div>
 
@@ -348,8 +343,131 @@
     <script src="./libs/jquery/jq-ui.js"></script>
     <script src="./libs/bootstrap.bundle.min.js"></script>
     <script src="./libs/selectric/selectric.min.js"></script>
+    <script src="./libs/datapicker/js/moment.min.js"></script>
+    <script src="./libs/datapicker/js/daterangepicker.js"></script>
+    <script src="./libs/ag-table/ag-grid-lang.js"></script>
+    <script src="./libs/ag-table/ag-grid.js"></script>
     <!-- main.js -->
     <script src="./js/main.js"></script>
+
+    <script>
+        $(function() {
+            $('#tovar-stat').daterangepicker({
+                locale: {
+                    "format": "MM.DD.YYYY",
+                    "separator": " - ",
+                    "applyLabel": "Применить",
+                    "cancelLabel": "Закрыть",
+                    "fromLabel": "От",
+                    "toLabel": "До",
+                    "customRangeLabel": "Custom",
+                    "weekLabel": "W",
+                    "daysOfWeek": ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+                    "monthNames": ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+                    "firstDay": 1
+                },
+                opens: 'left',
+                drops: 'down'
+            }, function(start, end, label) {
+                console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+            });
+
+
+
+        })
+    </script>
+    <script>
+        // таблица
+        var columnDefs = [{
+            field: 'Неделя',
+            checkboxSelection: true,
+            width: 100,
+            flex: 1,
+            filter: 'agDateColumnFilter',
+        }, {
+            field: 'Продаж',
+            width: 100,
+            filter: 'agNumberColumnFilter',
+            flex: 1,
+        }, {
+            field: 'Выручка',
+            width: 100,
+            flex: 1,
+            filter: 'agNumberColumnFilter',
+        }, {
+            field: 'Товаров',
+            width: 100,
+            flex: 1,
+            filter: 'agNumberColumnFilter',
+        }, {
+            field: 'Продавцов',
+            width: 100,
+            flex: 1,
+            filter: 'agNumberColumnFilter',
+        }, ];
+
+        var localeText = AG_GRID_LOCALE_ZZZ;
+
+        var gridOptions = {
+            defaultColDef: {
+                editable: false,
+                sortable: true,
+                minWidth: 50,
+                filter: true,
+                floatingFilter: true,
+                resizable: true,
+            },
+            columnDefs: columnDefs,
+            rowData: null,
+            rowSelection: 'multiple',
+            sideBar: {
+                toolPanels: [{
+                    id: 'columns',
+                    labelDefault: 'Columns',
+                    labelKey: 'columns',
+                    iconKey: 'columns',
+                    toolPanel: 'agColumnsToolPanel',
+                    toolPanelParams: {
+                        suppressRowGroups: true,
+                        suppressValues: true,
+                        suppressPivots: true,
+                        suppressPivotMode: true,
+                        suppressSideButtons: true,
+                        suppressColumnFilter: false,
+                        suppressColumnSelectAll: false,
+                        suppressColumnExpandAll: false,
+                    },
+                }, {
+                    id: 'filters',
+                    labelDefault: 'Filters',
+                    labelKey: 'filters',
+                    iconKey: 'filter',
+                    toolPanel: 'agFiltersToolPanel',
+                }, ],
+                position: 'right',
+                defaultToolPanel: 'filters',
+            },
+            localeText: localeText,
+        };
+
+        function closeToolPanel() {
+            gridOptions.api.closeToolPanel();
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var gridDiv = document.querySelector('#myGrid');
+            new agGrid.Grid(gridDiv, gridOptions);
+
+            agGrid
+                .simpleHttpRequest({
+                    url: './libs/table.json',
+                })
+                .then(function(data) {
+                    gridOptions.api.setRowData(data);
+                });
+            closeToolPanel()
+        });
+    </script>
 
 </body>
 
