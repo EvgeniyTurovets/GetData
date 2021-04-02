@@ -455,7 +455,7 @@
                     </ul>
                 </div>
                 <div class="tabs__content active">
-                    <div id="myGrid" class="ag-theme-alpine" style="height: 475px;;"></div>
+                    <div id="myGrid" class="ag-theme-alpine" style="height: 500px;"></div>
                 </div>
                 <div class="tabs__content">
                     Ozon
@@ -537,6 +537,139 @@
             </div>
         </div>
     </footer>
+    <!-- модалка таблицы -->
+    <div class="modal fade" id="m-help">
+        <div class="modal-dialog modal-xl" style="max-width: 1140px;">
+            <div class="modal-content">
+                <div class="top-table__wrap">
+                    <table class="table table-lg table-striped">
+                        <tbody>
+                            <tr>
+                                <td>Фото</td>
+                                <td>—</td>
+                            </tr>
+                            <tr>
+                                <td>SKU</td>
+                                <td>Идентификатор товарной позиции</td>
+                            </tr>
+                            <tr>
+                                <td>Название</td>
+                                <td>Название товара</td>
+                            </tr>
+                            <tr>
+                                <td>Площадка</td>
+                                <td>Маркетплейс</td>
+                            </tr>
+                            <tr>
+                                <td>Категория</td>
+                                <td>Категория товара</td>
+                            </tr>
+                            <tr>
+                                <td>Бренд</td>
+                                <td>Название бренда</td>
+                            </tr>
+                            <tr>
+                                <td>Продавец</td>
+                                <td>Название продавца товара</td>
+                            </tr>
+                            <tr>
+                                <td>Цвет</td>
+                                <td>Цвет товара</td>
+                            </tr>
+                            <tr>
+                                <td>Наличие</td>
+                                <td>Последний зафиксированный остаток на складе</td>
+                            </tr>
+                            <tr>
+                                <td>Коммент.</td>
+                                <td>Количество комментариев</td>
+                            </tr>
+                            <tr>
+                                <td>Рейтинг</td>
+                                <td>Рейтинг товара</td>
+                            </tr>
+                            <tr>
+                                <td>Мин. цена</td>
+                                <td>Минимальная зафиксированная цена</td>
+                            </tr>
+                            <tr>
+                                <td>Макс. цена</td>
+                                <td>Максимальная зафиксированная цена</td>
+                            </tr>
+                            <tr>
+                                <td>Базовая цена</td>
+                                <td>Цена до скидок</td>
+                            </tr>
+                            <tr>
+                                <td>Скидка</td>
+                                <td>Размер установленной скидки</td>
+                            </tr>
+                            <tr>
+                                <td>Цена со скидкой</td>
+                                <td>Цена после применения скидки</td>
+                            </tr>
+                            <tr>
+                                <td>Промокод</td>
+                                <td>Размер установленного промокода</td>
+                            </tr>
+                            <tr>
+                                <td>Цена СПП</td>
+                                <td>Цена после применения скидки постоянного покупателя</td>
+                            </tr>
+                            <tr>
+                                <td>СПП</td>
+                                <td>Размер скидки постоянного покупателя</td>
+                            </tr>
+                            <tr>
+                                <td>Средняя цена</td>
+                                <td>Средняя цена продажи (выручка/продажи)</td>
+                            </tr>
+                            <tr>
+                                <td>Дней с продажами</td>
+                                <td>Число дней, в которые была хотя бы одна продажа</td>
+                            </tr>
+                            <tr>
+                                <td>Среднее при наличии</td>
+                                <td>Среднее число продаж в день при наличии товара</td>
+                            </tr>
+                            <tr>
+                                <td>Потенциал</td>
+                                <td>Потенциальная выручка товара - среднее число продаж при наличии, умноженное на число дней в отчете</td>
+                            </tr>
+                            <tr>
+                                <td>Упущенная выручка</td>
+                                <td>Потенциал товара минус фактическая выручка</td>
+                            </tr>
+                            <tr>
+                                <td>Цена</td>
+                                <td>Последняя зафиксированная цена</td>
+                            </tr>
+                            <tr>
+                                <td>Был в наличии</td>
+                                <td>Количество дней, когда товар был в наличии на конец дня</td>
+                            </tr>
+                            <tr>
+                                <td>Продаж</td>
+                                <td>Количество проданных единиц товара за период</td>
+                            </tr>
+                            <tr>
+                                <td>Выручка</td>
+                                <td>Выручка за период</td>
+                            </tr>
+                            <tr>
+                                <td>График продаж</td>
+                                <td>График продаж</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="d-flex justify-content-end">
+                        <button data-bs-dismiss="modal" aria-label="Close" class="btn-bo ml-auto">закрыть</button>
+                    </div>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
     <!-- плагины -->
     <script src="./libs/jquery/jquery.min.js"></script>
     <script src="./libs/jquery/jq-ui.js"></script>
@@ -572,16 +705,42 @@
             }
         }
 
+        function CustomHelpToolPanel() {}
+
+        CustomHelpToolPanel.prototype.init = function(params) {
+            this.eGui = document.createElement('div');
+            this.eGui.style.width = '100%';
+            var _this = this;
+            var renderStats = function() {
+                _this.eGui.innerHTML = '<div role = "group" class = "btn-group-vertical grid-set" >' +
+                    '<button type="button" data-bs-toggle="modal" data-bs-target="#m-help">Описание полей</button>' +
+                    '</div>'
+            };
+            params.api.addEventListener('modelUpdated', renderStats);
+        }
+
+        CustomHelpToolPanel.prototype.getGui = function() {
+            return this.eGui;
+        };
+
         function CustomStatsToolPanel() {}
+
+
 
         CustomStatsToolPanel.prototype.init = function(params) {
             this.eGui = document.createElement('div');
-            this.eGui.style.textAlign = 'center';
+            this.eGui.style.width = '100%';
 
             // calculate stats when new rows loaded, i.e. onModelUpdated
             var _this = this;
             var renderStats = function() {
-                _this.eGui.innerHTML = calculateStats(params);
+                _this.eGui.innerHTML = '<div role = "group" class ="btn-group-vertical grid-set" >' +
+                    '<button onclick="resetView()" type = "button" title="Изменяет вид таблицы до состояния столбцов по-умолчанию. Изменяется порядок и видимость столбцов до первоначально заданных. Ширина столбцов сжимается или расширяется с учетом ширины контента в ячейках и заголовка столбца">Сбросить колонки</button>' +
+                    '<button onclick="autoSizeAll(false)" type = "button" title="Ширина столбцов сжимается или расширяется с учетом ширины контента в ячейках и заголовка столбца">Автоширина</button>' +
+                    '<button onclick="autoSizeAll(true)" type = "button" title="Ширина столбцов сжимается или расширяется с учетом ширины контента">Автоширина (без учета заголовков)</button>' +
+                    '<button onclick="sizeToFit()" type = "button" title="Сжимет или растягивает столбцы по ширине чтобы попытаться уместить все видимые столбцы в видимой области таблицы">По ширине таблицы</button>' +
+                    '<button onclick="setAutoHeight($(this))" type="button" title="Растягивает таблицу на всю высоту контента без скроллинга внутри таблицы">Автовысота</button>' +
+                    '</div>'
             };
             params.api.addEventListener('modelUpdated', renderStats);
         };
@@ -590,41 +749,10 @@
             return this.eGui;
         };
 
-        function calculateStats(params) {
-            var numGold = 0,
-                numSilver = 0,
-                numBronze = 0;
-            params.api.forEachNode(function(rowNode) {
-                var data = rowNode.data;
-                if (data.gold) numGold += data.gold;
-                if (data.silver) numSilver += data.silver;
-                if (data.bronze) numBronze += data.bronze;
-            });
-
-            return (
-                '<span>' +
-                '<h2><i class="fa fa-calculator"></i> Custom Stats</h2>' +
-                '<dl style="font-size: large; padding: 30px 40px 10px 30px">' +
-                '<dt style="padding-bottom: 15px">Total Medals: <b>' +
-                (numGold + numSilver + numBronze) +
-                '</b></dt>' +
-                '<dt style="padding-bottom: 15px">Total Gold: <b>' +
-                numGold +
-                '</b></dt>' +
-                '<dt style="padding-bottom: 15px">Total Silver: <b>' +
-                numSilver +
-                '</b></dt>' +
-                '<dt style="padding-bottom: 15px">Total Bronze: <b>' +
-                numBronze +
-                '</b></dt>' +
-                '</dl>' +
-                '</span>'
-            );
-        }
-
         var columnDefs = [{
             field: 'Неделя',
             checkboxSelection: true,
+            suppressSizeToFit: true,
             width: 100,
             cellRenderer: 'medalCellRenderer',
             filter: false
@@ -663,6 +791,7 @@
             },
             icons: {
                 'custom-stats': '<span class="ag-icon ag-icon-custom-stats"></span>',
+                'custom-help': '<span class="ag-icon ag-icon-custom-help"></span>',
             },
             columnDefs: columnDefs,
             rowData: null,
@@ -696,6 +825,12 @@
                     labelKey: 'customStats',
                     iconKey: 'custom-stats',
                     toolPanel: 'customStatsToolPanel',
+                }, {
+                    id: 'customHelp',
+                    labelDefault: 'Помощь',
+                    labelKey: 'customHelp',
+                    iconKey: 'custom-help',
+                    toolPanel: 'customHelpToolPanel',
                 }, ],
                 position: 'right',
                 defaultToolPanel: 'filters',
@@ -703,6 +838,7 @@
             components: {
                 medalCellRenderer: MedalCellRenderer,
                 customStatsToolPanel: CustomStatsToolPanel,
+                customHelpToolPanel: CustomHelpToolPanel,
             },
             localeText: localeText,
         };
@@ -710,6 +846,54 @@
         function closeToolPanel() {
             gridOptions.api.closeToolPanel();
         }
+
+        function sizeToFit() {
+            gridOptions.api.sizeColumnsToFit();
+        }
+
+        function resetView() {
+            gridOptions.columnApi.resetColumnState()
+        }
+
+        function setAutoHeight(e) {
+            gridOptions.api.setDomLayout('autoHeight');
+
+            // auto height will get the grid to fill the height of the contents,
+            // so the grid div should have no height set, the height is dynamic.
+            document.querySelector('#myGrid').style.height = '';
+
+            $thisBtn = e
+            $thisBtn.text('Высота по-умолчанию')
+            $thisBtn.attr('onclick', 'setFixedHeight($(this))')
+            $thisBtn.attr('title', 'Сжимает высоту таблицы до заданной по-умолчанию со скроллингом')
+        }
+
+        function setFixedHeight(e) {
+            // we could also call setDomLayout(null or undefined) here as normal is the default
+            gridOptions.api.setDomLayout('normal');
+            // when auto height is off, the grid ahs a fixed height, and then the grid
+            // will provide scrollbars if the data does not fit into it.
+            document.querySelector('#myGrid').style.height = '500px';
+
+            $thisBtn.text('Автовысота')
+            $thisBtn.attr('onclick', 'setAutoHeight($(this))')
+            $thisBtn.attr('title', 'Растягивает таблицу на всю высоту контента без скроллинга внутри таблицы')
+        }
+
+        function autoSizeAll(skipHeader) {
+            var allColumnIds = [];
+            gridOptions.columnApi.getAllColumns().forEach(function(column) {
+                allColumnIds.push(column.colId);
+            });
+
+            gridOptions.columnApi.autoSizeColumns(allColumnIds, skipHeader);
+        }
+
+
+
+        $(document).on('click', '.grid-set button', function() {
+            gridOptions.api.closeToolPanel();
+        })
 
         document.addEventListener('DOMContentLoaded', function() {
             var gridDiv = document.querySelector('#myGrid');

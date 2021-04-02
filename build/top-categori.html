@@ -504,7 +504,98 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                                <tr class="table-level level0">
+                                    <td>
+                                        <div class="t-cat"><img src="./img/top/1.png">Электронные сигареты и товары<button class="btn-white dropdown-toggle" type="button" data-level="0" data-category-id="1"></button></div>
+                                    </td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>2346</td>
+                                    <td>0 руб.</td>
+                                    <td>1</td>
+                                    <td>0 руб.</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>
+                                        <div class="top-table-active add">
+                                            <span class="myTooltip left">Добавить в избранное</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="table-level level1" data-category-wrap="1">
+                                    <td>
+                                        <div class="t-cat"><img src="./img/top/1.png">Электронные сигареты и товары<button class="btn-white dropdown-toggle" type="button" data-level="0" data-category-id="2"></button></div>
+                                    </td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>2346</td>
+                                    <td>0 руб.</td>
+                                    <td>1</td>
+                                    <td>0 руб.</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>
+                                        <div class="top-table-active add">
+                                            <span class="myTooltip left">Добавить в избранное</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="table-level level2" data-category-wrap="2">
+                                    <td>
+                                        <div class="t-cat"><img src="./img/top/1.png">Электронные сигареты и товары<button class="btn-white dropdown-toggle" type="button" data-level="0" data-category-id="3"></button></div>
+                                    </td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>2346</td>
+                                    <td>0 руб.</td>
+                                    <td>1</td>
+                                    <td>0 руб.</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>
+                                        <div class="top-table-active add">
+                                            <span class="myTooltip left">Добавить в избранное</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="table-level level3" data-category-wrap="3">
+                                    <td>
+                                        <div class="t-cat"><img src="./img/top/1.png">Электронные сигареты и товары</div>
+                                    </td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>2346</td>
+                                    <td>0 руб.</td>
+                                    <td>1</td>
+                                    <td>0 руб.</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>
+                                        <div class="top-table-active add">
+                                            <span class="myTooltip left">Добавить в избранное</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="table-level level3" data-category-wrap="3">
+                                    <td>
+                                        <div class="t-cat"><img src="./img/top/1.png">Электронные сигареты и товары</div>
+                                    </td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>2346</td>
+                                    <td>0 руб.</td>
+                                    <td>1</td>
+                                    <td>0 руб.</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>
+                                        <div class="top-table-active add">
+                                            <span class="myTooltip left">Добавить в избранное</span>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr class="table-level level1" data-category-wrap="1">
                                     <td>
                                         <div class="t-cat"><img src="./img/top/1.png">Электронные сигареты и товары</div>
                                     </td>
@@ -699,6 +790,34 @@
             });
 
             $('#datatable').tablesorter()
+
+
+            $('.t-cat .dropdown-toggle').on('click', function() {
+                let btnCId = $(this).attr('data-category-id')
+                let btnLevel = $(this).attr('data-level')
+                let parent = $(this).closest('.table')
+                if ($(this).hasClass('active')) {
+
+                    parent.find('.table-level').each(function() {
+                        if ($(this).attr('data-category-wrap') >= btnCId) {
+                            console.log('1')
+                            $(this).fadeOut()
+                            $(this).find('.dropdown-toggle').removeClass('active')
+                        }
+                    })
+                } else {
+                    parent.find('.table-level').each(function() {
+                        if ($(this).attr('data-category-wrap') == btnCId) {
+                            $(this).fadeIn()
+                        }
+                    })
+                }
+                $(this).toggleClass('active')
+
+
+
+            })
+
         })
     </script>
 </body>

@@ -2299,6 +2299,22 @@ h1 {
     background-image: url('../img/top/settings-h.svg');
 }
 
+.ag-side-button-icon-wrapper .ag-icon.ag-icon-custom-help {
+    background-position: center;
+    width: 15px;
+    height: 15px;
+    background-repeat: no-repeat;
+    background-image: url('../img/top/help.svg');
+}
+
+.ag-theme-alpine .ag-side-button:hover .ag-icon.ag-icon-custom-help {
+    background-image: url('../img/top/help-h.svg');
+}
+
+.ag-theme-alpine .ag-side-button.ag-selected .ag-icon.ag-icon-custom-help {
+    background-image: url('../img/top/help-h.svg');
+}
+
 @import './template/cart.scss';
 @import './template/auth.scss';
 @import './template/lk.scss';

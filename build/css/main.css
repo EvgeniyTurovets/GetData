@@ -2090,6 +2090,19 @@ h1 {
 .ag-theme-alpine .ag-side-button.ag-selected .ag-icon.ag-icon-custom-stats {
   background-image: url("../img/top/settings-h.svg"); }
 
+.ag-side-button-icon-wrapper .ag-icon.ag-icon-custom-help {
+  background-position: center;
+  width: 15px;
+  height: 15px;
+  background-repeat: no-repeat;
+  background-image: url("../img/top/help.svg"); }
+
+.ag-theme-alpine .ag-side-button:hover .ag-icon.ag-icon-custom-help {
+  background-image: url("../img/top/help-h.svg"); }
+
+.ag-theme-alpine .ag-side-button.ag-selected .ag-icon.ag-icon-custom-help {
+  background-image: url("../img/top/help-h.svg"); }
+
 .cart {
   padding-bottom: 50px;
   font-size: 14px; }
@@ -4479,3 +4492,52 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     .top-table__flex .categori__tabs__wrap {
       margin-bottom: 15px;
       width: 100%; } }
+
+.grid-set {
+  width: 100%; }
+  .grid-set button {
+    width: 100%;
+    padding: 9px 12px;
+    text-align: center;
+    border-bottom: 1px solid #e2eaf4;
+    background-color: #fff; }
+
+.modal-content .table {
+  margin-top: 20px; }
+
+.modal-content .table td {
+  font-size: 14px; }
+
+@media (max-width: 374px) {
+  .modal-content .table td {
+    font-size: 12px; } }
+
+.table-level .btn-white {
+  background-color: transparent;
+  margin-left: 2px; }
+
+.table-level .dropdown-toggle::after {
+  border-top: .5em solid;
+  border-right: .4em solid transparent;
+  border-left: 0.4em solid transparent;
+  position: relative;
+  top: 4px; }
+
+.table-level .dropdown-toggle.active:after {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  top: 3px; }
+
+.table-level.level1,
+.table-level.level2,
+.table-level.level3 {
+  display: none; }
+
+.table-level.level1 .t-cat {
+  padding-left: 20px; }
+
+.table-level.level2 .t-cat {
+  padding-left: 40px; }
+
+.table-level.level3 .t-cat {
+  padding-left: 60px; }
