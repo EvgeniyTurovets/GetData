@@ -2384,6 +2384,8 @@ h1 {
     height: auto;
     -ms-flex-direction: column;
         flex-direction: column; }
+  .auth__left {
+    display: none; }
   .auth__right {
     width: 100%;
     -ms-flex-pack: start;
@@ -3044,19 +3046,16 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     margin-top: 0;
     -ms-flex-pack: justify;
         justify-content: space-between; }
+  .izb3__wrap1 button {
+    font-size: 12px;
+    padding: 7px 9px; }
   .izb3__wrap1 label {
-    margin-right: 0; }
+    margin-right: 5px;
+    width: 155px; }
   .izb3__wrap2 {
-    margin-bottom: 0; } }
-
-@media (max-width: 374px) {
-  .izb3__wrap1 {
-    -ms-flex-direction: column;
-        flex-direction: column;
-    -ms-flex-align: start;
-        align-items: flex-start; }
-  .izb3__wrap1 label {
-    margin-bottom: 15px; } }
+    margin-bottom: 0; }
+  .izb3__wrap1 input:checked + .big-checkbox:before {
+    left: 66px; } }
 
 .izb__wrap3 {
   display: -ms-flexbox;
@@ -3065,8 +3064,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
       justify-content: flex-end;
   -ms-flex-align: center;
       align-items: center;
-  margin-top: -65px;
-  margin-bottom: 34px; }
+  margin-top: -65px; }
   .izb__wrap3 .btn-dblue {
     margin-right: 17px; }
   .izb__wrap3 input {
@@ -3079,12 +3077,20 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 @media (max-width: 767px) {
   .izb__wrap3 {
     margin-top: 0;
-    -ms-flex-direction: column;
-        flex-direction: column;
-    -ms-flex-align: start;
-        align-items: flex-start; }
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
     .izb__wrap3 .btn-dblue {
-      margin-bottom: 15px; } }
+      margin-bottom: 0px;
+      margin-right: 10px; }
+    .izb__wrap3 input {
+      width: 160px;
+      margin-bottom: 0px;
+      font-size: 14px; } }
+
+@media (max-width: 374px) {
+  .izb__wrap3 .btn-dblue {
+    font-size: 12px;
+    padding: 7px 9px; } }
 
 @font-face {
   font-family: 'Material Icons';
@@ -3417,8 +3423,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: justify;
-      justify-content: space-between;
-  margin-bottom: 20px; }
+      justify-content: space-between; }
 
 .tovar__stat__top input {
   font-weight: 600;
@@ -3447,12 +3452,19 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   .free__times button:hover {
     color: #FF7B1B; }
 
+.free__times {
+  margin-bottom: 25px;
+  margin-right: 15px; }
+
+.tovar__stat__top input {
+  margin-bottom: 25px; }
+
 @media (max-width: 767px) {
   .tovar__stat__top {
-    -ms-flex-direction: column;
-        flex-direction: column; }
-  .free__times {
-    margin-bottom: 25px; } }
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+  .free__times button {
+    margin: 0 10px; } }
 
 .tovar__sklad {
   margin-top: 81px; }
@@ -3796,8 +3808,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   -ms-flex-pack: justify;
       justify-content: space-between;
   -ms-flex-align: center;
-      align-items: center;
-  margin-bottom: 17px; }
+      align-items: center; }
   .dif-table__top input {
     font-weight: 600;
     font-size: 16px;
@@ -3805,13 +3816,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     /* identical to box height */
     color: #2F2F2F;
     cursor: pointer; }
+  .dif-table__top a {
+    margin-bottom: 20px; }
 
 @media (max-width: 767px) {
   .dif-table__top {
-    -ms-flex-direction: column;
-        flex-direction: column;
-    -ms-flex-align: start;
-        align-items: flex-start; }
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
     .dif-table__top input {
       margin-bottom: 15px; } }
 
@@ -3820,20 +3831,16 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .tovar__stat__top .two-btns {
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+  margin-bottom: 15px; }
   .tovar__stat__top .two-btns button {
     padding: 9px 11px;
     margin-left: 14px; }
 
-@media (max-width: 767px) {
-  .tovar__stat__top .two-btns {
-    -ms-flex-direction: column;
-        flex-direction: column;
-    -ms-flex-align: start;
-        align-items: flex-start; }
-    .tovar__stat__top .two-btns button {
-      margin-bottom: 14px;
-      margin-left: 0; } }
+@media (max-width: 610px) {
+  .tovar__stat__top .two-btns2 button {
+    margin-left: 0;
+    margin-right: 14px; } }
 
 .tarifi__top h1 {
   text-align: center; }
@@ -4326,8 +4333,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
       justify-content: space-between;
   -ms-flex-align: center;
       align-items: center; }
-  .top-table__flex .free__times {
-    padding-bottom: 10px; }
 
 .top-table .tablesorter-header-inner {
   font-weight: 600;

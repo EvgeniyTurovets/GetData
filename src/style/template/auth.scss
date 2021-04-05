@@ -192,6 +192,9 @@
         height: auto;
         flex-direction: column;
     }
+    .auth__left {
+        display: none;
+    }
     .auth__right {
         width: 100%;
         justify-content: flex-start;
