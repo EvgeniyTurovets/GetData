@@ -471,6 +471,10 @@
     top: 3px;
 }
 
+.table-level .dropdown-toggle:hover::after {
+    border-top-color: var(--orang);
+}
+
 .table-level.level1,
 .table-level.level2,
 .table-level.level3 {

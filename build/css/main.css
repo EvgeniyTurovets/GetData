@@ -2103,6 +2103,10 @@ h1 {
 .ag-theme-alpine .ag-side-button.ag-selected .ag-icon.ag-icon-custom-help {
   background-image: url("../img/top/help-h.svg"); }
 
+.daterangepicker .drp-buttons .btn.applyBtn {
+  background-color: var(--orang);
+  border: 1px solid var(--orang); }
+
 .cart {
   padding-bottom: 50px;
   font-size: 14px; }
@@ -2919,6 +2923,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   -ms-flex-pack: center;
       justify-content: center; }
 
+.izb-text a:hover {
+  color: var(--orang); }
+
 .izb__table {
   text-align: center; }
   .izb__table .tablesorter-header-inner {
@@ -3347,10 +3354,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .tovar__svodka__mid1 {
   font-weight: 600;
   font-size: 40px;
+  color: #7379f8;
   line-height: 130.4%;
   /* or 52px */
-  letter-spacing: 0.005em;
-  color: #000000; }
+  letter-spacing: 0.005em; }
 
 .tovar__svodka__mid2 {
   font-size: 16px;
@@ -3841,6 +3848,50 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   .tovar__stat__top .two-btns2 button {
     margin-left: 0;
     margin-right: 14px; } }
+
+/* Контейнер подсказок */
+.tooltip2 {
+  position: relative;
+  cursor: pointer;
+  /* Если вы хотите, чтобы точки под перемещаемым текстом */ }
+
+/* Текст подсказки */
+.tooltip2 .tooltiptext {
+  visibility: hidden;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  padding: 5px;
+  border-radius: 6px;
+  /* Расположите текст подсказки */
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  /* Исчезают в подсказке */
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-family: var(--main-font);
+  font-weight: 400;
+  font-size: 14px; }
+
+/* Подсказка стрелка */
+.tooltip2 .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent; }
+
+/* Отображение текста подсказки при наведении курсора мыши на контейнер подсказки */
+.tooltip2:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1; }
 
 .tarifi__top h1 {
   text-align: center; }
@@ -4532,6 +4583,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
   top: 3px; }
+
+.table-level .dropdown-toggle:hover::after {
+  border-top-color: var(--orang); }
 
 .table-level.level1,
 .table-level.level2,

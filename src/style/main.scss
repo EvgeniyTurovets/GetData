@@ -2315,6 +2315,11 @@ h1 {
     background-image: url('../img/top/help-h.svg');
 }
 
+.daterangepicker .drp-buttons .btn.applyBtn {
+    background-color: var(--orang);
+    border: 1px solid var(--orang);
+}
+
 @import './template/cart.scss';
 @import './template/auth.scss';
 @import './template/lk.scss';

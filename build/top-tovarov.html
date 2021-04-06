@@ -691,6 +691,25 @@
         })
 
         // таблица
+        function setStyle(element, propertyObject) {
+            for (var property in propertyObject) {
+                element.style[property] = propertyObject[property];
+            }
+        }
+
+        function CustomPinnedRowRenderer() {}
+
+        CustomPinnedRowRenderer.prototype.init = function(params) {
+            this.eGui = document.createElement('div');
+            setStyle(this.eGui, params.style);
+            this.eGui.innerHTML = params.value;
+        };
+
+        CustomPinnedRowRenderer.prototype.getGui = function() {
+            return this.eGui;
+        };
+
+
         class MedalCellRenderer {
             constructor() {}
 
@@ -725,8 +744,6 @@
 
         function CustomStatsToolPanel() {}
 
-
-
         CustomStatsToolPanel.prototype.init = function(params) {
             this.eGui = document.createElement('div');
             this.eGui.style.width = '100%';
@@ -749,17 +766,21 @@
             return this.eGui;
         };
 
+
+
         var columnDefs = [{
             field: 'Неделя',
             checkboxSelection: true,
             suppressSizeToFit: true,
             width: 100,
             cellRenderer: 'medalCellRenderer',
+            pinnedRowCellRenderer: 'customPinnedRowRenderer',
             filter: false
         }, {
             field: 'Продаж',
             width: 100,
             filter: 'agNumberColumnFilter',
+            pinnedRowCellRenderer: 'customPinnedRowRenderer',
             flex: 1,
         }, {
             field: 'Выручка',
@@ -835,10 +856,12 @@
                 position: 'right',
                 defaultToolPanel: 'filters',
             },
+            pinnedBottomRowData: createData(2, 'Bottom'),
             components: {
                 medalCellRenderer: MedalCellRenderer,
                 customStatsToolPanel: CustomStatsToolPanel,
                 customHelpToolPanel: CustomHelpToolPanel,
+                customPinnedRowRenderer: CustomPinnedRowRenderer,
             },
             localeText: localeText,
         };
@@ -889,11 +912,34 @@
             gridOptions.columnApi.autoSizeColumns(allColumnIds, skipHeader);
         }
 
-
-
         $(document).on('click', '.grid-set button', function() {
             gridOptions.api.closeToolPanel();
         })
+
+        function onPinnedRowTopCount() {
+            var headerRowsToFloat = document.getElementById('top-row-count').value;
+            var count = Number(headerRowsToFloat);
+            var rows = createData(count, 'Top');
+            gridOptions.api.setPinnedTopRowData(rows);
+        }
+
+        function onPinnedRowBottomCount() {
+            var footerRowsToFloat = document.getElementById('bottom-row-count').value;
+            var count = Number(footerRowsToFloat);
+            var rows = createData(count, 'Bottom');
+            gridOptions.api.setPinnedBottomRowData(rows);
+        }
+
+        function createData(count, prefix) {
+            var result = [];
+            for (var i = 0; i < count; i++) {
+                result.push({
+                    Неделя: 'Суммарно',
+                    Продаж: '500 шт',
+                });
+            }
+            return result;
+        }
 
         document.addEventListener('DOMContentLoaded', function() {
             var gridDiv = document.querySelector('#myGrid');

@@ -78,6 +78,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     justify-content: center;
 }
 
+.izb-text a:hover {
+    color: var(--orang);
+}
+
 .izb__table {
     text-align: center;
     .tablesorter-header-inner {

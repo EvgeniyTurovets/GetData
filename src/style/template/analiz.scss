@@ -282,10 +282,10 @@
 .tovar__svodka__mid1 {
     font-weight: 600;
     font-size: 40px;
+    color: #7379f8;
     line-height: 130.4%;
     /* or 52px */
     letter-spacing: 0.005em;
-    color: #000000;
 }
 
 .tovar__svodka__mid2 {
@@ -835,4 +835,59 @@
             margin-right: 14px;
         }
     }
+}
+
+
+/* Контейнер подсказок */
+
+.tooltip2 {
+    position: relative;
+    cursor: pointer;
+    /* Если вы хотите, чтобы точки под перемещаемым текстом */
+}
+
+
+/* Текст подсказки */
+
+.tooltip2 .tooltiptext {
+    visibility: hidden;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    border-radius: 6px;
+    /* Расположите текст подсказки */
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    /* Исчезают в подсказке */
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-family: var(--main-font);
+    font-weight: 400;
+    font-size: 14px;
+}
+
+
+/* Подсказка стрелка */
+
+.tooltip2 .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+
+/* Отображение текста подсказки при наведении курсора мыши на контейнер подсказки */
+
+.tooltip2:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
 }

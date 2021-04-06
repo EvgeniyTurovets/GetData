@@ -372,14 +372,62 @@
                             <a href="https://evgeniyturovets.github.io/GetData/table.json" download class="btn-blue dark">Скачать в SCV</a>
                         </div>
                         <div id="myGrid" class="ag-theme-alpine" style="height: 475px;"></div>
-
-
                     </div>
                     <div class="tabs__content">
-                        Товары в тренде
+                        <div class="grafic">
+                            <h3>Распределение числа продаж от цены на товар </h3>
+                            <div class="budgets_chart__wrap">
+                                <div id="budgets_chart2" style="min-width: 1000px;"></div>
+                            </div>
+
+                            <div class="range__slider">
+                                <div id="slider-range2"></div>
+                            </div>
+
+                            <div class="grafic__range">
+                                <div class="range__text">
+                                    <label for="amount2">Выбранный дипазон цен:</label>
+                                    <input type="text" id="amount2" readonly>
+                                </div>
+
+                                <button type="button" class="btn-blue">Показать товары</button>
+                            </div>
+
+                        </div>
+
+                        <div class="dif-table__top">
+                            <input id="tovar-stat2" value="03.18.2013 - 03.23.2013" readonly>
+                            <a href="https://evgeniyturovets.github.io/GetData/table.json" download class="btn-blue dark">Скачать в SCV</a>
+                        </div>
+                        <div id="myGrid5" class="ag-theme-alpine" style="height: 475px;"></div>
                     </div>
                     <div class="tabs__content">
-                        Новинки
+                        <div class="grafic">
+                            <h3>Распределение числа продаж от цены на товар </h3>
+                            <div class="budgets_chart__wrap">
+                                <div id="budgets_chart3" style="min-width: 1000px;"></div>
+                            </div>
+
+                            <div class="range__slider">
+                                <div id="slider-range3"></div>
+                            </div>
+
+                            <div class="grafic__range">
+                                <div class="range__text">
+                                    <label for="amount3">Выбранный дипазон цен:</label>
+                                    <input type="text" id="amount3" readonly>
+                                </div>
+
+                                <button type="button" class="btn-blue">Показать товары</button>
+                            </div>
+
+                        </div>
+
+                        <div class="dif-table__top">
+                            <input id="tovar-stat3" value="03.18.2013 - 03.23.2013" readonly>
+                            <a href="https://evgeniyturovets.github.io/GetData/table.json" download class="btn-blue dark">Скачать в SCV</a>
+                        </div>
+                        <div id="myGrid6" class="ag-theme-alpine" style="height: 475px;"></div>
                     </div>
                     <div class="tabs__content">
                         <div class="grafic grafic-2">
@@ -405,10 +453,48 @@
 
                     </div>
                     <div class="tabs__content">
-                        Бренды
+                        <div class="grafic grafic-2">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <h3>Продажи</h3>
+                                    <div id="pie-chart3" class="pie-chart"></div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <h3>Выручка</h3>
+                                    <div id="pie-chart4" class="pie-chart"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tovar__stat__top">
+                            <div class="free__times">
+                                <button>7 дней</button>
+                                <button class="active">14 дней</button>
+                                <button>30 дней</button>
+                            </div>
+                        </div>
+                        <div id="myGrid7" class="ag-theme-alpine" style="height: 475px;"></div>
                     </div>
                     <div class="tabs__content">
-                        Продавцы
+                        <div class="grafic grafic-2">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <h3>Продажи</h3>
+                                    <div id="pie-chart5" class="pie-chart"></div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <h3>Выручка</h3>
+                                    <div id="pie-chart6" class="pie-chart"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tovar__stat__top">
+                            <div class="free__times">
+                                <button>7 дней</button>
+                                <button class="active">14 дней</button>
+                                <button>30 дней</button>
+                            </div>
+                        </div>
+                        <div id="myGrid8" class="ag-theme-alpine" style="height: 475px;"></div>
                     </div>
                     <div class="tabs__content">
                         <div class="grafic">
@@ -445,7 +531,26 @@
                         <div class="ag-theme-alpine" id="myGrid4" style="height: 475px;"></div>
                     </div>
                     <div class="tabs__content">
-                        По складам
+                        <div class="grafic grafic-2">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <h3>Продажи</h3>
+                                    <div id="pie-chart7" class="pie-chart"></div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <h3>Выручка</h3>
+                                    <div id="pie-chart8" class="pie-chart"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tovar__stat__top">
+                            <div class="free__times">
+                                <button>7 дней</button>
+                                <button class="active">14 дней</button>
+                                <button>30 дней</button>
+                            </div>
+                        </div>
+                        <div id="myGrid9" class="ag-theme-alpine" style="height: 475px;"></div>
                     </div>
                 </div>
             </div>
@@ -704,8 +809,19 @@
                 document.querySelector("#budgets_chart"),
                 options
             );
+            var chart2 = new ApexCharts(
+                document.querySelector("#budgets_chart2"),
+                options
+            );
+
+            var chart3 = new ApexCharts(
+                document.querySelector("#budgets_chart3"),
+                options
+            );
 
             chart.render();
+            chart2.render();
+            chart3.render();
 
             // рендж слайдер
             $("#slider-range").slider({
@@ -717,11 +833,74 @@
                     $("#amount").val(ui.values[0] + " руб." + ' - ' + ui.values[1] + " руб.");
                 }
             });
+            $("#slider-range2").slider({
+                range: true,
+                min: 0,
+                max: 500,
+                values: [75, 300],
+                slide: function(event, ui) {
+                    $("#amount2").val(ui.values[0] + " руб." + ' - ' + ui.values[1] + " руб.");
+                }
+            });
+            $("#slider-range3").slider({
+                range: true,
+                min: 0,
+                max: 500,
+                values: [75, 300],
+                slide: function(event, ui) {
+                    $("#amount3").val(ui.values[0] + " руб." + ' - ' + ui.values[1] + " руб.");
+                }
+            });
             $("#amount").val($("#slider-range").slider("values", 0) + " руб." + ' - ' +
                 $("#slider-range").slider("values", 1) + " руб.");
 
+            $("#amount2").val($("#slider-range2").slider("values", 0) + " руб." + ' - ' +
+                $("#slider-range2").slider("values", 1) + " руб.");
+            $("#amount3").val($("#slider-range3").slider("values", 0) + " руб." + ' - ' +
+                $("#slider-range3").slider("values", 1) + " руб.");
+
 
             $('#tovar-stat').daterangepicker({
+                locale: {
+                    "format": "MM.DD.YYYY",
+                    "separator": " - ",
+                    "applyLabel": "Применить",
+                    "cancelLabel": "Закрыть",
+                    "fromLabel": "От",
+                    "toLabel": "До",
+                    "customRangeLabel": "Custom",
+                    "weekLabel": "W",
+                    "daysOfWeek": ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+                    "monthNames": ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+                    "firstDay": 1
+                },
+                opens: 'right',
+                drops: 'down'
+            }, function(start, end, label) {
+                console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+            });
+
+            $('#tovar-stat2').daterangepicker({
+                locale: {
+                    "format": "MM.DD.YYYY",
+                    "separator": " - ",
+                    "applyLabel": "Применить",
+                    "cancelLabel": "Закрыть",
+                    "fromLabel": "От",
+                    "toLabel": "До",
+                    "customRangeLabel": "Custom",
+                    "weekLabel": "W",
+                    "daysOfWeek": ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+                    "monthNames": ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+                    "firstDay": 1
+                },
+                opens: 'right',
+                drops: 'down'
+            }, function(start, end, label) {
+                console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+            });
+
+            $('#tovar-stat3').daterangepicker({
                 locale: {
                     "format": "MM.DD.YYYY",
                     "separator": " - ",
@@ -786,6 +965,24 @@
 
                 var chart2 = new ApexCharts(document.querySelector("#pie-chart2"), pieOptions);
                 chart2.render();
+
+                var chart3 = new ApexCharts(document.querySelector("#pie-chart3"), pieOptions);
+                chart3.render();
+
+                var chart4 = new ApexCharts(document.querySelector("#pie-chart4"), pieOptions);
+                chart4.render();
+
+                var chart5 = new ApexCharts(document.querySelector("#pie-chart5"), pieOptions);
+                chart5.render();
+
+                var chart6 = new ApexCharts(document.querySelector("#pie-chart6"), pieOptions);
+                chart6.render();
+
+                var chart7 = new ApexCharts(document.querySelector("#pie-chart7"), pieOptions);
+                chart7.render();
+
+                var chart8 = new ApexCharts(document.querySelector("#pie-chart8"), pieOptions);
+                chart8.render();
 
             })
         </script>
@@ -1137,11 +1334,231 @@
                 localeText: localeText,
             };
 
+            var gridOptions5 = {
+                defaultColDef: {
+                    editable: false,
+                    sortable: true,
+                    flex: 1,
+                    minWidth: 100,
+                    filter: true,
+                    floatingFilter: true,
+                    resizable: true,
+                },
+                columnDefs: columnDefs,
+                rowData: null,
+                rowSelection: 'multiple',
+                sideBar: {
+                    toolPanels: [{
+                        id: 'columns',
+                        labelDefault: 'Columns',
+                        labelKey: 'columns',
+                        iconKey: 'columns',
+                        toolPanel: 'agColumnsToolPanel',
+                        toolPanelParams: {
+                            suppressRowGroups: true,
+                            suppressValues: true,
+                            suppressPivots: true,
+                            suppressPivotMode: true,
+                            suppressSideButtons: true,
+                            suppressColumnFilter: false,
+                            suppressColumnSelectAll: false,
+                            suppressColumnExpandAll: false,
+                        },
+                    }, {
+                        id: 'filters',
+                        labelDefault: 'Filters',
+                        labelKey: 'filters',
+                        iconKey: 'filter',
+                        toolPanel: 'agFiltersToolPanel',
+                    }, ],
+                    position: 'right',
+                    defaultToolPanel: 'filters',
+                },
+                localeText: localeText,
+            };
+
+            var gridOptions6 = {
+                defaultColDef: {
+                    editable: false,
+                    sortable: true,
+                    flex: 1,
+                    minWidth: 100,
+                    filter: true,
+                    floatingFilter: true,
+                    resizable: true,
+                },
+                columnDefs: columnDefs,
+                rowData: null,
+                rowSelection: 'multiple',
+                sideBar: {
+                    toolPanels: [{
+                        id: 'columns',
+                        labelDefault: 'Columns',
+                        labelKey: 'columns',
+                        iconKey: 'columns',
+                        toolPanel: 'agColumnsToolPanel',
+                        toolPanelParams: {
+                            suppressRowGroups: true,
+                            suppressValues: true,
+                            suppressPivots: true,
+                            suppressPivotMode: true,
+                            suppressSideButtons: true,
+                            suppressColumnFilter: false,
+                            suppressColumnSelectAll: false,
+                            suppressColumnExpandAll: false,
+                        },
+                    }, {
+                        id: 'filters',
+                        labelDefault: 'Filters',
+                        labelKey: 'filters',
+                        iconKey: 'filter',
+                        toolPanel: 'agFiltersToolPanel',
+                    }, ],
+                    position: 'right',
+                    defaultToolPanel: 'filters',
+                },
+                localeText: localeText,
+            };
+
+            var gridOptions7 = {
+                defaultColDef: {
+                    editable: false,
+                    sortable: true,
+                    flex: 1,
+                    minWidth: 100,
+                    filter: true,
+                    floatingFilter: true,
+                    resizable: true,
+                },
+                columnDefs: columnDefs,
+                rowData: null,
+                rowSelection: 'multiple',
+                sideBar: {
+                    toolPanels: [{
+                        id: 'columns',
+                        labelDefault: 'Columns',
+                        labelKey: 'columns',
+                        iconKey: 'columns',
+                        toolPanel: 'agColumnsToolPanel',
+                        toolPanelParams: {
+                            suppressRowGroups: true,
+                            suppressValues: true,
+                            suppressPivots: true,
+                            suppressPivotMode: true,
+                            suppressSideButtons: true,
+                            suppressColumnFilter: false,
+                            suppressColumnSelectAll: false,
+                            suppressColumnExpandAll: false,
+                        },
+                    }, {
+                        id: 'filters',
+                        labelDefault: 'Filters',
+                        labelKey: 'filters',
+                        iconKey: 'filter',
+                        toolPanel: 'agFiltersToolPanel',
+                    }, ],
+                    position: 'right',
+                    defaultToolPanel: 'filters',
+                },
+                localeText: localeText,
+            };
+
+            var gridOptions8 = {
+                defaultColDef: {
+                    editable: false,
+                    sortable: true,
+                    flex: 1,
+                    minWidth: 100,
+                    filter: true,
+                    floatingFilter: true,
+                    resizable: true,
+                },
+                columnDefs: columnDefs,
+                rowData: null,
+                rowSelection: 'multiple',
+                sideBar: {
+                    toolPanels: [{
+                        id: 'columns',
+                        labelDefault: 'Columns',
+                        labelKey: 'columns',
+                        iconKey: 'columns',
+                        toolPanel: 'agColumnsToolPanel',
+                        toolPanelParams: {
+                            suppressRowGroups: true,
+                            suppressValues: true,
+                            suppressPivots: true,
+                            suppressPivotMode: true,
+                            suppressSideButtons: true,
+                            suppressColumnFilter: false,
+                            suppressColumnSelectAll: false,
+                            suppressColumnExpandAll: false,
+                        },
+                    }, {
+                        id: 'filters',
+                        labelDefault: 'Filters',
+                        labelKey: 'filters',
+                        iconKey: 'filter',
+                        toolPanel: 'agFiltersToolPanel',
+                    }, ],
+                    position: 'right',
+                    defaultToolPanel: 'filters',
+                },
+                localeText: localeText,
+            };
+
+            var gridOptions9 = {
+                defaultColDef: {
+                    editable: false,
+                    sortable: true,
+                    flex: 1,
+                    minWidth: 100,
+                    filter: true,
+                    floatingFilter: true,
+                    resizable: true,
+                },
+                columnDefs: columnDefs,
+                rowData: null,
+                rowSelection: 'multiple',
+                sideBar: {
+                    toolPanels: [{
+                        id: 'columns',
+                        labelDefault: 'Columns',
+                        labelKey: 'columns',
+                        iconKey: 'columns',
+                        toolPanel: 'agColumnsToolPanel',
+                        toolPanelParams: {
+                            suppressRowGroups: true,
+                            suppressValues: true,
+                            suppressPivots: true,
+                            suppressPivotMode: true,
+                            suppressSideButtons: true,
+                            suppressColumnFilter: false,
+                            suppressColumnSelectAll: false,
+                            suppressColumnExpandAll: false,
+                        },
+                    }, {
+                        id: 'filters',
+                        labelDefault: 'Filters',
+                        labelKey: 'filters',
+                        iconKey: 'filter',
+                        toolPanel: 'agFiltersToolPanel',
+                    }, ],
+                    position: 'right',
+                    defaultToolPanel: 'filters',
+                },
+                localeText: localeText,
+            };
+
             function closeToolPanel() {
                 gridOptions.api.closeToolPanel();
                 gridOptions2.api.closeToolPanel();
                 gridOptions3.api.closeToolPanel();
                 gridOptions4.api.closeToolPanel();
+                gridOptions5.api.closeToolPanel();
+                gridOptions6.api.closeToolPanel();
+                gridOptions7.api.closeToolPanel();
+                gridOptions8.api.closeToolPanel();
+                gridOptions9.api.closeToolPanel();
             }
 
             document.addEventListener('DOMContentLoaded', function() {
@@ -1157,6 +1574,21 @@
                 var gridDiv4 = document.querySelector('#myGrid4');
                 new agGrid.Grid(gridDiv4, gridOptions4);
 
+                var gridDiv5 = document.querySelector('#myGrid5');
+                new agGrid.Grid(gridDiv5, gridOptions5);
+
+                var gridDiv6 = document.querySelector('#myGrid6');
+                new agGrid.Grid(gridDiv6, gridOptions6);
+
+                var gridDiv7 = document.querySelector('#myGrid7');
+                new agGrid.Grid(gridDiv7, gridOptions7);
+
+                var gridDiv8 = document.querySelector('#myGrid8');
+                new agGrid.Grid(gridDiv8, gridOptions8);
+
+                var gridDiv9 = document.querySelector('#myGrid9');
+                new agGrid.Grid(gridDiv9, gridOptions9);
+
                 agGrid
                     .simpleHttpRequest({
                         url: './libs/table.json',
@@ -1166,6 +1598,11 @@
                         gridOptions2.api.setRowData(data);
                         gridOptions3.api.setRowData(data);
                         gridOptions4.api.setRowData(data);
+                        gridOptions5.api.setRowData(data);
+                        gridOptions6.api.setRowData(data);
+                        gridOptions7.api.setRowData(data);
+                        gridOptions8.api.setRowData(data);
+                        gridOptions9.api.setRowData(data);
                     });
                 closeToolPanel()
             });

@@ -269,7 +269,7 @@
                         </ul>
                     </div>
                     <div class="tabs__content active">
-                        <div id="myGrid" class="ag-theme-alpine" style="height: 475px;"></div>
+                        <div id="myGrid5" class="ag-theme-alpine" style="height: 475px;"></div>
                     </div>
                     <div class="tabs__content">
                         <div class="grafic grafic-2">
@@ -288,7 +288,7 @@
                         <div id="myGrid2" class="ag-theme-alpine" style="height: 475px;"></div>
                     </div>
                     <div class="tabs__content">
-                        Продавцы
+                        <div id="myGrid" class="ag-theme-alpine" style="height: 475px;"></div>
                     </div>
                     <div class="tabs__content">
                         <div class="grafic">
@@ -716,6 +716,50 @@
             },
             localeText: localeText,
         };
+        var gridOptions5 = {
+            defaultColDef: {
+                editable: false,
+                sortable: true,
+                minWidth: 100,
+                filter: true,
+                floatingFilter: true,
+                resizable: true,
+            },
+            columnDefs: columnDefs,
+            rowData: null,
+            rowSelection: 'multiple',
+            sideBar: {
+                toolPanels: [{
+                    id: 'columns',
+                    labelDefault: 'Columns',
+                    labelKey: 'columns',
+                    iconKey: 'columns',
+                    toolPanel: 'agColumnsToolPanel',
+                    toolPanelParams: {
+                        suppressRowGroups: true,
+                        suppressValues: true,
+                        suppressPivots: true,
+                        suppressPivotMode: true,
+                        suppressSideButtons: true,
+                        suppressColumnFilter: false,
+                        suppressColumnSelectAll: false,
+                        suppressColumnExpandAll: false,
+                    },
+                }, {
+                    id: 'filters',
+                    labelDefault: 'Filters',
+                    labelKey: 'filters',
+                    iconKey: 'filter',
+                    toolPanel: 'agFiltersToolPanel',
+                }, ],
+                position: 'right',
+                defaultToolPanel: 'filters',
+            },
+            components: {
+                medalCellRenderer: MedalCellRenderer
+            },
+            localeText: localeText,
+        };
         var gridOptions2 = {
             defaultColDef: {
                 editable: false,
@@ -847,6 +891,7 @@
             gridOptions2.api.closeToolPanel();
             gridOptions3.api.closeToolPanel();
             gridOptions4.api.closeToolPanel();
+            gridOptions5.api.closeToolPanel();
         }
 
         document.addEventListener('DOMContentLoaded', function() {
@@ -862,12 +907,16 @@
             var gridDiv4 = document.querySelector('#myGrid4');
             new agGrid.Grid(gridDiv4, gridOptions4);
 
+            var gridDiv5 = document.querySelector('#myGrid5');
+            new agGrid.Grid(gridDiv5, gridOptions5);
+
             agGrid
                 .simpleHttpRequest({
                     url: './libs/table-img.json',
                 })
                 .then(function(data) {
                     gridOptions.api.setRowData(data);
+                    gridOptions5.api.setRowData(data);
                 });
             agGrid
                 .simpleHttpRequest({
