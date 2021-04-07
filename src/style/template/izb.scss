@@ -79,7 +79,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .izb-text a:hover {
-    color: var(--orang);
+    color: #535afb;
+    text-decoration: underline;
 }
 
 .izb__table {
@@ -249,9 +250,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 @media(max-width: 767px) {
+    .tovar__stat__top2 {
+        flex-direction: row-reverse;
+    }
     .izb__wrap3 {
         margin-top: 0;
         flex-wrap: wrap;
+        justify-content: flex-start;
         .btn-dblue {
             margin-bottom: 0px;
             margin-right: 10px;

@@ -195,7 +195,6 @@
         <div class="wrap">
             <button class="btn-bo" data-bs-toggle="modal" data-bs-target="#kupon">Купон</button>
             <button class="btn-bo" data-bs-toggle="modal" data-bs-target="#add-t">Добавить товар в группу</button>
-            <button class="btn-bo" data-bs-toggle="modal" data-bs-target="#add-t2">Добавить товар в группу 2</button>
             <button class="btn-bo" data-bs-toggle="modal" data-bs-target="#preimenovat">Переименование группы товаров</button>
             <button class="btn-bo" data-bs-toggle="modal" data-bs-target="#sozdat">Создание группы товаров</button>
             <button class="btn-bo" data-bs-toggle="modal" data-bs-target="#delete">Удалить</button>
@@ -228,34 +227,18 @@
                 <div class="modal-content">
                     <div class="modal-name">Добавить товар в группу</div>
                     <div class="field-name">Название</div>
-                    <select>
-                        <option selected disabled hidden>Не выбрана</option>
+                    <select class="add-new-group">
                         <option>група 1</option>
                         <option>Група 2</option>
+                        <option>Новая група</option>
                     </select>
-                    <div class="modal-btns">
-                        <button class="btn-or">Добавить</button>
-                        <button class="btn-bo" data-bs-dismiss="modal" aria-label="Close">Отмена</button>
+                    <div class="add-new-group-wrap" style="display: none;">
+                        <div class="field-name">Название новой группы</div>
+                        <input type="text" class="input" placeholder="Название новой группы">
                     </div>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-            </div>
-        </div>
 
-        <div class="modal fade" id="add-t2" tabindex="-1" aria-labelledby="add-t2" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-name">Добавить товар в группу</div>
-                    <div class="field-name">Название</div>
-                    <select>
-                        <option selected disabled hidden>Не выбрана</option>
-                        <option>група 1</option>
-                        <option>Група 2</option>
-                    </select>
-                    <div class="field-name">Название новой группы</div>
-                    <input type="text" class="input" placeholder="Название новой группы">
                     <div class="modal-btns">
-                        <button class="btn-or">Добавить</button>
+                        <button class="btn-or" data-bs-dismiss="modal" aria-label="Close">Добавить</button>
                         <button class="btn-bo" data-bs-dismiss="modal" aria-label="Close">Отмена</button>
                     </div>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -476,6 +459,17 @@
         }).focus(function() {
             $(this).autocomplete("search", "");
         });
+
+
+        $('.add-new-group').on('change', function() {
+            if ($(this).val() == 'Новая група') {
+                $('.add-new-group-wrap').fadeIn()
+                $('.add-new-group-wrap').addClass('active')
+            } else {
+                $('.add-new-group-wrap').fadeOut()
+                $('.add-new-group-wrap').removeClass('active')
+            }
+        })
     </script>
 </body>
 

@@ -420,6 +420,7 @@
 
 .tovar__sklad {
     margin-top: 81px;
+    margin-bottom: 50px;
 }
 
 @media(max-width: 767px) {
@@ -828,8 +829,14 @@
     }
 }
 
-@media(max-width: 610px) {
+@media(max-width: 767px) {
     .tovar__stat__top .two-btns2 {
+        button {
+            margin-left: 0;
+            margin-right: 14px;
+        }
+    }
+    .tovar__stat__top2 .two-btns {
         button {
             margin-left: 0;
             margin-right: 14px;

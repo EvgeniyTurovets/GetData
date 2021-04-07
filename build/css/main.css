@@ -2924,7 +2924,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
       justify-content: center; }
 
 .izb-text a:hover {
-  color: var(--orang); }
+  color: #535afb;
+  text-decoration: underline; }
 
 .izb__table {
   text-align: center; }
@@ -3082,10 +3083,15 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     color: #2F2F2F; }
 
 @media (max-width: 767px) {
+  .tovar__stat__top2 {
+    -ms-flex-direction: row-reverse;
+        flex-direction: row-reverse; }
   .izb__wrap3 {
     margin-top: 0;
     -ms-flex-wrap: wrap;
-        flex-wrap: wrap; }
+        flex-wrap: wrap;
+    -ms-flex-pack: start;
+        justify-content: flex-start; }
     .izb__wrap3 .btn-dblue {
       margin-bottom: 0px;
       margin-right: 10px; }
@@ -3474,7 +3480,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     margin: 0 10px; } }
 
 .tovar__sklad {
-  margin-top: 81px; }
+  margin-top: 81px;
+  margin-bottom: 50px; }
 
 @media (max-width: 767px) {
   .tovar__sklad {
@@ -3844,8 +3851,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     padding: 9px 11px;
     margin-left: 14px; }
 
-@media (max-width: 610px) {
+@media (max-width: 767px) {
   .tovar__stat__top .two-btns2 button {
+    margin-left: 0;
+    margin-right: 14px; }
+  .tovar__stat__top2 .two-btns button {
     margin-left: 0;
     margin-right: 14px; } }
 

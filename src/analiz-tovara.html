@@ -804,64 +804,8 @@
                     </div>
                 </div>
 
-                <div class="top-table__wrap" style="margin-bottom: 50px;">
-                    <table id="datatable4" class="table top-table table-bordered">
-                        <thead class="thead-light">
-                            <tr>
-                                <th data-sorter="false">Категория</th>
-                                <th>Продавцов
-                                    <div class="sort"></div>
-                                </th>
-                                <th>Брендов
-                                    <div class="sort"></div>
-                                </th>
-                                <th>Товаров
-                                    <div class="sort"></div>
-                                </th>
-                                <th>Средний чек
-                                    <div class="sort"></div>
-                                </th>
-                                <th>Продаж
-                                    <div class="sort"></div>
-                                </th>
-                                <th>Оборот
-                                    <div class="sort"></div>
-                                </th>
-                                <th data-sorter="false">Динамика (шт)</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <div class="izb-text">
-                                        <div class="t-cat"><img src="./img/top/1.png">Женщины / Одежда / Верхняя одежда</div>
-                                    </div>
-
-                                </td>
-                                <td>
-                                    <div class="izb-text">3456</div>
-                                </td>
-                                <td>
-                                    <div class="izb-text">3454</div>
-                                </td>
-                                <td>
-                                    <div class="izb-text">12345</div>
-                                </td>
-                                <td>
-                                    <div class="izb-text">4, 345 руб.</div>
-                                </td>
-                                <td>
-                                    <div class="izb-text">12345</div>
-                                </td>
-                                <td>
-                                    <div class="izb-text">1234567 руб.</div>
-                                </td>
-                                <td>
-                                    <div class="izb-text">5</div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="tovar__table1">
+                    <div id="myGrid3" style="height: 500px;" class="ag-theme-alpine"></div>
                 </div>
 
             </div>
@@ -1166,18 +1110,28 @@
                     name: 'Выручка',
                     data: [11, 32, 25, 32, 34, 32, 41]
                 }],
-
-
                 yaxis: [{
                         title: {
-                            text: ""
+                            text: "",
+                        },
+                        labels: {
+                            show: true,
+                            style: {
+                                colors: '#ff4560',
+                            }
                         },
                         axisTicks: {
-                            show: true
+                            show: true,
                         },
                     }, {
                         title: {
                             text: ""
+                        },
+                        labels: {
+                            show: true,
+                            style: {
+                                colors: '#feb019',
+                            }
                         },
                         axisTicks: {
                             show: true
@@ -1187,6 +1141,12 @@
                         title: {
                             text: ""
                         },
+                        labels: {
+                            show: true,
+                            style: {
+                                colors: '#00e396',
+                            }
+                        },
                         axisTicks: {
                             show: true
                         },
@@ -1194,6 +1154,12 @@
                         opposite: true,
                         title: {
                             text: ""
+                        },
+                        labels: {
+                            show: true,
+                            style: {
+                                colors: '#0B94FB',
+                            }
                         },
                         axisTicks: {
                             show: true
@@ -1254,7 +1220,6 @@
             $("#datatable").tablesorter();
             $("#datatable2").tablesorter();
             $("#datatable3").tablesorter();
-            $("#datatable4").tablesorter();
 
             // datapicker
             let opensVal
@@ -1393,9 +1358,51 @@
             },
             localeText: localeText,
         };
+        var gridOptions2 = {
+            defaultColDef: {
+                editable: false,
+                sortable: true,
+                flex: 1,
+                minWidth: 100,
+                filter: true,
+                floatingFilter: true,
+                resizable: true,
+            },
+            columnDefs: columnDefs,
+            rowData: null,
+            sideBar: {
+                toolPanels: [{
+                    id: 'columns',
+                    labelDefault: 'Columns',
+                    labelKey: 'columns',
+                    iconKey: 'columns',
+                    toolPanel: 'agColumnsToolPanel',
+                    toolPanelParams: {
+                        suppressRowGroups: true,
+                        suppressValues: true,
+                        suppressPivots: true,
+                        suppressPivotMode: true,
+                        suppressSideButtons: true,
+                        suppressColumnFilter: false,
+                        suppressColumnSelectAll: false,
+                        suppressColumnExpandAll: false,
+                    },
+                }, {
+                    id: 'filters',
+                    labelDefault: 'Filters',
+                    labelKey: 'filters',
+                    iconKey: 'filter',
+                    toolPanel: 'agFiltersToolPanel',
+                }, ],
+                position: 'right',
+                defaultToolPanel: 'filters',
+            },
+            localeText: localeText,
+        };
 
         function closeToolPanel() {
             gridOptions.api.closeToolPanel();
+            gridOptions2.api.closeToolPanel();
         }
 
 
@@ -1404,12 +1411,16 @@
             var gridDiv = document.querySelector('#myGrid2');
             new agGrid.Grid(gridDiv, gridOptions);
 
+            var gridDiv2 = document.querySelector('#myGrid3');
+            new agGrid.Grid(gridDiv2, gridOptions2);
+
             agGrid
                 .simpleHttpRequest({
                     url: 'https://evgeniyturovets.github.io/GetData/table.json',
                 })
                 .then(function(data) {
                     gridOptions.api.setRowData(data);
+                    gridOptions2.api.setRowData(data);
                 });
             closeToolPanel()
         });
