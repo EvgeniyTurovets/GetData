@@ -2943,17 +2943,17 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   .izb__table .izb__action-wrap button {
     margin-right: 12px; }
 
-.izb-table2 td {
-  text-align: center; }
-
-.izb-table2 .tablesorter-header-inner {
-  text-align: center;
-  -ms-flex-pack: center;
-      justify-content: center; }
-
-.izb-table2 th:first-child .tablesorter-header-inner {
-  -ms-flex-pack: start;
-      justify-content: flex-start; }
+.izb-table2 {
+  margin-bottom: 50px; }
+  .izb-table2 td {
+    text-align: center; }
+  .izb-table2 .tablesorter-header-inner {
+    text-align: center;
+    -ms-flex-pack: center;
+        justify-content: center; }
+  .izb-table2 th:first-child .tablesorter-header-inner {
+    -ms-flex-pack: start;
+        justify-content: flex-start; }
 
 .izb-table2 td:first-child {
   text-align: left; }
