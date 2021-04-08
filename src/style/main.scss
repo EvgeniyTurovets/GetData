@@ -1898,7 +1898,7 @@ h1 {
 
 .selectric-items li.highlighted {
     background-color: #FFFFFF;
-    color: #535afb;
+    color: var(--orang)
 }
 
 .selectric-items {
@@ -1910,9 +1910,17 @@ h1 {
 
 .selectric-items li:hover {
     background-color: #FFFFFF;
-    color: #535afb;
+    color: var(--orang)
 }
-
+#add-t{
+    .selectric-items li.last{
+        color: #535afb;
+    }
+    .selectric-items li.last:hover{
+        text-decoration: underline;
+    }
+   
+}
 .selectric-wrapper {
     margin-bottom: 20px;
 }
