@@ -1741,7 +1741,7 @@ h1 {
 
 .selectric-items li.highlighted {
   background-color: #FFFFFF;
-  color: var(--orang); }
+  color: #535afb; }
 
 .selectric-items {
   background: #FFFFFF;
@@ -1751,7 +1751,7 @@ h1 {
 
 .selectric-items li:hover {
   background-color: #FFFFFF;
-  color: var(--orang); }
+  color: #535afb; }
 
 .selectric-wrapper {
   margin-bottom: 20px; }
@@ -2923,8 +2923,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   -ms-flex-pack: center;
       justify-content: center; }
 
+.izb-text a {
+  color: #535afb; }
+
 .izb-text a:hover {
-  color: #535afb;
   text-decoration: underline; }
 
 .izb__table {
